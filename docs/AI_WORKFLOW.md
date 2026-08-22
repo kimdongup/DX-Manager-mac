@@ -2,7 +2,8 @@
 
 ## 시작
 
-1. `docs/README.md`, `PROJECT_BRIEF.md`, `SESSION.md`, `TODO.md`를 읽는다.
+1. `docs/README.md`, `HANDOFF.md`, `PROJECT_BRIEF.md`, `SESSION.md`,
+   `TODO.md`를 읽는다.
 2. Git 상태와 최근 커밋을 확인한다.
 3. 관련 코드와 기술/결정 문서를 읽는다.
 4. DexManager가 실행 중이면 빌드 파일 잠금 여부를 확인한다.
