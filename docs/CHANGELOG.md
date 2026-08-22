@@ -2,6 +2,17 @@
 
 세부 변경은 Git 이력을 사용하고 여기에는 큰 이정표만 적는다.
 
+## 2026-08 - v2.0.0 (macOS Cross-Platform Edition)
+
+- **macOS 크로스플랫폼 포팅 완료 (.NET 8 Native)**:
+  - 플랫폼 독립적인 비즈니스 로직, 세션 레지스트리, ADB/Scrcpy 오케스트레이션을 `DexManager.Core` (.NET 8)로 분리
+  - macOS 네이티브 인터랙티브 호스트 및 TUI 대시보드 `DexManager.Mac` 구현 (ANSI 컬러 콘솔, 실시간 기기 감시, 키보드 인터랙션)
+  - macOS 플랫폼 서비스 구현 (`MacPlatformService`, `MacPathProvider`, `MacCaptureService` [screencapture 연동], `MacAutoStartService` [LaunchAgents plist])
+  - Scrcpy 파일 드롭 가로채기 및 관리형 전송 중계를 위한 `DexManager.AdbProxy` (.NET 8) 크로스플랫폼 이식
+  - C# 12 최신 문법(파일 범위 네임스페이스, 패턴 매칭, 레코드, 식 본문 멤버, 컬렉션 식) 적용 및 코드베이스 리팩터링
+  - 92개 xUnit 단위/통합 테스트 (`DexManager.Tests`) 및 39개 다중 기기 독립 회귀 테스트 (`DexManager.MultiDeviceTests`) 100% 통과
+  - macOS 사용자 및 개발자 가이드 문서(`docs/MACOS_GUIDE.md`) 작성
+
 ## 2026-08 - v2.0.0
 
 - 구조 감사에서 더 이상 구독되지 않던 v1 단일 기기 연결·분리 이벤트 처리기를

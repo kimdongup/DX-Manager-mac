@@ -1,0 +1,45 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DexManager.Core", "DexManager.Core\DexManager.Core.csproj", "{A1111111-2222-3333-4444-555555555555}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DexManager.Mac", "DexManager.Mac\DexManager.Mac.csproj", "{B2222222-3333-4444-5555-666666666666}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DexManager.AdbProxy", "DexManager.AdbProxy\DexManager.AdbProxy.csproj", "{C247845E-870B-49D3-B5F0-5ABF16FB3DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DexManager.MultiDeviceTests", "DexManager.MultiDeviceTests\DexManager.MultiDeviceTests.csproj", "{838646D0-4EF3-411A-815F-A48A290B55E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DexManager.Tests", "DexManager.Tests\DexManager.Tests.csproj", "{37209A68-0A80-4BA6-81FD-05A2C2D7C0FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1111111-2222-3333-4444-555555555555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1111111-2222-3333-4444-555555555555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1111111-2222-3333-4444-555555555555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1111111-2222-3333-4444-555555555555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2222222-3333-4444-5555-666666666666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2222222-3333-4444-5555-666666666666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2222222-3333-4444-5555-666666666666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2222222-3333-4444-5555-666666666666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C247845E-870B-49D3-B5F0-5ABF16FB3DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C247845E-870B-49D3-B5F0-5ABF16FB3DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C247845E-870B-49D3-B5F0-5ABF16FB3DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C247845E-870B-49D3-B5F0-5ABF16FB3DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{838646D0-4EF3-411A-815F-A48A290B55E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{838646D0-4EF3-411A-815F-A48A290B55E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{838646D0-4EF3-411A-815F-A48A290B55E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{838646D0-4EF3-411A-815F-A48A290B55E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37209A68-0A80-4BA6-81FD-05A2C2D7C0FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37209A68-0A80-4BA6-81FD-05A2C2D7C0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37209A68-0A80-4BA6-81FD-05A2C2D7C0FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37209A68-0A80-4BA6-81FD-05A2C2D7C0FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

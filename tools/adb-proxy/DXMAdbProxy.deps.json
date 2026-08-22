@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DXMAdbProxy/1.0.0": {
+        "runtime": {
+          "DXMAdbProxy.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DXMAdbProxy/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

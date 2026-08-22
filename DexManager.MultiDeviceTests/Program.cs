@@ -885,7 +885,7 @@ namespace DexManager.MultiDeviceTests
 
             var result = runner.Run(
                 GetCommandProcessorPath(),
-                "/d /c exit 0",
+                GetCommandProcessorArgs(),
                 null,
                 5000,
                 false);
@@ -902,8 +902,8 @@ namespace DexManager.MultiDeviceTests
             var task = Task.Run(delegate
             {
                 return runner.Run(
-                    GetSystemExecutablePath("ping.exe"),
-                    "127.0.0.1 -n 30",
+                    GetPingExecutablePath(),
+                    GetPingArguments(),
                     null,
                     30000,
                     false);
@@ -929,11 +929,22 @@ namespace DexManager.MultiDeviceTests
             Directory.CreateDirectory(secondDirectory);
 
             var executableName = "dxmtest" +
-                Guid.NewGuid().ToString("N").Substring(0, 8) + ".exe";
+                Guid.NewGuid().ToString("N").Substring(0, 8) + (OperatingSystem.IsWindows() ? ".exe" : "");
             var firstPath = Path.Combine(firstDirectory, executableName);
             var secondPath = Path.Combine(secondDirectory, executableName);
-            File.Copy(GetSystemExecutablePath("ping.exe"), firstPath);
-            File.Copy(GetSystemExecutablePath("ping.exe"), secondPath);
+
+            if (OperatingSystem.IsMacOS() || OperatingSystem.IsLinux())
+            {
+                File.WriteAllText(firstPath, "#!/bin/sh\nsleep 30\n");
+                File.WriteAllText(secondPath, "#!/bin/sh\nsleep 30\n");
+                File.SetUnixFileMode(firstPath, UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.UserExecute | UnixFileMode.GroupRead | UnixFileMode.GroupExecute | UnixFileMode.OtherRead | UnixFileMode.OtherExecute);
+                File.SetUnixFileMode(secondPath, UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.UserExecute | UnixFileMode.GroupRead | UnixFileMode.GroupExecute | UnixFileMode.OtherRead | UnixFileMode.OtherExecute);
+            }
+            else
+            {
+                File.Copy(GetPingExecutablePath(), firstPath);
+                File.Copy(GetPingExecutablePath(), secondPath);
+            }
 
             Process first = null;
             Process second = null;
@@ -942,14 +953,14 @@ namespace DexManager.MultiDeviceTests
                 first = Process.Start(new ProcessStartInfo
                 {
                     FileName = firstPath,
-                    Arguments = "127.0.0.1 -n 30",
+                    Arguments = OperatingSystem.IsWindows() ? GetPingArguments() : "",
                     UseShellExecute = false,
                     CreateNoWindow = true
                 });
                 second = Process.Start(new ProcessStartInfo
                 {
                     FileName = secondPath,
-                    Arguments = "127.0.0.1 -n 30",
+                    Arguments = OperatingSystem.IsWindows() ? GetPingArguments() : "",
                     UseShellExecute = false,
                     CreateNoWindow = true
                 });
@@ -1046,14 +1057,44 @@ namespace DexManager.MultiDeviceTests
 
         private static string GetCommandProcessorPath()
         {
-            return GetSystemExecutablePath("cmd.exe");
+            if (OperatingSystem.IsWindows()) return GetSystemExecutablePath("cmd.exe");
+            return "/bin/sh";
+        }
+
+        private static string GetCommandProcessorArgs()
+        {
+            if (OperatingSystem.IsWindows()) return "/d /c exit 0";
+            return "-c \"exit 0\"";
+        }
+
+        private static string GetPingExecutablePath()
+        {
+            if (OperatingSystem.IsWindows()) return GetSystemExecutablePath("ping.exe");
+            if (File.Exists("/sbin/ping")) return "/sbin/ping";
+            if (File.Exists("/bin/ping")) return "/bin/ping";
+            if (File.Exists("/usr/bin/ping")) return "/usr/bin/ping";
+            return "/bin/sleep";
+        }
+
+        private static string GetPingArguments()
+        {
+            if (OperatingSystem.IsWindows()) return "127.0.0.1 -n 30";
+            var exe = GetPingExecutablePath();
+            if (exe.Contains("sleep")) return "30";
+            return "-c 30 127.0.0.1";
         }
 
         private static string GetSystemExecutablePath(string fileName)
         {
-            return Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.System),
-                fileName);
+            if (OperatingSystem.IsWindows())
+            {
+                return Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.System),
+                    fileName);
+            }
+            if (fileName.StartsWith("ping", StringComparison.OrdinalIgnoreCase)) return GetPingExecutablePath();
+            if (fileName.StartsWith("cmd", StringComparison.OrdinalIgnoreCase)) return "/bin/sh";
+            return Path.Combine("/bin", fileName);
         }
 
         private static DiscoveredDeviceTransport Device(

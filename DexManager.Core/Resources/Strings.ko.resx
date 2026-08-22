@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="App.Name" xml:space="preserve"><value>DX Manager</value></data>
+  <data name="Language.Auto" xml:space="preserve"><value>Windows 언어에 맞춤</value></data>
+  <data name="Language.Korean" xml:space="preserve"><value>한국어</value></data>
+  <data name="Language.English" xml:space="preserve"><value>English</value></data>
+  <data name="Common.Close" xml:space="preserve"><value>닫기</value></data>
+  <data name="Common.Save" xml:space="preserve"><value>저장</value></data>
+  <data name="Common.Browse" xml:space="preserve"><value>찾아보기</value></data>
+  <data name="Common.Error" xml:space="preserve"><value>오류</value></data>
+  <data name="Common.Unknown" xml:space="preserve"><value>확인 안 됨</value></data>
+  <data name="Main.Mode" xml:space="preserve"><value>모드</value></data>
+  <data name="Main.ConnectedDevices" xml:space="preserve"><value>연결된 기기</value></data>
+  <data name="Main.Dex" xml:space="preserve"><value>DeX</value></data>
+  <data name="Main.SingleWindow" xml:space="preserve"><value>단일창 {0}</value></data>
+  <data name="Main.SidebarHint" xml:space="preserve"><value>각 슬롯은 서로 다른 앱과 설정을 기억합니다.</value></data>
+  <data name="Main.Settings" xml:space="preserve"><value>설정</value></data>
+  <data name="Main.Waiting" xml:space="preserve"><value>연결 대기 중</value></data>
+  <data name="Main.PreparingAdb" xml:space="preserve"><value>ADB 서버를 준비하고 있습니다.</value></data>
+  <data name="Main.WaitingPhone" xml:space="preserve"><value>휴대폰 연결을 기다립니다.</value></data>
+  <data name="Main.DisplaySettings.Dex" xml:space="preserve"><value>DeX 화면 설정</value></data>
+  <data name="Main.DisplaySettings.Single" xml:space="preserve"><value>단일창 {0} 화면 설정</value></data>
+  <data name="Main.Resolution" xml:space="preserve"><value>해상도</value></data>
+  <data name="Main.Width" xml:space="preserve"><value>가로</value></data>
+  <data name="Main.Height" xml:space="preserve"><value>세로</value></data>
+  <data name="Main.Custom" xml:space="preserve"><value>사용자 지정</value></data>
+  <data name="Main.Bitrate" xml:space="preserve"><value>비트레이트</value></data>
+  <data name="Main.MaxFps" xml:space="preserve"><value>최대 FPS</value></data>
+  <data name="Main.Options" xml:space="preserve"><value>실행 옵션</value></data>
+  <data name="Main.ScreenOff" xml:space="preserve"><value>폰 화면 끄기 (-S)</value></data>
+  <data name="Main.HidKeyboard" xml:space="preserve"><value>HID 키보드 (-K)</value></data>
+  <data name="Main.HidMouse" xml:space="preserve"><value>HID 마우스 (-M)</value></data>
+  <data name="Main.ForceStop" xml:space="preserve"><value>선택 앱 강제 종료</value></data>
+  <data name="Main.DpiMinimum" xml:space="preserve"><value>DPI는 {0}보다 낮게 설정할 수 없습니다. 이전 값으로 되돌립니다.</value></data>
+  <data name="Main.ResolutionMaximum" xml:space="preserve"><value>{0} 값은 {1}을 초과할 수 없습니다. 이전 값으로 되돌립니다.</value></data>
+  <data name="Main.FlexDisplay" xml:space="preserve"><value>동적 창 크기 (-x)</value></data>
+  <data name="Main.StayAwake" xml:space="preserve"><value>잠자기 방지 (-w)</value></data>
+  <data name="Main.StartApp" xml:space="preserve"><value>시작 앱</value></data>
+  <data name="Main.NoApp" xml:space="preserve"><value>선택 안 함</value></data>
+  <data name="Main.LoadApps" xml:space="preserve"><value>앱 목록 불러오기</value></data>
+  <data name="Main.Loading" xml:space="preserve"><value>불러오는 중...</value></data>
+  <data name="Main.AppProfile.SelectApp" xml:space="preserve"><value>앱 프로필: 앱 선택 ▼</value></data>
+  <data name="Main.AppProfile.NotSaved" xml:space="preserve"><value>앱 프로필: 없음 ▼</value></data>
+  <data name="Main.AppProfile.Saved" xml:space="preserve"><value>앱 프로필: 저장됨 ▼</value></data>
+  <data name="Main.AppProfile.Save" xml:space="preserve"><value>현재 설정 저장</value></data>
+  <data name="Main.AppProfile.Delete" xml:space="preserve"><value>프로필 삭제</value></data>
+  <data name="Main.AppProfile.OverwriteConfirm" xml:space="preserve"><value>{0} 앱 프로필이 이미 있습니다. 현재 설정으로 덮어쓰시겠습니까?</value></data>
+  <data name="Main.AppProfile.DeleteConfirm" xml:space="preserve"><value>{0} 앱의 저장된 프로필을 삭제하시겠습니까? 현재 단일창 설정은 바뀌지 않습니다.</value></data>
+  <data name="Main.AppProfile.ApplyFailed" xml:space="preserve"><value>저장된 앱 프로필을 적용하지 못했습니다.{0}{0}{1}</value></data>
+  <data name="Main.AppProfile.SaveFailed" xml:space="preserve"><value>앱 프로필을 저장하지 못했습니다.{0}{0}{1}</value></data>
+  <data name="Main.AppProfile.DeleteFailed" xml:space="preserve"><value>앱 프로필을 삭제하지 못했습니다.{0}{0}{1}</value></data>
+  <data name="Main.AdvancedClosed" xml:space="preserve"><value>▶  고급 옵션 (추가 인자)</value></data>
+  <data name="Main.AdvancedOpen" xml:space="preserve"><value>▼  고급 옵션 (추가 인자)</value></data>
+  <data name="Main.StartDex" xml:space="preserve"><value>DeX 시작</value></data>
+  <data name="Main.StopDex" xml:space="preserve"><value>DeX 중지</value></data>
+  <data name="Main.StartSingle" xml:space="preserve"><value>단일창 시작</value></data>
+  <data name="Main.StopSingle" xml:space="preserve"><value>단일창 중지</value></data>
+  <data name="Main.ApplyChanges" xml:space="preserve"><value>변경사항 적용</value></data>
+  <data name="Main.DexMode" xml:space="preserve"><value>DeX 모드</value></data>
+  <data name="Main.SingleMode" xml:space="preserve"><value>단일창 {0} · Scrcpy 새 가상화면</value></data>
+  <data name="Status.Initializing" xml:space="preserve"><value>초기화 중</value></data>
+  <data name="Status.Ready" xml:space="preserve"><value>준비</value></data>
+  <data name="Status.Error" xml:space="preserve"><value>오류</value></data>
+  <data name="Status.Starting" xml:space="preserve"><value>시작 중</value></data>
+  <data name="Status.Stopping" xml:space="preserve"><value>중지 중</value></data>
+  <data name="Status.Applying" xml:space="preserve"><value>설정 적용 중</value></data>
+  <data name="Status.Running" xml:space="preserve"><value>실행 중</value></data>
+  <data name="Status.Stopped" xml:space="preserve"><value>중지</value></data>
+  <data name="Status.Idle" xml:space="preserve"><value>대기</value></data>
+  <data name="Status.Responding" xml:space="preserve"><value>응답</value></data>
+  <data name="Main.DexStarting" xml:space="preserve"><value>DeX 시작 중</value></data>
+  <data name="Main.DexPreparing" xml:space="preserve"><value>가상화면과 Scrcpy를 준비합니다.</value></data>
+  <data name="Main.DexStopping" xml:space="preserve"><value>DeX 중지 중</value></data>
+  <data name="Main.DexCleaning" xml:space="preserve"><value>가상화면을 정리합니다.</value></data>
+  <data name="Main.SingleStarting" xml:space="preserve"><value>단일창 {0} 시작 중</value></data>
+  <data name="Main.SinglePreparing" xml:space="preserve"><value>Scrcpy 새 가상화면과 선택한 앱을 준비합니다.</value></data>
+  <data name="Main.SingleStopping" xml:space="preserve"><value>단일창 {0} 중지 중</value></data>
+  <data name="Main.SingleCleaning" xml:space="preserve"><value>Scrcpy 새 가상화면을 정리합니다.</value></data>
+  <data name="Main.DexRunning" xml:space="preserve"><value>DeX 실행 중</value></data>
+  <data name="Main.DexRunningDetail" xml:space="preserve"><value>삼성 DeX가 정상 실행 중입니다.</value></data>
+  <data name="Main.SingleRunning" xml:space="preserve"><value>단일창 {0} 실행 중</value></data>
+  <data name="Main.SingleRunningDetail" xml:space="preserve"><value>Scrcpy 새 가상화면이 실행 중입니다.</value></data>
+  <data name="Main.AppRunningDetail" xml:space="preserve"><value>{0} 앱이 실행 중입니다.</value></data>
+  <data name="Main.PhoneConnected" xml:space="preserve"><value>휴대폰 연결됨</value></data>
+  <data name="Main.WaitingDex" xml:space="preserve"><value>DeX 시작을 기다립니다.</value></data>
+  <data name="Main.AuthorizationRequired" xml:space="preserve"><value>승인 필요</value></data>
+  <data name="Main.AuthorizationDetail" xml:space="preserve"><value>휴대폰에서 ADB 디버깅 승인을 확인하세요.</value></data>
+  <data name="Main.DeviceOffline" xml:space="preserve"><value>장치 오프라인</value></data>
+  <data name="Main.DeviceOfflineDetail" xml:space="preserve"><value>휴대폰 연결 또는 ADB 상태를 확인하세요.</value></data>
+  <data name="Main.ConnectedDevice" xml:space="preserve"><value>{0}  ·  {1}</value></data>
+  <data name="Main.ConnectedDeviceFallback" xml:space="preserve"><value>Android 장치  ·  {0}</value></data>
+  <data name="Main.SingleReady" xml:space="preserve"><value>단일창 {0} 준비</value></data>
+  <data name="Main.SelectApp" xml:space="preserve"><value>실행할 앱을 선택하세요.</value></data>
+  <data name="Main.PressStart" xml:space="preserve"><value>시작 버튼을 누르면 선택한 앱을 새 가상화면에서 실행합니다.</value></data>
+  <data name="Main.ApplyStatus" xml:space="preserve"><value>설정 적용 중</value></data>
+  <data name="Main.ApplyRestartDetail" xml:space="preserve"><value>기존 가상화면을 제거하고 새 설정으로 다시 시작합니다.</value></data>
+  <data name="Main.ApplyNoDevice" xml:space="preserve"><value>실행 설정을 저장했습니다. 연결된 휴대폰이 없어 다음 DeX 시작 때 적용됩니다.</value></data>
+  <data name="Main.ApplyDeferred" xml:space="preserve"><value>실행 설정은 저장했습니다. 현재 적용하지 못해 다음 DeX 시작 때 사용합니다.</value></data>
+  <data name="Main.ApplySucceeded" xml:space="preserve"><value>실행 설정을 저장하고 새 가상화면으로 다시 시작했습니다.</value></data>
+  <data name="Main.ApplyFailed" xml:space="preserve"><value>실행 설정은 저장했습니다.{0}현재 적용하지 못해 다음 DeX 시작 때 사용합니다.{0}{0}{1}</value></data>
+  <data name="Main.SingleSavedNoDevice" xml:space="preserve"><value>단일창 {0} 설정을 저장했습니다.{1}연결된 휴대폰이 없어 다음 실행 때 적용됩니다.</value></data>
+  <data name="Main.SingleSaved" xml:space="preserve"><value>단일창 {0} 설정을 저장했습니다.</value></data>
+  <data name="Main.SingleApplying" xml:space="preserve"><value>단일창 {0} 설정 적용 중</value></data>
+  <data name="Main.SingleRestartDetail" xml:space="preserve"><value>현재 창을 닫고 새 설정으로 다시 시작합니다.</value></data>
+  <data name="Main.SingleApplied" xml:space="preserve"><value>단일창 {0}을 새 설정으로 다시 시작했습니다.</value></data>
+  <data name="Main.LoadAppsFailed" xml:space="preserve"><value>앱 목록을 불러오지 못했습니다.{0}{0}{1}</value></data>
+  <data name="Main.BitrateRequired" xml:space="preserve"><value>비트레이트를 입력하세요. 예: 20M</value></data>
+  <data name="Main.TrayContinues" xml:space="preserve"><value>DX Manager가 시스템 트레이에서 계속 실행됩니다.</value></data>
+  <data name="Main.CaptureHotkeyFailed" xml:space="preserve"><value>F8 캡처 단축키를 등록하지 못했습니다.</value></data>
+  <data name="Main.KeyMappingFailed" xml:space="preserve"><value>Scrcpy 키 매핑을 시작하지 못했습니다.</value></data>
+  <data name="Device.Connected" xml:space="preserve"><value>연결됨 ({0})</value></data>
+  <data name="Device.Unauthorized" xml:space="preserve"><value>RSA 승인 필요</value></data>
+  <data name="Device.Offline" xml:space="preserve"><value>오프라인</value></data>
+  <data name="Device.Disconnected" xml:space="preserve"><value>연결 안 됨</value></data>
+  <data name="Error.AdbInit" xml:space="preserve"><value>ADB 초기화 실패: {0}</value></data>
+  <data name="Error.ApplyLaunchSettings" xml:space="preserve"><value>실행 설정을 적용하지 못했습니다.</value></data>
+  <data name="Error.StartDex" xml:space="preserve"><value>DeX를 시작하지 못했습니다.</value></data>
+  <data name="Error.StopDex" xml:space="preserve"><value>DeX를 중지하는 중 오류가 발생했습니다.</value></data>
+  <data name="Error.ApplySingleSettings" xml:space="preserve"><value>단일창 실행 설정을 적용하지 못했습니다.</value></data>
+  <data name="Error.StartSingle" xml:space="preserve"><value>단일창 {0}을 시작하지 못했습니다.</value></data>
+  <data name="Error.StopSingle" xml:space="preserve"><value>단일창 {0}을 중지하지 못했습니다.</value></data>
+  <data name="Status.ShuttingDown" xml:space="preserve"><value>종료 정리 중</value></data>
+  <data name="Capture.Hint" xml:space="preserve"><value>F8 다시 누름: Scrcpy 전체 캡처&#xD;&#xA;마우스 드래그: 선택 영역 캡처&#xD;&#xA;ESC: 취소</value></data>
+  <data name="Capture.Saved" xml:space="preserve"><value>✓ 스크린샷 저장 완료</value></data>
+  <data name="Settings.SavedInline" xml:space="preserve"><value>설정을 저장했습니다. 언어, 프로그램 경로, 장치 감시 주기 또는 프로세스 제한 시간 변경은 다시 시작한 뒤 적용됩니다.</value></data>
+  <data name="Settings.SaveFailedInline" xml:space="preserve"><value>저장 실패: {0}</value></data>
+  <data name="Settings.SavedApplyFailedInline" xml:space="preserve"><value>설정은 저장했지만 즉시 런타임 반영에 실패했습니다: {0}</value></data>
+  <data name="Settings.Title" xml:space="preserve"><value>DX Manager · 설정 및 진단</value></data>
+  <data name="Settings.Description" xml:space="preserve"><value>해상도와 Scrcpy 실행 옵션은 메인 창에서 변경합니다. 연결, 경로와 고급 동작은 이 창에서 관리합니다.</value></data>
+  <data name="Settings.General" xml:space="preserve"><value>기본</value></data>
+  <data name="Settings.Connection" xml:space="preserve"><value>연결</value></data>
+  <data name="Settings.Paths" xml:space="preserve"><value>경로 / ADB</value></data>
+  <data name="Settings.Keyboard" xml:space="preserve"><value>키 입력</value></data>
+  <data name="Settings.Diagnostics" xml:space="preserve"><value>진단</value></data>
+  <data name="Settings.About" xml:space="preserve"><value>정보</value></data>
+  <data name="Settings.AboutVersion" xml:space="preserve"><value>DX Manager v{0}</value></data>
+  <data name="Settings.AboutSummary" xml:space="preserve"><value>Android 장치의 화면과 입력을 관리하는 독립 유틸리티입니다.</value></data>
+  <data name="Settings.AboutDeveloper" xml:space="preserve"><value>개발자: maze</value></data>
+  <data name="Settings.AboutCopyright" xml:space="preserve"><value>Copyright © 2026 maze</value></data>
+  <data name="Settings.AboutLicense" xml:space="preserve"><value>DX Manager 소스 코드는 MIT License로 배포됩니다.</value></data>
+  <data name="Settings.OpenProjectFailed" xml:space="preserve"><value>프로젝트 페이지를 열지 못했습니다: {0}</value></data>
+  <data name="Settings.AboutScrcpy" xml:space="preserve"><value>이 프로그램은 scrcpy 4.1을 포함하고 사용합니다. scrcpy는 Genymobile과 Romain Vimont가 Apache License 2.0으로 배포하는 오픈소스 소프트웨어입니다.</value></data>
+  <data name="Settings.AboutComponents" xml:space="preserve"><value>동봉된 FFmpeg 라이브러리는 LGPL v2.1 이상, SDL3는 zlib, libusb는 LGPL v2.1 이상에 따라 배포됩니다. 자세한 내용은 제3자 라이선스를 확인하십시오.</value></data>
+  <data name="Settings.AboutSamsung" xml:space="preserve"><value>이 프로그램은 호환되는 Samsung 장치에서 Samsung DeX 기능과 함께 동작하지만 Samsung Electronics가 제작, 후원, 보증 또는 배포하는 제품이 아닙니다. Samsung 및 Samsung DeX는 각 권리자의 상표입니다.</value></data>
+  <data name="Settings.OpenNotices" xml:space="preserve"><value>제3자 라이선스 보기</value></data>
+  <data name="Licenses.Title" xml:space="preserve"><value>DX Manager - 제3자 라이선스</value></data>
+  <data name="Licenses.Guide" xml:space="preserve"><value>DX Manager에 포함된 오픈소스 소프트웨어의 고지와 라이선스 조건을 확인합니다.</value></data>
+  <data name="Licenses.NoticesTab" xml:space="preserve"><value>제3자 고지</value></data>
+  <data name="Licenses.ScrcpyTab" xml:space="preserve"><value>scrcpy - Apache 2.0</value></data>
+  <data name="Licenses.FileMissing" xml:space="preserve"><value>동봉된 라이선스 파일을 찾을 수 없습니다: {0}</value></data>
+  <data name="Licenses.ReadFailed" xml:space="preserve"><value>라이선스 파일을 읽지 못했습니다: {0} ({1})</value></data>
+  <data name="Log.Program.Starting" xml:space="preserve"><value>DX Manager를 시작합니다.</value></data>
+  <data name="Log.Program.ScrcpyAdbPath" xml:space="preserve"><value>Scrcpy가 사용할 ADB 경로를 지정했습니다: {0}</value></data>
+  <data name="Log.Program.InitFailed" xml:space="preserve"><value>프로그램 초기화에 실패했습니다.</value></data>
+  <data name="Log.Settings.CreatedDefaults" xml:space="preserve"><value>기본 설정 파일을 생성했습니다: {0}</value></data>
+  <data name="Log.Settings.SchemaUpdated" xml:space="preserve"><value>설정 스키마를 {0}에서 {1}로 갱신했습니다.</value></data>
+  <data name="Log.Settings.Loaded" xml:space="preserve"><value>설정 파일을 불러왔습니다: {0}</value></data>
+  <data name="Log.Settings.LoadFailed" xml:space="preserve"><value>설정 파일을 읽지 못해 기본 설정을 사용합니다. 백업: {0}</value></data>
+  <data name="Log.Settings.BackupFailed" xml:space="preserve"><value>손상된 설정 파일의 백업을 보존하지 못했습니다.</value></data>
+  <data name="Log.Settings.Saved" xml:space="preserve"><value>설정 파일을 저장했습니다: {0}</value></data>
+  <data name="Log.Settings.PrimaryInvalid" xml:space="preserve"><value>주 설정 파일이 올바르지 않습니다. 보존된 사본: {0}</value></data>
+  <data name="Log.Settings.Recovered" xml:space="preserve"><value>다음 파일에서 설정을 복구했습니다: {0}</value></data>
+  <data name="Log.Settings.RecoverySaveFailed" xml:space="preserve"><value>복구한 설정을 메모리에서 사용하지만 주 설정 파일을 복구 상태로 저장하지 못했습니다.</value></data>
+  <data name="Log.Settings.SchemaSaveFailed" xml:space="preserve"><value>설정을 메모리에서 마이그레이션했지만 갱신된 파일을 저장하지 못했습니다.</value></data>
+  <data name="Log.Settings.Normalized" xml:space="preserve"><value>누락되었거나 올바르지 않은 설정값을 보정하고 수정된 파일을 저장했습니다.</value></data>
+  <data name="Error.Settings.NewerSchema" xml:space="preserve"><value>이 설정 파일은 스키마 {0}을(를) 사용하지만 현재 DX Manager는 스키마 {1}까지만 지원합니다. 파일은 변경하지 않았습니다. 더 새로운 DX Manager를 실행하거나 호환되는 설정 파일을 복원하세요.</value></data>
+  <data name="Error.Process.PathEmpty" xml:space="preserve"><value>실행 파일 경로가 비어 있습니다.</value></data>
+  <data name="Error.Process.FileNotFound" xml:space="preserve"><value>실행 파일을 찾을 수 없습니다.</value></data>
+  <data name="Log.Process.Start" xml:space="preserve"><value>프로세스 실행: {0} {1}</value></data>
+  <data name="Log.Process.KillTimedOutFailed" xml:space="preserve"><value>시간 초과 프로세스를 종료하지 못했습니다: {0}</value></data>
+  <data name="Log.Process.TerminationDeferred" xml:space="preserve"><value>시간 초과 프로세스가 Kill 후에도 종료되지 않아 백그라운드 정리를 재시도합니다.</value></data>
+  <data name="Log.Process.TerminationFailed" xml:space="preserve"><value>시간 초과 프로세스가 반복 정리 후에도 종료되지 않았습니다.</value></data>
+  <data name="Log.Process.End" xml:space="preserve"><value>프로세스 종료: ExitCode={0}, Timeout={1}, Duration={2}ms</value></data>
+  <data name="Log.Process.ShutdownRequested" xml:space="preserve"><value>프로세스 종료를 요청했습니다. 새로운 ADB 및 보조 프로세스 실행을 차단합니다.</value></data>
+  <data name="Log.Process.FinalSweepTerminated" xml:space="preserve"><value>최종 프로세스 정리에서 DX Manager 번들 경로의 잔존 프로세스 {0}개를 종료했습니다.</value></data>
+  <data name="Error.Adb.PathEmpty" xml:space="preserve"><value>ADB 경로가 비어 있습니다.</value></data>
+  <data name="Error.Adb.ShellCommandEmpty" xml:space="preserve"><value>ADB shell 명령이 비어 있습니다.</value></data>
+  <data name="Error.Adb.SerialEmpty" xml:space="preserve"><value>ADB serial이 비어 있습니다.</value></data>
+  <data name="Error.Adb.PushFileNotFound" xml:space="preserve"><value>전송할 파일을 찾을 수 없습니다.</value></data>
+  <data name="Error.Adb.RemotePathEmpty" xml:space="preserve"><value>스마트폰 대상 경로가 비어 있습니다.</value></data>
+  <data name="Error.Adb.WirelessEndpointEmpty" xml:space="preserve"><value>무선 ADB 주소가 비어 있습니다.</value></data>
+  <data name="Error.Adb.PairingEndpointEmpty" xml:space="preserve"><value>페어링 주소가 비어 있습니다.</value></data>
+  <data name="Error.Adb.PairingCodeEmpty" xml:space="preserve"><value>페어링 코드가 비어 있습니다.</value></data>
+  <data name="Log.Adb.TargetCleared" xml:space="preserve"><value>기본 연결 감시 대상 선택을 해제했습니다.</value></data>
+  <data name="Log.Adb.TargetSelected" xml:space="preserve"><value>기본 연결 감시 대상 선택: {0}</value></data>
+  <data name="Log.Adb.StartServerResult" xml:space="preserve"><value>ADB start-server 결과</value></data>
+  <data name="Log.Adb.SelectedPath" xml:space="preserve"><value>선택된 ADB 경로: {0}</value></data>
+  <data name="Log.Adb.VersionResult" xml:space="preserve"><value>ADB version 결과</value></data>
+  <data name="Log.Adb.ShutdownProcessesTerminated" xml:space="preserve"><value>DX Manager에서 선택한 ADB 경로의 프로세스 {0}개를 종료했습니다.</value></data>
+  <data name="Log.Adb.PairingAttempt" xml:space="preserve"><value>ADB 무선 페어링을 시도합니다: {0}</value></data>
+  <data name="Log.Adb.PairResult" xml:space="preserve"><value>ADB pair 결과</value></data>
+  <data name="Log.Adb.DevicesResult" xml:space="preserve"><value>ADB devices 결과</value></data>
+  <data name="Log.Adb.DeviceCount" xml:space="preserve"><value>ADB 장치 조회 결과: {0}개</value></data>
+  <data name="Log.Adb.WakeUpStarting" xml:space="preserve"><value>ADB Wake-up을 시작합니다.</value></data>
+  <data name="Log.Adb.WakeUpScrcpyUnavailable" xml:space="preserve"><value>ADB Wake-up 실패: Scrcpy Wake-up이 구성되지 않았습니다.</value></data>
+  <data name="Log.Adb.WakeUpFallback" xml:space="preserve"><value>기본 ADB Wake-up 실패. Scrcpy Wake-up을 실행합니다.</value></data>
+  <data name="Log.Adb.WakeUpDeviceFound" xml:space="preserve"><value>Scrcpy Wake-up 후 ADB 장치를 확인했습니다.</value></data>
+  <data name="Log.Adb.WakeUpDeviceMissing" xml:space="preserve"><value>Scrcpy Wake-up 후에도 ADB 장치를 확인하지 못했습니다.</value></data>
+  <data name="Log.Main.Shown" xml:space="preserve"><value>메인 창을 표시했습니다.</value></data>
+  <data name="Log.Main.DeviceStartDelay" xml:space="preserve"><value>기기 {0}의 시작 명령 전 {1}ms 동안 대기합니다.</value></data>
+  <data name="Log.Main.CaptureHotkeyRegistrationFailed" xml:space="preserve"><value>캡처 단축키 등록에 실패했습니다.</value></data>
+  <data name="Log.Main.AutoStartApplyFailed" xml:space="preserve"><value>Windows 시작 프로그램 설정을 적용하지 못했습니다.</value></data>
+  <data name="Log.Main.LogFolderApplyFailed" xml:space="preserve"><value>로그 폴더 설정을 적용하지 못했습니다.</value></data>
+  <data name="Log.Main.KeyMappingStartFailed" xml:space="preserve"><value>키 매핑 시작에 실패했습니다.</value></data>
+  <data name="Log.Main.AdbInitFailed" xml:space="preserve"><value>ADB 초기화에 실패했습니다.</value></data>
+  <data name="Log.Main.DeviceSwitchCleanupFailed" xml:space="preserve"><value>ADB 장치 전환 전에 이전 장치 세션을 중지하지 못했습니다.</value></data>
+  <data name="Log.Main.ScreenOffReapplyFailed" xml:space="preserve"><value>휴대폰 화면 OFF 재적용에 실패했습니다.</value></data>
+  <data name="Log.Main.StayAwakeCommandFailed" xml:space="preserve"><value>잠자기 방지 설정 변경에 실패했습니다: {0}</value></data>
+  <data name="Log.Main.StayAwakeEnabled" xml:space="preserve"><value>실행 중인 Scrcpy 세션에 맞춰 잠자기 방지를 켰습니다.</value></data>
+  <data name="Log.Main.StayAwakeDisabled" xml:space="preserve"><value>실행 중인 Scrcpy 세션이 없어 잠자기 방지를 껐습니다.</value></data>
+  <data name="Log.Main.StayAwakeChangeFailed" xml:space="preserve"><value>잠자기 방지 설정을 변경하지 못했습니다.</value></data>
+  <data name="Log.Main.StayAwakeRestoreSkipped" xml:space="preserve"><value>다른 프로세스가 현재 값을 '{0}'(으)로 변경하여 잠자기 방지 설정 복원을 건너뛰었습니다.</value></data>
+  <data name="Log.Main.PhoneScreenWoken" xml:space="preserve"><value>이 기기의 모든 Scrcpy 창이 종료되어 휴대폰 화면을 켰습니다.</value></data>
+  <data name="Log.Main.PhoneScreenWakeCommandFailed" xml:space="preserve"><value>휴대폰 화면 켜기 명령이 실패했습니다: {0}</value></data>
+  <data name="Log.Main.PhoneScreenWakeFailed" xml:space="preserve"><value>휴대폰 화면을 켜지 못했습니다.</value></data>
+  <data name="Log.Main.CleanupFailed" xml:space="preserve"><value>종료 중 정리 단계 '{0}'에 실패했습니다.</value></data>
+  <data name="Log.Main.CleanupDeferredForShutdown" xml:space="preserve"><value>종료 정리가 5초를 초과했습니다. 소유 프로세스와 기기 상태 정리가 끝난 뒤 DX Manager를 닫습니다.</value></data>
+  <data name="Log.Main.SystemShutdownDetected" xml:space="preserve"><value>Windows 세션 종료를 감지했습니다. 진행 중인 작업을 중단하고 필수 기기 정리만 빠르게 시도합니다.</value></data>
+  <data name="Log.Main.SystemShutdownCleanupTimedOut" xml:space="preserve"><value>Windows 종료 기기 정리가 1.5초 안에 완료되지 않았습니다. 남은 프로세스 종료는 Windows에 맡깁니다.</value></data>
+  <data name="Log.Main.SystemShutdownDeviceCleanupFailed" xml:space="preserve"><value>Windows 종료 기기 정리 명령이 실패했습니다: {0}</value></data>
+  <data name="Log.Main.SystemShutdownDeviceCleanupException" xml:space="preserve"><value>Windows 종료 기기 정리 중 오류가 발생했습니다.</value></data>
+  <data name="Log.Main.SettingsDeferredNoDevice" xml:space="preserve"><value>실행 설정을 저장했습니다. 연결된 ADB 장치가 없어 다음 DeX 시작 때 적용합니다.</value></data>
+  <data name="Log.Main.SettingsImmediateApplyFailed" xml:space="preserve"><value>실행 설정은 저장했지만 즉시 적용하지 못했습니다.</value></data>
+  <data name="Main.ApplyFailedShort" xml:space="preserve"><value>실행 설정 즉시 적용 실패: {0}</value></data>
+  <data name="Log.Main.AppListDisplayed" xml:space="preserve"><value>Scrcpy 앱 목록을 메인 화면에 표시했습니다.</value></data>
+  <data name="Log.Main.AppListLoadFailed" xml:space="preserve"><value>Scrcpy 앱 목록을 불러오지 못했습니다.</value></data>
+  <data name="Log.Main.AppIdentitySaveFailed" xml:space="preserve"><value>선택한 앱을 저장하지 못했습니다.</value></data>
+  <data name="Log.Main.RememberedAppSaveFailed" xml:space="preserve"><value>세션은 시작했지만 앱을 기억된 앱 목록에 추가하지 못했습니다.</value></data>
+  <data name="Log.Main.DexSettingsSaved" xml:space="preserve"><value>메인 화면의 DeX/Scrcpy 실행 설정을 저장했습니다.</value></data>
+  <data name="Log.Main.SingleWindowSettingsSaved" xml:space="preserve"><value>단일창 {0} 실행 설정을 저장했습니다.</value></data>
+  <data name="Log.Main.AppProfileApplied" xml:space="preserve"><value>{0} 앱의 저장된 프로필을 단일창 {1}에 적용했습니다.</value></data>
+  <data name="Log.Main.AppProfileSaved" xml:space="preserve"><value>{0} 앱의 단일창 프로필을 저장했습니다.</value></data>
+  <data name="Log.Main.AppProfileDeleted" xml:space="preserve"><value>{0} 앱의 단일창 프로필을 삭제했습니다.</value></data>
+  <data name="Log.Main.AppProfileApplyFailed" xml:space="preserve"><value>단일창 앱 프로필을 적용하지 못했습니다.</value></data>
+  <data name="Log.Main.AppProfileSaveFailed" xml:space="preserve"><value>단일창 앱 프로필을 저장하지 못했습니다.</value></data>
+  <data name="Log.Main.AppProfileDeleteFailed" xml:space="preserve"><value>단일창 앱 프로필을 삭제하지 못했습니다.</value></data>
+  <data name="Log.Main.ModeSwitchSaveFailed" xml:space="preserve"><value>모드 전환 중 현재 실행 설정을 저장하지 못했습니다: {0}</value></data>
+  <data name="Log.AutoHide.Started" xml:space="preserve"><value>자동 숨김을 시작했습니다: {0}초</value></data>
+  <data name="Log.AutoHide.ScrcpyMinimized" xml:space="preserve"><value>사용자 입력이 없어 실행 중인 Scrcpy 창을 최소화했습니다.</value></data>
+  <data name="Log.AutoHide.ManagerHidden" xml:space="preserve"><value>사용자 입력이 없어 DX Manager UI를 트레이로 숨깁니다.</value></data>
+  <data name="Log.AutoHide.TickFailed" xml:space="preserve"><value>자동 숨김 감시 중 일시적인 오류가 발생했습니다. 감시는 계속됩니다.</value></data>
+  <data name="Error.AutoStart.RegistryUnavailable" xml:space="preserve"><value>자동 실행 레지스트리를 열 수 없습니다.</value></data>
+  <data name="Log.AutoStart.Registered" xml:space="preserve"><value>Windows 자동 실행을 등록했습니다.</value></data>
+  <data name="Log.AutoStart.Unregistered" xml:space="preserve"><value>Windows 자동 실행 등록을 해제했습니다.</value></data>
+  <data name="Capture.CancelReason.Timeout" xml:space="preserve"><value>시간 초과</value></data>
+  <data name="Log.Capture.Waiting" xml:space="preserve"><value>캡처 대기: F8 재입력 또는 마우스 드래그</value></data>
+  <data name="Log.Capture.ScrcpyWindowMissing" xml:space="preserve"><value>Scrcpy 창을 찾지 못해 캡처 모드를 시작할 수 없습니다.</value></data>
+  <data name="Error.Capture.Failed" xml:space="preserve"><value>캡처에 실패했습니다.</value></data>
+  <data name="Log.Capture.Failed" xml:space="preserve"><value>캡처에 실패했습니다.</value></data>
+  <data name="Log.Capture.Cancelled" xml:space="preserve"><value>캡처를 취소했습니다: {0}</value></data>
+  <data name="Error.Capture.ScrcpyWindowNotFound" xml:space="preserve"><value>Scrcpy 창을 찾을 수 없습니다.</value></data>
+  <data name="Error.Capture.WindowAreaUnavailable" xml:space="preserve"><value>Scrcpy 창 영역을 확인하지 못했습니다.</value></data>
+  <data name="Error.Capture.InvalidArea" xml:space="preserve"><value>캡처 영역이 올바르지 않습니다.</value></data>
+  <data name="Log.Capture.Saved" xml:space="preserve"><value>화면 캡처를 저장했습니다: {0}</value></data>
+  <data name="Error.Capture.DeviceFolderFailed" xml:space="preserve"><value>스마트폰 캡처 폴더를 확인하지 못했습니다. {0}</value></data>
+  <data name="Error.Capture.PushFailed" xml:space="preserve"><value>캡처 파일을 스마트폰으로 전송하지 못했습니다. {0}</value></data>
+  <data name="Log.Capture.MediaScanFailed" xml:space="preserve"><value>미디어 스캔 broadcast 실행에 실패했습니다.</value></data>
+  <data name="Log.Capture.Pushed" xml:space="preserve"><value>캡처 파일을 스마트폰으로 전송했습니다: {0}</value></data>
+  <data name="Log.Capture.PushSkippedNoTarget" xml:space="preserve"><value>캡처를 로컬에 저장했지만 원본 창의 ADB 대상을 확인할 수 없어 기기로 복사하지 않았습니다.</value></data>
+  <data name="Log.DeviceMonitor.Started" xml:space="preserve"><value>기본 연결 감시를 시작합니다.</value></data>
+  <data name="Log.DeviceMonitor.Stopped" xml:space="preserve"><value>기본 연결 감시를 중지했습니다.</value></data>
+  <data name="Log.DeviceMonitor.Failed" xml:space="preserve"><value>기본 연결 감시 중 오류가 발생했습니다.</value></data>
+  <data name="Log.DeviceMonitor.StateChanged" xml:space="preserve"><value>기본 연결 감시 상태 변경: {0} -&gt; {1}{2}</value></data>
+  <data name="Log.DeviceMonitor.DevicePinned" xml:space="preserve"><value>기본 연결 감시 기기를 선택했습니다: {0} ({1})</value></data>
+  <data name="Log.DeviceMonitor.IgnoredOtherDevice" xml:space="preserve"><value>기본 연결 감시 대상이 아닌 추가 ADB 기기를 감지했습니다: {0}</value></data>
+  <data name="Log.DeviceContext.Registered" xml:space="preserve"><value>기기 런타임 등록: {0} ({1}, {2})</value></data>
+  <data name="Log.DeviceContext.Selected" xml:space="preserve"><value>현재 기기 탭 선택: {0} ({1}, {2})</value></data>
+  <data name="Log.DeviceMonitor.PinnedTransportChanged" xml:space="preserve"><value>기본 연결 감시 기기의 ADB 연결 방식이 변경되었습니다: {0} -&gt; {1}</value></data>
+  <data name="Log.Dex.OperationInProgress" xml:space="preserve"><value>DeX 작업이 이미 진행 중입니다.</value></data>
+  <data name="Log.Dex.AlreadyRunning" xml:space="preserve"><value>DeX가 이미 실행 중입니다.</value></data>
+  <data name="Error.Dex.NoAuthorizedDevice" xml:space="preserve"><value>승인된 ADB 장치가 연결되어 있지 않습니다.</value></data>
+  <data name="Log.Dex.StartCompleted" xml:space="preserve"><value>DeX 실행 흐름을 완료했습니다.</value></data>
+  <data name="Log.Dex.StartFailed" xml:space="preserve"><value>DeX 시작에 실패했습니다.</value></data>
+  <data name="Log.Dex.StartCancelled" xml:space="preserve"><value>종료 요청으로 DeX 시작을 취소했습니다.</value></data>
+  <data name="Log.Dex.LastSuccessSaveFailed" xml:space="preserve"><value>DeX는 시작됐지만 마지막 성공 정보를 저장하지 못했습니다.</value></data>
+  <data name="Log.Dex.StopProcessFailed" xml:space="preserve"><value>관리 중인 DeX Scrcpy 프로세스를 중지하지 못했습니다.</value></data>
+  <data name="Log.Dex.StopCleanupCompleted" xml:space="preserve"><value>DeX 종료 정리를 완료했습니다.</value></data>
+  <data name="Log.Dex.ApplyInProgress" xml:space="preserve"><value>실행 설정 적용 작업이 이미 진행 중입니다.</value></data>
+  <data name="Log.Dex.ApplyDeferredNoDevice" xml:space="preserve"><value>실행 설정은 저장했지만 승인된 ADB 장치가 없어 즉시 적용하지 않았습니다.</value></data>
+  <data name="Log.Dex.RemovingDisplayForApply" xml:space="preserve"><value>새 실행 설정 적용을 위해 기존 가상화면을 제거합니다.</value></data>
+  <data name="Error.Dex.DisplayResetFailed" xml:space="preserve"><value>기존 가상화면을 제거하지 못했습니다.</value></data>
+  <data name="Log.Dex.ApplyCompleted" xml:space="preserve"><value>새 실행 설정을 즉시 적용했습니다.</value></data>
+  <data name="Log.Dex.ApplyFailed" xml:space="preserve"><value>새 실행 설정을 즉시 적용하지 못했습니다.</value></data>
+  <data name="Log.Dex.ShutdownInProgress" xml:space="preserve"><value>종료 정리 작업이 이미 진행 중입니다.</value></data>
+  <data name="Log.Dex.ShutdownCleanupCompleted" xml:space="preserve"><value>프로그램 종료 전 ADB 정리를 완료했습니다.</value></data>
+  <data name="Log.Dex.NaturalExitCleanupCompleted" xml:space="preserve"><value>Scrcpy 자연 종료 후 DeX 가상 디스플레이를 해제했습니다.</value></data>
+  <data name="Log.Dex.NaturalExitCleanupDeferred" xml:space="preserve"><value>Scrcpy가 종료되었지만 DeX 가상 디스플레이를 복원하지 못했습니다. 이 기기가 다시 연결될 때까지 정리를 보류합니다.</value></data>
+  <data name="Log.Dex.DeferredCleanupStored" xml:space="preserve"><value>연결이 끊어진 기기의 가상 디스플레이 정리를 보류했습니다: {0}</value></data>
+  <data name="Log.Dex.DeferredCleanupStillPending" xml:space="preserve"><value>기기의 가상 디스플레이 정리가 아직 보류 중입니다: {0}</value></data>
+  <data name="Log.Dex.DeferredCleanupCompleted" xml:space="preserve"><value>기기의 보류된 가상 디스플레이 정리를 완료했습니다: {0}</value></data>
+  <data name="Log.Dex.DeferredCleanupSuperseded" xml:space="preserve"><value>기기가 다시 연결되어 보류된 삭제 대신 현재 가상 디스플레이 설정을 다시 확인합니다: {0}</value></data>
+  <data name="Log.Dex.ShutdownCleanupFailed" xml:space="preserve"><value>프로그램 종료 전 ADB 정리에 실패했습니다.</value></data>
+  <data name="Log.Dex.SessionStarted" xml:space="preserve"><value>관리 세션 시작: {0}</value></data>
+  <data name="Log.Dex.SessionEnded" xml:space="preserve"><value>관리 세션 종료: {0}</value></data>
+  <data name="Log.Environment.Completed" xml:space="preserve"><value>환경 점검을 완료했습니다.</value></data>
+  <data name="Log.Hotkey.LowLevelEnabled" xml:space="preserve"><value>저수준 키보드 후크 핫키 사용: 캡처={0}, 종료={1}</value></data>
+  <data name="Log.Hotkey.MessageReceived" xml:space="preserve"><value>WM_HOTKEY 수신: WParam={0}, LParam={1}</value></data>
+  <data name="Log.Hotkey.Registered" xml:space="preserve"><value>RegisterHotKey 등록 성공: {0}, Modifiers={1}, Key={2}</value></data>
+  <data name="Log.Hotkey.DiagnosticRegistrationRemoved" xml:space="preserve"><value>저수준 후크 사용을 위해 진단용 RegisterHotKey 등록을 해제했습니다.</value></data>
+  <data name="Log.Hotkey.RestoreFailed" xml:space="preserve"><value>이전 단축키 구성을 복원하지 못했습니다.</value></data>
+  <data name="Log.Hotkey.RegistrationFailed" xml:space="preserve"><value>RegisterHotKey 등록 실패: {0}, LastWin32Error={1}</value></data>
+  <data name="Error.Hotkey.GlobalCaptureRegistrationFailed" xml:space="preserve"><value>전역 캡처 단축키를 등록하지 못했습니다: {0}</value></data>
+  <data name="Error.Hotkey.GlobalExitRegistrationFailed" xml:space="preserve"><value>전역 종료 단축키를 등록하지 못했습니다: {0}</value></data>
+  <data name="Error.Hotkey.LowLevelHookFailed" xml:space="preserve"><value>저수준 키보드 후크를 설치하지 못했습니다.</value></data>
+  <data name="Log.Hotkey.Diagnostics" xml:space="preserve"><value>키 진단: msg=0x{0}, vk=0x{1}, scan=0x{2}, flags=0x{3}, mods={4}</value></data>
+  <data name="Error.KeyMapping.HookFailed" xml:space="preserve"><value>키 매핑 훅을 설치하지 못했습니다.</value></data>
+  <data name="Log.KeyMapping.Started" xml:space="preserve"><value>Scrcpy 전용 키 매핑을 시작했습니다.</value></data>
+  <data name="Log.KeyMapping.EnterConversionEnabled" xml:space="preserve"><value>Enter 변환 사용: 시작 상태=일반 Enter, Scroll Lock 입력 시 Shift+Enter 모드 전환</value></data>
+  <data name="Log.KeyMapping.EnterConversionDisabled" xml:space="preserve"><value>Enter 변환 설정이 꺼져 있어 일반 Enter가 그대로 전송됩니다.</value></data>
+  <data name="Log.KeyMapping.Stopped" xml:space="preserve"><value>Scrcpy 전용 키 매핑을 중지했습니다.</value></data>
+  <data name="Log.KeyMapping.AdbTargetUnavailable" xml:space="preserve"><value>{0}: 활성 Scrcpy 디스플레이를 안전하게 식별할 수 없어 ADB 대체 입력을 건너뛰었습니다.</value></data>
+  <data name="Log.KeyMapping.EnterMode" xml:space="preserve"><value>Enter 입력 모드: {0}</value></data>
+  <data name="KeyMapping.NormalEnter" xml:space="preserve"><value>일반 Enter</value></data>
+  <data name="Log.KeyMapping.Diagnostics" xml:space="preserve"><value>키 매핑 진단: msg=0x{0}, vk=0x{1}, scan=0x{2}, flags=0x{3}, injected={4}</value></data>
+  <data name="Log.Path.WindowsDetected" xml:space="preserve"><value>감지된 Windows 버전: {0} ({1})</value></data>
+  <data name="Path.Description.ManualAdb" xml:space="preserve"><value>수동 지정 ADB</value></data>
+  <data name="Path.Description.LegacyAdb" xml:space="preserve"><value>Windows 7/8.1 레거시 ADB</value></data>
+  <data name="Path.Description.ScrcpyAdb" xml:space="preserve"><value>선택한 Scrcpy 폴더의 ADB</value></data>
+  <data name="Path.Mode.Automatic" xml:space="preserve"><value>자동 선택</value></data>
+  <data name="Path.Mode.Selected" xml:space="preserve"><value>선택</value></data>
+  <data name="Log.Path.AdminRequired" xml:space="preserve"><value>시스템 PATH 등록에는 관리자 권한이 필요합니다.</value></data>
+  <data name="Error.Path.SystemEnvironmentUnavailable" xml:space="preserve"><value>시스템 환경 변수를 열 수 없습니다.</value></data>
+  <data name="Log.Path.SystemPathRegistered" xml:space="preserve"><value>ADB 폴더를 시스템 PATH에 등록했습니다: {0}</value></data>
+  <data name="Error.Path.AutomaticAdbNotFound" xml:space="preserve"><value>Scrcpy 폴더와 레거시 대체 폴더에서 실행 가능한 adb.exe를 찾을 수 없습니다.</value></data>
+  <data name="Error.Path.AdbUnavailable" xml:space="preserve"><value>{0} adb.exe를 실행할 수 없습니다. 경로를 확인하세요.</value></data>
+  <data name="Log.Path.CandidateMissing" xml:space="preserve"><value>{0} 파일이 없습니다: {1}</value></data>
+  <data name="Log.Path.CandidateExecutionFailed" xml:space="preserve"><value>{0} 실행 실패: {1}</value></data>
+  <data name="Log.Path.CandidateUnavailable" xml:space="preserve"><value>{0} 실행 불가: {1}</value></data>
+  <data name="Log.Path.Selection" xml:space="preserve"><value>ADB {0}: {1}</value></data>
+  <data name="Log.Path.SelectedAdbPath" xml:space="preserve"><value>선택된 ADB 경로: {0}</value></data>
+  <data name="Log.Path.AdbVersion" xml:space="preserve"><value>ADB 버전: {0}</value></data>
+  <data name="Path.VersionUnavailable" xml:space="preserve"><value>버전 출력 없음</value></data>
+  <data name="Error.Scrcpy.PathEmpty" xml:space="preserve"><value>Scrcpy 경로가 비어 있습니다.</value></data>
+  <data name="Error.Scrcpy.FileNotFound" xml:space="preserve"><value>scrcpy.exe를 찾을 수 없습니다.</value></data>
+  <data name="Error.Scrcpy.ShutdownRequested" xml:space="preserve"><value>프로그램 종료가 시작되어 Scrcpy를 실행할 수 없습니다.</value></data>
+  <data name="Error.Scrcpy.StopTimeout" xml:space="preserve"><value>관리 중인 Scrcpy 프로세스 종료 시간이 초과되었습니다.</value></data>
+  <data name="Error.Scrcpy.ReservedAdditionalArgument" xml:space="preserve"><value>추가 인자 '{0}'은(는) DX Manager가 관리하므로 여기서 재정의할 수 없습니다.</value></data>
+  <data name="Log.ScreenOff.Cancelled" xml:space="preserve"><value>화면 OFF 재적용 조건이 사라져 실행을 취소했습니다.</value></data>
+  <data name="Log.ScreenOff.Starting" xml:space="preserve"><value>휴대폰 화면 OFF 재적용 Scrcpy를 순차 실행합니다.</value></data>
+  <data name="Log.ScreenOff.Confirmed" xml:space="preserve"><value>휴대폰 화면 OFF 재적용을 확인했습니다.</value></data>
+  <data name="Log.ScreenOff.ConfirmationFailed" xml:space="preserve"><value>휴대폰 화면 OFF 재적용 확인에 실패했습니다.</value></data>
+  <data name="Error.Scrcpy.AppListLoadFailed" xml:space="preserve"><value>Scrcpy 앱 목록을 불러오지 못했습니다: {0}</value></data>
+  <data name="Error.Scrcpy.AppListParseFailed" xml:space="preserve"><value>Scrcpy 앱 목록 결과를 해석하지 못했습니다.</value></data>
+  <data name="Log.Scrcpy.AppListLoaded" xml:space="preserve"><value>Scrcpy 앱 목록을 불러왔습니다: {0}개</value></data>
+  <data name="Log.Scrcpy.AlreadyRunning" xml:space="preserve"><value>Scrcpy가 이미 실행 중이므로 중복 실행을 건너뜁니다.</value></data>
+  <data name="Log.Scrcpy.Start" xml:space="preserve"><value>Scrcpy 실행: {0}</value></data>
+  <data name="Log.Scrcpy.Stopped" xml:space="preserve"><value>Scrcpy를 중지했습니다.</value></data>
+  <data name="Log.Scrcpy.WakeUpFileMissing" xml:space="preserve"><value>Scrcpy Wake-up 파일이 없습니다: {0}</value></data>
+  <data name="Log.Scrcpy.WakeUpStarting" xml:space="preserve"><value>Scrcpy Wake-up을 실행합니다.</value></data>
+  <data name="Log.Scrcpy.WakeUpFailed" xml:space="preserve"><value>Scrcpy Wake-up 실행에 실패했습니다.</value></data>
+  <data name="Log.Scrcpy.ProcessExited" xml:space="preserve"><value>Scrcpy 프로세스가 종료되었습니다.</value></data>
+  <data name="Error.Scrcpy.ExitedBeforeWindow" xml:space="preserve"><value>Scrcpy가 창을 준비하기 전에 종료되었습니다.</value></data>
+  <data name="Log.Scrcpy.WindowReady" xml:space="preserve"><value>Scrcpy 창 준비 완료: PID={0}</value></data>
+  <data name="Error.Scrcpy.WindowTimeout" xml:space="preserve"><value>Scrcpy 창 준비 시간이 초과되었습니다.</value></data>
+  <data name="Error.SingleWindow.AppRequired" xml:space="preserve"><value>단일창에서 실행할 앱을 선택하세요.</value></data>
+  <data name="Log.SingleWindow.AlreadyRunning" xml:space="preserve"><value>단일창 {0}이 이미 실행 중입니다.</value></data>
+  <data name="Log.SingleWindow.Start" xml:space="preserve"><value>단일창 {0} Scrcpy 실행: {1}</value></data>
+  <data name="Log.SingleWindow.Stopped" xml:space="preserve"><value>단일창 {0}을 중지했습니다.</value></data>
+  <data name="Log.SingleWindow.StopFailed" xml:space="preserve"><value>단일창 {0}을 중지하지 못했습니다.</value></data>
+  <data name="Log.SingleWindow.ProcessExited" xml:space="preserve"><value>단일창 {0} Scrcpy 프로세스가 종료되었습니다.</value></data>
+  <data name="Error.SingleWindow.ExitedBeforeWindow" xml:space="preserve"><value>단일창 {0} Scrcpy가 창을 준비하기 전에 종료되었습니다.</value></data>
+  <data name="Log.SingleWindow.WindowReady" xml:space="preserve"><value>단일창 {0} Scrcpy 창 준비 완료: PID={1}</value></data>
+  <data name="Error.SingleWindow.WindowTimeout" xml:space="preserve"><value>단일창 {0} Scrcpy 창 준비 시간이 초과되었습니다.</value></data>
+  <data name="Log.Display.ReusingSetting" xml:space="preserve"><value>기존 가상 디스플레이 설정을 재사용합니다: {0}</value></data>
+  <data name="Error.Display.ApplyFailed" xml:space="preserve"><value>가상 디스플레이 설정 적용 실패: {0}</value></data>
+  <data name="Error.Display.QuerySettingFailed" xml:space="preserve"><value>가상 디스플레이 설정을 읽지 못했습니다: {0}</value></data>
+  <data name="Error.Display.QueryFailed" xml:space="preserve"><value>장치의 디스플레이 목록을 조회하지 못했습니다: {0}</value></data>
+  <data name="Error.Display.OverlaySettingMismatch" xml:space="preserve"><value>기존 overlay 설정이 요청한 디스플레이와 일치하지 않습니다. 기존: {0}, 요청: {1}</value></data>
+  <data name="Error.Display.ResetFailed" xml:space="preserve"><value>기존 가상 디스플레이를 제거하지 못했습니다: {0}</value></data>
+  <data name="Error.Display.ResetTimedOut" xml:space="preserve"><value>기존 가상 디스플레이가 제한 시간 안에 제거되지 않았습니다.</value></data>
+  <data name="Log.Display.RestoreSkipped" xml:space="preserve"><value>DX Manager 외부에서 overlay 설정이 변경되어 덮어쓰지 않습니다: {0}</value></data>
+  <data name="Log.Display.RestoreFailed" xml:space="preserve"><value>가상 디스플레이 설정을 정리하지 못했습니다: {0}</value></data>
+  <data name="Log.Display.Restored" xml:space="preserve"><value>가상 디스플레이 설정을 정리했습니다.</value></data>
+  <data name="Log.Display.RestoreException" xml:space="preserve"><value>가상 디스플레이 설정 정리 중 오류가 발생했습니다.</value></data>
+  <data name="Log.Display.RestoreDeferred" xml:space="preserve"><value>현재 가상 디스플레이 설정을 정리할 수 없어 처리를 보류합니다: {0}</value></data>
+  <data name="Log.Display.SettingApplied" xml:space="preserve"><value>가상 디스플레이 설정을 적용했습니다: {0}</value></data>
+  <data name="Log.Display.Reset" xml:space="preserve"><value>가상 디스플레이 설정을 초기화했습니다.</value></data>
+  <data name="Log.Display.ReplacingSetting" xml:space="preserve"><value>기존 가상 디스플레이를 제거하고 새 설정을 적용합니다. 기존: {0}, 요청: {1}</value></data>
+  <data name="Log.Display.ExistingFound" xml:space="preserve"><value>기존 가상 디스플레이 발견: id={0}, {1}x{2} / {3} dpi</value></data>
+  <data name="Log.Display.RequestedValues" xml:space="preserve"><value>설정 값: {0}x{1} / {2} dpi</value></data>
+  <data name="Log.Display.ReuseMatched" xml:space="preserve"><value>판정: 해상도와 DPI 일치, 기존 디스플레이를 재사용합니다.</value></data>
+  <data name="Log.Display.RecreateMismatch" xml:space="preserve"><value>판정: {0} 불일치, 기존 디스플레이를 제거하고 재생성합니다.</value></data>
+  <data name="Log.Display.ExistingNotResolved" xml:space="preserve"><value>overlay 설정은 존재하지만 실제 가상 디스플레이 ID를 확인하지 못했습니다. 제거 후 재생성합니다: {0}</value></data>
+  <data name="Display.Mismatch.Resolution" xml:space="preserve"><value>해상도</value></data>
+  <data name="Display.Mismatch.Dpi" xml:space="preserve"><value>DPI</value></data>
+  <data name="Display.Mismatch.ResolutionAndDpi" xml:space="preserve"><value>해상도와 DPI</value></data>
+  <data name="Log.Display.ExistingSelected" xml:space="preserve"><value>기존 가상 디스플레이 ID 선택: {0}</value></data>
+  <data name="Log.Display.SingleFallbackSelected" xml:space="preserve"><value>해상도/DPI가 일치하는 기존 가상 디스플레이를 찾지 못했지만 후보가 1개뿐이라 선택합니다: {0}</value></data>
+  <data name="Error.Display.ReusableNotFound" xml:space="preserve"><value>재사용할 기존 가상 디스플레이를 찾을 수 없습니다. display 목록: {0}</value></data>
+  <data name="Error.Display.ReusableAmbiguous" xml:space="preserve"><value>재사용할 기존 가상 디스플레이가 여러 개라 선택할 수 없습니다. 후보: {0}</value></data>
+  <data name="Log.Display.NewSelected" xml:space="preserve"><value>새 가상 디스플레이 ID 선택: {0}</value></data>
+  <data name="Error.Display.NewAmbiguous" xml:space="preserve"><value>새 가상 디스플레이 ID를 명확히 선택할 수 없습니다. before=[{0}], after=[{1}], candidates=[{2}]</value></data>
+  <data name="Log.Display.Snapshot" xml:space="preserve"><value>디스플레이 {0}: {1}</value></data>
+  <data name="Log.Wireless.ReconnectAttempt" xml:space="preserve"><value>무선 ADB 재연결 시도: {0}</value></data>
+  <data name="Log.Wireless.ReconnectSucceeded" xml:space="preserve"><value>무선 ADB 재연결 성공: {0}</value></data>
+  <data name="Log.Wireless.ReconnectFailed" xml:space="preserve"><value>무선 ADB 재연결 실패: {0}</value></data>
+  <data name="Log.Wireless.ConnectAttempt" xml:space="preserve"><value>무선 ADB 연결 시도: {0}</value></data>
+  <data name="Log.Wireless.ConnectSucceeded" xml:space="preserve"><value>무선 ADB 연결 성공: {0}</value></data>
+  <data name="Log.Wireless.EnableFromUsb" xml:space="preserve"><value>USB 장치를 무선 ADB 모드로 전환합니다: {0}, port={1}</value></data>
+  <data name="Log.Wireless.Disconnected" xml:space="preserve"><value>무선 ADB 연결을 해제하고 USB 모드로 전환했습니다.</value></data>
+  <data name="Log.Wireless.DisconnectCommandFailed" xml:space="preserve"><value>USB 모드로 전환했지만 무선 ADB 연결 해제 명령에 실패했습니다: {0}</value></data>
+  <data name="Log.Wireless.DeviceConnectAttempt" xml:space="preserve"><value>기기 {0}의 무선 ADB 연결 시도: {1}</value></data>
+  <data name="Log.Wireless.DeviceConnectSucceeded" xml:space="preserve"><value>기기 {0}의 무선 ADB 연결 성공: {1}</value></data>
+  <data name="Log.Wireless.DeviceEnableFromUsb" xml:space="preserve"><value>기기 {0}을 USB 연결 {1}로 무선 ADB 준비합니다. port={2}</value></data>
+  <data name="Log.Wireless.DeviceDisconnected" xml:space="preserve"><value>기기 {0}의 무선 ADB 연결을 해제했습니다: {1}</value></data>
+  <data name="Log.Wireless.RetryDetectedAddress" xml:space="preserve"><value>기기 {0}의 저장된 주소로 연결하지 못해 USB에서 확인한 주소로 다시 시도합니다: {1}</value></data>
+  <data name="Wireless.NoResult" xml:space="preserve"><value>결과 없음</value></data>
+  <data name="Settings.Language" xml:space="preserve"><value>표시 언어</value></data>
+  <data name="Settings.LanguageRestart" xml:space="preserve"><value>언어 변경은 DX Manager를 다시 시작한 뒤 적용됩니다.</value></data>
+  <data name="Settings.Theme" xml:space="preserve"><value>앱 테마</value></data>
+  <data name="Settings.ThemeAuto" xml:space="preserve"><value>Windows 설정 사용</value></data>
+  <data name="Settings.ThemeLight" xml:space="preserve"><value>라이트</value></data>
+  <data name="Settings.ThemeDark" xml:space="preserve"><value>다크</value></data>
+  <data name="Settings.ThemeRestart" xml:space="preserve"><value>테마 변경은 저장 즉시 적용됩니다.</value></data>
+  <data name="Settings.GroupMiniControlBar" xml:space="preserve"><value>미니 컨트롤바</value></data>
+  <data name="Settings.MiniControlBar" xml:space="preserve"><value>Scrcpy 창 옆에 미니 컨트롤바 표시</value></data>
+  <data name="Settings.MiniControlBarSide" xml:space="preserve"><value>부착 위치</value></data>
+  <data name="Settings.MiniControlBarRight" xml:space="preserve"><value>오른쪽</value></data>
+  <data name="Settings.MiniControlBarLeft" xml:space="preserve"><value>왼쪽</value></data>
+  <data name="Settings.MiniControlBarHint" xml:space="preserve"><value>각 DeX·단일창을 따라다니며 Scrcpy 창이 활성화된 동안 표시됩니다.</value></data>
+  <data name="Settings.ResetDefaults" xml:space="preserve"><value>모든 설정 기본값 복원</value></data>
+  <data name="Settings.ResetDefaultsGuide" xml:space="preserve"><value>DeX, 단일창, 연결, 키 입력을 포함한 모든 옵션을 초기 상태로 되돌립니다.</value></data>
+  <data name="Settings.ResetDefaultsConfirm" xml:space="preserve"><value>모든 설정을 기본값으로 되돌릴까요? 현재 저장된 사용자 설정은 삭제되며, 실행 중인 기능에는 다음 시작부터 완전히 적용됩니다.</value></data>
+  <data name="Settings.ResetDefaultsDone" xml:space="preserve"><value>모든 설정을 기본값으로 복원했습니다. 실행 중인 기능은 다시 시작한 뒤 완전히 적용됩니다.</value></data>
+  <data name="Settings.OpenLogs" xml:space="preserve"><value>현재 세션 로그 열기</value></data>
+  <data name="Settings.OpenEnvironment" xml:space="preserve"><value>환경 점검 실행</value></data>
+  <data name="Settings.DiagnosticsGuide" xml:space="preserve"><value>로그를 열거나 ADB, Scrcpy와 장치 연결 상태를 점검합니다.</value></data>
+  <data name="Settings.SaveDiagnosticReport" xml:space="preserve"><value>진단 보고서 저장</value></data>
+  <data name="Settings.SelectedDeviceDiagnostics" xml:space="preserve"><value>선택한 기기 버전</value></data>
+  <data name="Settings.DeviceDiagnosticsWaiting" xml:space="preserve"><value>연결된 휴대폰을 선택하면 Android와 One UI 버전을 확인합니다.</value></data>
+  <data name="Settings.DeviceDiagnosticsChecking" xml:space="preserve"><value>선택한 휴대폰에서 버전 정보를 읽는 중입니다...</value></data>
+  <data name="Settings.RefreshDeviceDiagnostics" xml:space="preserve"><value>선택한 기기 새로 고침</value></data>
+  <data name="Settings.DeviceDiagnosticsFailed" xml:space="preserve"><value>기기 버전 정보를 읽지 못했습니다.&#x0A;{0}</value></data>
+  <data name="Settings.DeviceDiagnosticsSummary" xml:space="preserve"><value>{0} · {1}&#x0A;Android {2} · One UI {3} · 보안 패치 {4}&#x0A;{5}</value></data>
+  <data name="Settings.Transport.Unknown" xml:space="preserve"><value>연결 방식 확인 안 됨</value></data>
+  <data name="Settings.Transport.Usb" xml:space="preserve"><value>USB</value></data>
+  <data name="Settings.Transport.Wireless" xml:space="preserve"><value>Wi-Fi ADB</value></data>
+  <data name="Settings.Transport.Emulator" xml:space="preserve"><value>에뮬레이터</value></data>
+  <data name="Settings.Compatibility.Unknown" xml:space="preserve"><value>호환성을 판정하지 못했습니다. 안내용 정보이며 실행을 차단하지 않습니다.</value></data>
+  <data name="Settings.Compatibility.RecommendedBaseline" xml:space="preserve"><value>One UI 8.x / Android 16은 확인된 권장 기준입니다.</value></data>
+  <data name="Settings.Compatibility.OlderUnverified" xml:space="preserve"><value>이전 소프트웨어 버전은 확인되지 않았으며 검은 화면이나 입력 제한이 생길 수 있습니다.</value></data>
+  <data name="Settings.Compatibility.NewerUnverified" xml:space="preserve"><value>더 새로운 소프트웨어 버전은 아직 충분히 확인되지 않았습니다. 실행은 차단하지 않습니다.</value></data>
+  <data name="Settings.DiagnosticReportFilter" xml:space="preserve"><value>텍스트 파일 (*.txt)|*.txt|모든 파일 (*.*)|*.*</value></data>
+  <data name="Settings.DiagnosticReportSaved" xml:space="preserve"><value>진단 보고서를 저장했습니다. 저장 폴더를 엽니다.</value></data>
+  <data name="Settings.DiagnosticReportFailed" xml:space="preserve"><value>진단 보고서를 저장하지 못했습니다.&#x0A;{0}</value></data>
+  <data name="Settings.StartWithWindows" xml:space="preserve"><value>Windows 시작 시 자동 실행</value></data>
+  <data name="Settings.StartMinimized" xml:space="preserve"><value>자동 실행 시 트레이로 시작</value></data>
+  <data name="Settings.WakeUpMode" xml:space="preserve"><value>ADB Wake-up 방식</value></data>
+  <data name="Settings.AutoHide" xml:space="preserve"><value>자동 숨김 사용</value></data>
+  <data name="Settings.AutoStartDex" xml:space="preserve"><value>기기 연결 시 DeX 자동 시작</value></data>
+  <data name="Settings.ShowConnectedDeviceInfo" xml:space="preserve"><value>연결된 장치 정보 표시</value></data>
+  <data name="Settings.ResetDisplay" xml:space="preserve"><value>중지/종료 시 가상화면 제거</value></data>
+  <data name="Settings.DisableStayAwake" xml:space="preserve"><value>중지/종료 시 잠자기 방지 해제</value></data>
+  <data name="Settings.AdbAuto" xml:space="preserve"><value>자동 선택 (Windows 버전과 Scrcpy 경로 기준)</value></data>
+  <data name="Settings.AdbManual" xml:space="preserve"><value>수동 지정</value></data>
+  <data name="Settings.AdbMode" xml:space="preserve"><value>ADB 모드</value></data>
+  <data name="Settings.CurrentOs" xml:space="preserve"><value>현재 OS</value></data>
+  <data name="Settings.CurrentAdb" xml:space="preserve"><value>현재 사용 중인 ADB</value></data>
+  <data name="Settings.AdbTypeLegacy" xml:space="preserve"><value>Legacy ADB</value></data>
+  <data name="Settings.AdbTypeManual" xml:space="preserve"><value>수동 지정 ADB</value></data>
+  <data name="Settings.AdbTypeScrcpy" xml:space="preserve"><value>Scrcpy 폴더 ADB</value></data>
+  <data name="Settings.AdbTypeExternal" xml:space="preserve"><value>외부 ADB</value></data>
+  <data name="Settings.AdbVersion" xml:space="preserve"><value>ADB 버전</value></data>
+  <data name="Settings.ManualAdbPath" xml:space="preserve"><value>수동 ADB 경로</value></data>
+  <data name="Settings.ScrcpyPath" xml:space="preserve"><value>Scrcpy 실행 파일</value></data>
+  <data name="Settings.ScreenshotFolder" xml:space="preserve"><value>PC 스크린샷 폴더</value></data>
+  <data name="Settings.DeviceFolder" xml:space="preserve"><value>캡처의 휴대폰 저장 폴더</value></data>
+  <data name="Settings.LogFolder" xml:space="preserve"><value>로그 폴더</value></data>
+  <data name="Settings.Usb" xml:space="preserve"><value>USB 연결 사용</value></data>
+  <data name="Settings.Wireless" xml:space="preserve"><value>무선 ADB 연결 사용</value></data>
+  <data name="Settings.ConnectionMode" xml:space="preserve"><value>연결 방식</value></data>
+  <data name="Settings.WirelessDevice" xml:space="preserve"><value>대상 휴대폰</value></data>
+  <data name="Settings.NoWirelessDevice" xml:space="preserve"><value>선택할 수 있는 연결된 휴대폰이 없습니다.</value></data>
+  <data name="Settings.DeviceTransportUsb" xml:space="preserve"><value>USB</value></data>
+  <data name="Settings.DeviceTransportWireless" xml:space="preserve"><value>무선</value></data>
+  <data name="Settings.DeviceTransportUsbWireless" xml:space="preserve"><value>USB + 무선</value></data>
+  <data name="Settings.PhoneIp" xml:space="preserve"><value>휴대폰 IP 주소</value></data>
+  <data name="Settings.ConnectPort" xml:space="preserve"><value>연결 포트</value></data>
+  <data name="Settings.AutoReconnect" xml:space="preserve"><value>연결이 끊기면 자동으로 다시 연결</value></data>
+  <data name="Settings.PrepareWireless" xml:space="preserve"><value>USB로 무선 준비</value></data>
+  <data name="Settings.ConnectWireless" xml:space="preserve"><value>무선 연결</value></data>
+  <data name="Settings.Disconnect" xml:space="preserve"><value>연결 해제</value></data>
+  <data name="Settings.WirelessActions" xml:space="preserve"><value>무선 연결</value></data>
+  <data name="Settings.CurrentStatus" xml:space="preserve"><value>현재 상태</value></data>
+  <data name="Settings.PairGuide" xml:space="preserve"><value>케이블 없이 처음 연결할 때 페어링 포트와 6자리 코드를 입력합니다. 연결 포트는 페어링 포트와 다를 수 있습니다.</value></data>
+  <data name="Settings.PairingPort" xml:space="preserve"><value>페어링 포트</value></data>
+  <data name="Settings.PairingCode" xml:space="preserve"><value>페어링 코드</value></data>
+  <data name="Settings.Pair" xml:space="preserve"><value>페어링</value></data>
+  <data name="Settings.CaptureHotkey" xml:space="preserve"><value>캡처 단축키</value></data>
+  <data name="Settings.ExitHotkey" xml:space="preserve"><value>종료 단축키</value></data>
+  <data name="Settings.HotkeyCaptureGuide" xml:space="preserve"><value>입력란을 선택한 뒤 원하는 키 또는 키 조합을 누르세요. Delete/Backspace: 해제, Esc: 취소</value></data>
+  <data name="Settings.LowLevelHotkey" xml:space="preserve"><value>저수준 키보드 후크로 단축키 처리</value></data>
+  <data name="Settings.KeyDiagnostics" xml:space="preserve"><value>키 진단 로그 남기기</value></data>
+  <data name="Settings.HangulCorrection" xml:space="preserve"><value>한영키를 Shift+Space로 보정</value></data>
+  <data name="Log.KeyMapping.HangulState" xml:space="preserve"><value>한영키 보정 완료 상태: held={0}</value></data>
+  <data name="Log.KeyMapping.HangulSuppressed" xml:space="preserve"><value>한영키 중복 입력 억제 상태: held={0}</value></data>
+  <data name="Log.KeyMapping.SendInputResult" xml:space="preserve"><value>{0} SendInput {1} 결과: sent={2}/{3}, LastWin32Error={4}</value></data>
+  <data name="Settings.HangulMode" xml:space="preserve"><value>한영키 전송 방식</value></data>
+  <data name="Settings.KeyInputMode" xml:space="preserve"><value>키 입력 전송 방식</value></data>
+  <data name="Settings.RightWindows" xml:space="preserve"><value>오른쪽 Windows 키 보정</value></data>
+  <data name="Settings.EnterConversion" xml:space="preserve"><value>Scroll Lock으로 Enter/Shift+Enter 모드 전환</value></data>
+  <data name="Settings.EnterMode" xml:space="preserve"><value>Enter 전송 방식</value></data>
+  <data name="Settings.IgnoreShiftSpace" xml:space="preserve"><value>직접 Shift+Space 입력 무시</value></data>
+  <data name="Settings.DeviceInterval" xml:space="preserve"><value>기기 감시 주기(초)</value></data>
+  <data name="Settings.DisconnectInterval" xml:space="preserve"><value>분리 감시 주기(초)</value></data>
+  <data name="Settings.StartDelay" xml:space="preserve"><value>기기 연결 후 시작 대기(초)</value></data>
+  <data name="Settings.WakeDelay" xml:space="preserve"><value>ADB Wake-up 대기(초)</value></data>
+  <data name="Settings.HideDelay" xml:space="preserve"><value>자동 숨김 대기(초)</value></data>
+  <data name="Settings.CaptureDelay" xml:space="preserve"><value>캡처 선택 대기(초)</value></data>
+  <data name="Settings.ProcessTimeout" xml:space="preserve"><value>프로세스 제한시간(초)</value></data>
+  <data name="Settings.VirtualDisplayTimeout" xml:space="preserve"><value>가상 디스플레이 감지 제한시간(초)</value></data>
+  <data name="Settings.AdvancedOptions" xml:space="preserve"><value>고급 옵션</value></data>
+  <data name="Settings.AdvancedOptionsGuide" xml:space="preserve"><value>일반적으로 변경할 필요가 없는 감시, 제한시간 및 복구 설정입니다.</value></data>
+  <data name="Settings.ShowAdvancedOptions" xml:space="preserve"><value>고급 옵션 표시</value></data>
+  <data name="Settings.HideAdvancedOptions" xml:space="preserve"><value>고급 옵션 숨기기</value></data>
+  <data name="Settings.PushCapture" xml:space="preserve"><value>캡처 후 폰으로 전송</value></data>
+  <data name="Settings.WirelessRequiresIp" xml:space="preserve"><value>무선 연결을 사용할 때는 휴대폰 IP 주소를 입력하세요.</value></data>
+  <data name="Settings.ManualAdbPathRequired" xml:space="preserve"><value>수동 ADB 선택을 사용할 때는 ADB 실행 파일 경로를 입력하세요.</value></data>
+  <data name="Settings.ScrcpyPathRequired" xml:space="preserve"><value>Scrcpy 실행 파일 경로는 비워 둘 수 없습니다.</value></data>
+  <data name="Settings.ExecutableNotFound" xml:space="preserve"><value>설정한 실행 파일을 찾을 수 없습니다: {0}</value></data>
+  <data name="Settings.HotkeysMustDiffer" xml:space="preserve"><value>캡처 단축키와 종료 단축키가 서로 충돌하면 안 됩니다.</value></data>
+  <data name="Settings.InvalidHotkey" xml:space="preserve"><value>각 단축키를 하나의 키와 선택적인 보조키 조합으로 입력하세요. 예: F8 또는 LeftAlt+F8</value></data>
+  <data name="Settings.InvalidPath" xml:space="preserve"><value>올바르지 않은 경로입니다: {0}</value></data>
+  <data name="Settings.WirelessOperationFailed" xml:space="preserve"><value>무선 연결 작업 실패: {0}</value></data>
+  <data name="Settings.WirelessWaiting" xml:space="preserve"><value>무선 연결 대기</value></data>
+  <data name="Settings.UsbWaiting" xml:space="preserve"><value>USB 장치 연결 대기</value></data>
+  <data name="Settings.WirelessTarget" xml:space="preserve"><value>무선 대상: {0}</value></data>
+  <data name="Settings.UsbTarget" xml:space="preserve"><value>USB 대상: {0}</value></data>
+  <data name="Settings.ObservedUsb" xml:space="preserve"><value>감지된 연결: USB ({0})</value></data>
+  <data name="Settings.ObservedWireless" xml:space="preserve"><value>감지된 연결: 무선 ({0})</value></data>
+  <data name="Settings.ObservedUsbWireless" xml:space="preserve"><value>감지된 연결: USB ({0}) + 무선 ({1})</value></data>
+  <data name="Settings.ObservedDisconnected" xml:space="preserve"><value>활성 USB 또는 무선 ADB 연결이 없습니다.</value></data>
+  <data name="Device.WaitingUsb" xml:space="preserve"><value>USB 대기</value></data>
+  <data name="Device.WaitingWireless" xml:space="preserve"><value>무선 대기</value></data>
+  <data name="Main.WaitingConfiguredTransport" xml:space="preserve"><value>{0} · {1}</value></data>
+  <data name="Settings.CheckFailed" xml:space="preserve"><value>확인 실패: {0}</value></data>
+  <data name="Settings.NoVersionOutput" xml:space="preserve"><value>버전 출력 없음</value></data>
+  <data name="Settings.ExecutableFilter" xml:space="preserve"><value>실행 파일 (*.exe)|*.exe|모든 파일 (*.*)|*.*</value></data>
+  <data name="Wireless.ConnectFailed" xml:space="preserve"><value>무선 ADB 연결에 실패했습니다: {0}</value></data>
+  <data name="Wireless.Connected" xml:space="preserve"><value>무선 연결이 완료되었습니다.</value></data>
+  <data name="Wireless.NoUsb" xml:space="preserve"><value>승인된 USB 장치를 찾지 못했습니다.</value></data>
+  <data name="Wireless.SelectedDeviceNoUsb" xml:space="preserve"><value>선택한 휴대폰에 승인된 USB 연결이 없습니다. 먼저 해당 휴대폰을 USB로 연결하세요.</value></data>
+  <data name="Wireless.DeviceMismatch" xml:space="preserve"><value>{0}은 선택한 휴대폰이 아닌 다른 휴대폰의 연결 주소입니다. 대상 휴대폰과 IP 주소를 확인하세요.</value></data>
+  <data name="Wireless.MultipleUsb" xml:space="preserve"><value>USB 장치가 여러 개입니다. 하나만 연결하세요.</value></data>
+  <data name="Wireless.NoWifiIp" xml:space="preserve"><value>휴대폰 Wi-Fi 주소를 자동으로 찾지 못했습니다. IP 주소를 직접 입력하세요.</value></data>
+  <data name="Wireless.TcpipFailed" xml:space="preserve"><value>휴대폰의 TCP/IP 모드를 켜지 못했습니다: {0}</value></data>
+  <data name="Wireless.InvalidPairCode" xml:space="preserve"><value>페어링 코드는 휴대폰에 표시된 6자리 숫자입니다.</value></data>
+  <data name="Wireless.PairFailed" xml:space="preserve"><value>무선 페어링에 실패했습니다: {0}</value></data>
+  <data name="Wireless.Paired" xml:space="preserve"><value>페어링되었습니다. 휴대폰의 무선 디버깅 화면에 표시된 연결 포트로 연결하세요.</value></data>
+  <data name="Wireless.Disconnected" xml:space="preserve"><value>무선 연결을 해제했습니다.</value></data>
+  <data name="Wireless.HostEmpty" xml:space="preserve"><value>무선 ADB IP 주소가 비어 있습니다.</value></data>
+  <data name="Wireless.HostInvalid" xml:space="preserve"><value>무선 ADB 주소 형식이 올바르지 않습니다.</value></data>
+  <data name="Environment.AdbFile" xml:space="preserve"><value>ADB 파일</value></data>
+  <data name="Environment.ScrcpyFile" xml:space="preserve"><value>Scrcpy 파일</value></data>
+  <data name="Environment.FileTransferHelper" xml:space="preserve"><value>파일 전송 보조 프로그램</value></data>
+  <data name="Environment.WindowsVersion" xml:space="preserve"><value>Windows 버전</value></data>
+  <data name="Environment.PathSystem" xml:space="preserve"><value>시스템 PATH에 ADB 폴더가 등록되어 있습니다.</value></data>
+  <data name="Environment.PathProcess" xml:space="preserve"><value>현재 프로세스 PATH에만 있습니다. 시스템 등록은 선택 사항입니다.</value></data>
+  <data name="Environment.PathAbsolute" xml:space="preserve"><value>PATH에는 없지만 DX Manager는 절대 경로로 ADB를 실행할 수 있습니다.</value></data>
+  <data name="Environment.Admin" xml:space="preserve"><value>관리자 권한</value></data>
+  <data name="Environment.AdminYes" xml:space="preserve"><value>관리자 권한으로 실행 중입니다.</value></data>
+  <data name="Environment.AdminNo" xml:space="preserve"><value>일반 권한입니다. 시스템 PATH 등록 시 관리자 실행이 필요합니다.</value></data>
+  <data name="Environment.AdbDevice" xml:space="preserve"><value>ADB 장치</value></data>
+  <data name="Environment.AdbVersion" xml:space="preserve"><value>ADB 버전</value></data>
+  <data name="Environment.PcCaptureFolder" xml:space="preserve"><value>PC 스크린샷 폴더</value></data>
+  <data name="Environment.DeviceCaptureFolder" xml:space="preserve"><value>휴대폰 스크린샷 폴더</value></data>
+  <data name="Environment.FolderWriteFailed" xml:space="preserve"><value>폴더에 쓸 수 없습니다: {0} · {1}</value></data>
+  <data name="Environment.DeviceFolderSkipped" xml:space="preserve"><value>승인된 휴대폰을 연결하면 확인할 수 있습니다.</value></data>
+  <data name="Environment.DeviceFolderFailed" xml:space="preserve"><value>휴대폰 폴더에 쓸 수 없습니다: {0}</value></data>
+  <data name="Environment.DeviceQueryFailed" xml:space="preserve"><value>ADB 장치 조회 실패: {0}</value></data>
+  <data name="Environment.FileMissing" xml:space="preserve"><value>파일을 찾을 수 없습니다: {0}</value></data>
+  <data name="Environment.DeviceAuthorized" xml:space="preserve"><value>연결 및 승인됨: {0}</value></data>
+  <data name="Environment.DeviceUnauthorized" xml:space="preserve"><value>휴대폰 RSA 인증창을 허용하십시오: {0}</value></data>
+  <data name="Environment.DeviceOfflineMessage" xml:space="preserve"><value>장치가 offline 상태입니다. USB를 다시 연결하십시오.</value></data>
+  <data name="Environment.NoDevice" xml:space="preserve"><value>장치가 없습니다. USB 케이블, 개발자 옵션, USB 디버깅, RSA 승인, 파일 전송 모드, 삼성 USB 드라이버를 확인하십시오.</value></data>
+  <data name="Settings.Saved" xml:space="preserve"><value>설정을 저장했습니다. 언어, 프로그램 경로, 장치 감시 주기 또는 프로세스 제한 시간 변경은 DX Manager를 다시 시작한 뒤 적용됩니다.</value></data>
+  <data name="Settings.SaveFailed" xml:space="preserve"><value>설정을 저장하지 못했습니다.{0}{0}{1}</value></data>
+  <data name="Log.Title" xml:space="preserve"><value>DX Manager · 세션 로그</value></data>
+  <data name="Log.Save" xml:space="preserve"><value>로그 저장</value></data>
+  <data name="Log.DialogTitle" xml:space="preserve"><value>세션 로그 저장</value></data>
+  <data name="Log.Filter" xml:space="preserve"><value>로그 파일 (*.log)|*.log|텍스트 파일 (*.txt)|*.txt</value></data>
+  <data name="Log.Saved" xml:space="preserve"><value>현재 실행 로그를 저장했습니다.</value></data>
+  <data name="Log.SaveFailed" xml:space="preserve"><value>로그를 저장하지 못했습니다.{0}{0}{1}</value></data>
+  <data name="Environment.Title" xml:space="preserve"><value>DX Manager · 환경 점검</value></data>
+  <data name="Environment.Guide" xml:space="preserve"><value>Android 보안 정책상 USB 디버깅과 RSA 승인은 자동으로 켤 수 없습니다.{0}아래 점검 결과에 따라 휴대폰과 USB 드라이버 상태를 확인하십시오.</value></data>
+  <data name="Environment.Status" xml:space="preserve"><value>상태</value></data>
+  <data name="Environment.Item" xml:space="preserve"><value>점검 항목</value></data>
+  <data name="Environment.Result" xml:space="preserve"><value>결과</value></data>
+  <data name="Environment.CheckAgain" xml:space="preserve"><value>다시 점검</value></data>
+  <data name="Environment.Passed" xml:space="preserve"><value>정상</value></data>
+  <data name="Environment.Warning" xml:space="preserve"><value>확인</value></data>
+  <data name="Environment.Failed" xml:space="preserve"><value>실패</value></data>
+  <data name="Environment.RunFailed" xml:space="preserve"><value>환경 점검 중 오류가 발생했습니다.{0}{0}{1}</value></data>
+  <data name="Environment.Checking" xml:space="preserve"><value>환경을 점검하고 있습니다...</value></data>
+  <data name="Tray.Open" xml:space="preserve"><value>DX Manager 열기</value></data>
+  <data name="Tray.StartDex" xml:space="preserve"><value>DeX 시작</value></data>
+  <data name="Tray.StopDex" xml:space="preserve"><value>DeX 중지</value></data>
+  <data name="Tray.Settings" xml:space="preserve"><value>설정</value></data>
+  <data name="Tray.Environment" xml:space="preserve"><value>환경 점검</value></data>
+  <data name="Tray.Logs" xml:space="preserve"><value>세션 로그</value></data>
+  <data name="Tray.Exit" xml:space="preserve"><value>프로그램 종료</value></data>
+  <data name="Program.AlreadyRunning" xml:space="preserve"><value>DX Manager가 이미 실행 중입니다.{0}시스템 트레이를 확인하십시오.</value></data>
+  <data name="Program.InitFailed" xml:space="preserve"><value>DX Manager 초기화에 실패했습니다.{0}{0}{1}</value></data>
+  <data name="Settings.GroupAppearance" xml:space="preserve"><value>화면 및 언어</value></data>
+  <data name="Settings.GroupStartup" xml:space="preserve"><value>시작 및 자동 실행</value></data>
+  <data name="Settings.GroupShutdown" xml:space="preserve"><value>중지 및 종료 동작</value></data>
+  <data name="Settings.GroupAdb" xml:space="preserve"><value>ADB 환경</value></data>
+  <data name="Settings.GroupStorage" xml:space="preserve"><value>프로그램 및 저장 경로</value></data>
+  <data name="Settings.GroupWireless" xml:space="preserve"><value>무선 연결</value></data>
+  <data name="Settings.GroupPairing" xml:space="preserve"><value>무선 페어링</value></data>
+  <data name="Settings.GroupHotkeys" xml:space="preserve"><value>단축키</value></data>
+  <data name="Settings.GroupInput" xml:space="preserve"><value>입력 보정</value></data>
+  <data name="Log.Scrcpy.FlexDisplayUnsupported" xml:space="preserve"><value>선택한 Scrcpy 버전이 --flex-display를 지원하지 않아 해당 옵션을 제외했습니다.</value></data>
+  <data name="Log.KeyMapping.RightShiftCompatibility" xml:space="preserve"><value>SDL3용 오른쪽 Shift 호환 입력을 사용합니다.</value></data>
+  <data name="Common.Cancel" xml:space="preserve"><value>취소</value></data>
+  <data name="Settings.ManagedFileTransfer" xml:space="preserve"><value>DX Manager 파일 전송 사용 (한글/Unicode 호환)</value></data>
+  <data name="Settings.ManagedFileTransferHint" xml:space="preserve"><value>켜면 DX Manager 파일 전송 기능을 사용합니다. 폴더 전체와 한글을 포함한 Unicode 이름을 깨짐 없이 전송할 수 있습니다. 끄면 scrcpy의 순정 파일 드롭 기능을 사용합니다. 변경은 새로 여는 DeX, 단일창부터 적용됩니다.</value></data>
+  <data name="Settings.FileTransferTargetFolder" xml:space="preserve"><value>드롭 파일 휴대폰 저장 폴더</value></data>
+  <data name="Settings.PhoneToPcTransfer" xml:space="preserve"><value>DX Companion에서 공유한 파일 받기</value></data>
+  <data name="Settings.PhoneToPcReceiveFolder" xml:space="preserve"><value>휴대폰→PC 저장 폴더</value></data>
+  <data name="Settings.PhoneToPcTransferHint" xml:space="preserve"><value>검증된 DX Companion이 설치되어 있으면 공유 메뉴로 보낸 파일과 폴더를 현재 ADB 연결을 통해 PC로 직접 전송합니다. 휴대폰에는 임시 복사본을 만들지 않습니다.</value></data>
+  <data name="Settings.PhoneToPcReceiveFolderRequired" xml:space="preserve"><value>휴대폰에서 받은 파일을 저장할 PC 폴더를 선택하십시오.</value></data>
+  <data name="PhoneTransfer.WindowTitle" xml:space="preserve"><value>DX Manager · 휴대폰에서 받기</value></data>
+  <data name="PhoneTransfer.Receiving" xml:space="preserve"><value>휴대폰에서 받는 중</value></data>
+  <data name="PhoneTransfer.Completed" xml:space="preserve"><value>전송 완료</value></data>
+  <data name="PhoneTransfer.Failed" xml:space="preserve"><value>전송 실패</value></data>
+  <data name="PhoneTransfer.Items" xml:space="preserve"><value>항목 {1}개 중 {0}개</value></data>
+  <data name="PhoneTransfer.Bytes" xml:space="preserve"><value>{1} 중 {0}</value></data>
+  <data name="PhoneTransfer.BytesUnknown" xml:space="preserve"><value>{0} 수신됨</value></data>
+  <data name="PhoneTransfer.OpenFolder" xml:space="preserve"><value>폴더 열기</value></data>
+  <data name="Settings.GroupDisplayCleanup" xml:space="preserve"><value>DX Companion</value></data>
+  <data name="Settings.DisplayCleanupGuide" xml:space="preserve"><value>내장된 DX Companion을 현재 선택한 휴대폰에 설치·업데이트·삭제합니다. DX Manager는 내장 APK와 설치된 앱을 모두 검증한 뒤 제한된 Android 설정 권한만 부여합니다. 사용자 동의 없이 자동으로 설치하지 않습니다.</value></data>
+  <data name="Settings.InstallCompanion" xml:space="preserve"><value>Companion 설치</value></data>
+  <data name="Settings.UpdateCompanion" xml:space="preserve"><value>Companion 업데이트</value></data>
+  <data name="Settings.ReinstallCompanion" xml:space="preserve"><value>Companion 재설치</value></data>
+  <data name="Settings.CompanionNewerInstalled" xml:space="preserve"><value>최신 버전 설치됨</value></data>
+  <data name="Settings.UninstallCompanion" xml:space="preserve"><value>Companion 삭제</value></data>
+  <data name="Settings.GrantDisplayCleanupPermission" xml:space="preserve"><value>권한 부여</value></data>
+  <data name="Settings.DisplayCleanupChecking" xml:space="preserve"><value>선택한 휴대폰과 DX Companion을 확인하는 중입니다…</value></data>
+  <data name="Settings.DisplayCleanupNoDevice" xml:space="preserve"><value>DX Companion을 관리하려면 승인된 휴대폰을 연결하십시오.</value></data>
+  <data name="Settings.DisplayCleanupNotInstalled" xml:space="preserve"><value>선택한 휴대폰에 DX Companion이 설치되어 있지 않습니다.</value></data>
+  <data name="Settings.DisplayCleanupVerificationFailed" xml:space="preserve"><value>설치된 앱을 공식 DX Companion으로 확인할 수 없어 권한을 부여하지 않았습니다. 내장 앱을 설치하려면 먼저 삭제하십시오.</value></data>
+  <data name="Settings.DisplayCleanupReady" xml:space="preserve"><value>설치된 DX Companion과 서명 인증서를 확인했습니다. 이제 권한을 부여할 수 있습니다.</value></data>
+  <data name="Settings.DisplayCleanupGranted" xml:space="preserve"><value>DX Companion이 확인되었으며 필요한 권한이 이미 부여되어 있습니다.</value></data>
+  <data name="Settings.DisplayCleanupFailed" xml:space="preserve"><value>DX Companion 또는 권한 상태를 확인하지 못했습니다.</value></data>
+  <data name="Settings.DisplayCleanupGrantConfirm" xml:space="preserve"><value>확인된 DX Companion에 정리 기능에 필요한 제한된 Android 설정 권한을 부여하시겠습니까? 임의의 ADB 명령 실행 권한은 제공되지 않습니다.</value></data>
+  <data name="Settings.DisplayCleanupGranting" xml:space="preserve"><value>설치된 앱을 다시 확인하고 권한을 부여하는 중입니다…</value></data>
+  <data name="Settings.DisplayCleanupGrantSucceeded" xml:space="preserve"><value>권한을 정상적으로 부여했습니다. 이제 DX Companion의 정리 및 휴대폰→PC 전송 기능을 사용할 수 있습니다.</value></data>
+  <data name="Settings.DisplayCleanupPermissionGrantedButton" xml:space="preserve"><value>권한 부여됨</value></data>
+  <data name="Settings.CompanionInstalledVersion" xml:space="preserve"><value>설치된 버전 코드: {0}</value></data>
+  <data name="Settings.CompanionBundledVersion" xml:space="preserve"><value>검증된 내장 버전: {0}</value></data>
+  <data name="Settings.CompanionBundledMissing" xml:space="preserve"><value>내장 APK가 없어 설치와 업데이트를 사용할 수 없습니다.</value></data>
+  <data name="Settings.CompanionBundledInvalid" xml:space="preserve"><value>내장 APK의 무결성 또는 서명 검증에 실패해 설치하지 않습니다.</value></data>
+  <data name="Settings.CompanionInstallConfirm" xml:space="preserve"><value>검증된 내장 DX Companion을 선택한 휴대폰에 설치하고 필요한 제한 권한을 부여하시겠습니까?</value></data>
+  <data name="Settings.CompanionUpdateConfirm" xml:space="preserve"><value>선택한 휴대폰의 DX Companion을 업데이트 또는 재설치한 뒤 다시 검증하고 필요한 제한 권한을 부여하시겠습니까?</value></data>
+  <data name="Settings.CompanionInstalling" xml:space="preserve"><value>DX Companion을 검증하여 선택한 휴대폰에 설치하는 중입니다…</value></data>
+  <data name="Settings.CompanionInstallSucceeded" xml:space="preserve"><value>DX Companion 설치, 검증과 권한 부여를 완료했습니다.</value></data>
+  <data name="Settings.CompanionUninstallConfirm" xml:space="preserve"><value>선택한 휴대폰에서 DX Companion을 삭제하시겠습니까? 진행 중인 휴대폰→PC 전송이 중지되고 앱 설정, 홈 위젯과 빠른 설정 타일도 제거됩니다.</value></data>
+  <data name="Settings.CompanionUninstalling" xml:space="preserve"><value>선택한 휴대폰의 전송 세션을 정리하고 DX Companion을 삭제하는 중입니다…</value></data>
+  <data name="Settings.CompanionUninstallSucceeded" xml:space="preserve"><value>선택한 휴대폰에서 DX Companion을 삭제했습니다.</value></data>
+  <data name="DeviceFolder.Title" xml:space="preserve"><value>휴대폰 폴더 찾아보기</value></data>
+  <data name="DeviceFolder.Heading" xml:space="preserve"><value>휴대폰 저장 폴더 선택</value></data>
+  <data name="DeviceFolder.Up" xml:space="preserve"><value>위로</value></data>
+  <data name="DeviceFolder.Refresh" xml:space="preserve"><value>새로 고침</value></data>
+  <data name="DeviceFolder.SelectCurrent" xml:space="preserve"><value>이 폴더 선택</value></data>
+  <data name="DeviceFolder.Loading" xml:space="preserve"><value>폴더를 불러오는 중입니다…</value></data>
+  <data name="DeviceFolder.Empty" xml:space="preserve"><value>하위 폴더가 없습니다.</value></data>
+  <data name="DeviceFolder.Count" xml:space="preserve"><value>폴더 {0}개</value></data>
+  <data name="DeviceFolder.LoadFailed" xml:space="preserve"><value>휴대폰 폴더를 읽지 못했습니다: {0}</value></data>
+  <data name="DeviceFolder.NoDevice" xml:space="preserve"><value>휴대폰 폴더를 찾으려면 승인된 휴대폰을 먼저 연결하십시오.</value></data>
+  <data name="Settings.FileTransferTargetFolderInvalid" xml:space="preserve"><value>/sdcard/ 또는 /storage/emulated/0/ 아래의 폴더를 입력하십시오. 상위 폴더 구문, 제어 문자 및 Android의 UTF-8 255바이트 제한을 넘는 이름은 사용할 수 없습니다.</value></data>
+  <data name="FileTransfer.WindowTitle" xml:space="preserve"><value>DX Manager · 파일 전송</value></data>
+  <data name="FileTransfer.Preparing" xml:space="preserve"><value>파일 전송 준비 중</value></data>
+  <data name="FileTransfer.Counts" xml:space="preserve"><value>완료: {0} · 실패: {1} · 대기: {2}</value></data>
+  <data name="FileTransfer.Size" xml:space="preserve"><value>{0} {1}</value></data>
+  <data name="FileTransfer.Queued" xml:space="preserve"><value>전송 대기 중</value></data>
+  <data name="FileTransfer.Transferring" xml:space="preserve"><value>휴대폰으로 전송 중</value></data>
+  <data name="FileTransfer.TransferringPercent" xml:space="preserve"><value>휴대폰으로 전송 중 · {0}%</value></data>
+  <data name="FileTransfer.Finalizing" xml:space="preserve"><value>휴대폰에 저장하는 중</value></data>
+  <data name="FileTransfer.Completed" xml:space="preserve"><value>전송 완료</value></data>
+  <data name="FileTransfer.CompletedSummary" xml:space="preserve"><value>전송 완료 · {0}개 항목</value></data>
+  <data name="FileTransfer.Detail" xml:space="preserve"><value>{0} · 경과 {1}</value></data>
+  <data name="FileTransfer.SavedAs" xml:space="preserve"><value>저장된 이름: {0}</value></data>
+  <data name="FileTransfer.Canceled" xml:space="preserve"><value>전송 취소됨</value></data>
+  <data name="FileTransfer.Failed" xml:space="preserve"><value>전송 실패</value></data>
+  <data name="FileTransfer.CanceledByUser" xml:space="preserve"><value>파일 전송이 취소되었습니다.</value></data>
+  <data name="FileTransfer.ShuttingDown" xml:space="preserve"><value>DX Manager가 종료 중입니다.</value></data>
+  <data name="FileTransfer.ProtocolMismatch" xml:space="preserve"><value>파일 전송 도우미 버전이 DX Manager와 일치하지 않습니다.</value></data>
+  <data name="FileTransfer.AuthenticationFailed" xml:space="preserve"><value>파일 전송 요청을 인증하지 못했습니다.</value></data>
+  <data name="FileTransfer.SourceUnavailable" xml:space="preserve"><value>원본 파일 또는 폴더를 더 이상 찾을 수 없습니다.</value></data>
+  <data name="FileTransfer.TargetRejected" xml:space="preserve"><value>요청한 휴대폰 폴더는 지원하지 않습니다.</value></data>
+  <data name="FileTransfer.SessionEnded" xml:space="preserve"><value>scrcpy 세션이 이미 종료되었습니다.</value></data>
+  <data name="FileTransfer.DeviceMismatch" xml:space="preserve"><value>대상 기기가 변경되어 전송을 중지했습니다.</value></data>
+  <data name="FileTransfer.InvalidFileName" xml:space="preserve"><value>파일 이름이 올바르지 않습니다.</value></data>
+  <data name="FileTransfer.FileNameTooLong" xml:space="preserve"><value>UTF-8 파일명이 Android의 {0}바이트 제한을 초과합니다.</value></data>
+  <data name="FileTransfer.PushFailed" xml:space="preserve"><value>ADB가 파일을 휴대폰으로 복사하지 못했습니다.</value></data>
+  <data name="FileTransfer.RenameFailed" xml:space="preserve"><value>휴대폰에서 임시 파일의 이름을 변경하지 못했습니다.</value></data>
+  <data name="FileTransfer.RenameResultMissing" xml:space="preserve"><value>휴대폰이 최종 파일 이름을 반환하지 않았습니다.</value></data>
+  <data name="FileTransfer.RenameResultInvalid" xml:space="preserve"><value>휴대폰이 잘못된 파일명 결과를 반환했습니다.</value></data>
+  <data name="FileTransfer.ReparsePointUnsupported" xml:space="preserve"><value>바로 가기, 정션 또는 심볼릭 링크 폴더는 전송할 수 없습니다.</value></data>
+  <data name="FileTransfer.FolderCreateFailed" xml:space="preserve"><value>휴대폰에 전송 대상 폴더를 준비하지 못했습니다.</value></data>
+  <data name="FileTransfer.FolderFinalizeFailed" xml:space="preserve"><value>완성된 폴더를 최종 이름으로 저장하지 못했습니다.</value></data>
+  <data name="Log.FileTransfer.ProxyMissing" xml:space="preserve"><value>DX Manager 파일 전송 도우미가 없어 scrcpy 순정 전송을 사용합니다: {0}</value></data>
+  <data name="Log.FileTransfer.PipeAcceptFailed" xml:space="preserve"><value>파일 전송 IPC 연결에 실패했습니다: {0}</value></data>
+  <data name="Log.FileTransfer.PipeServerFailed" xml:space="preserve"><value>파일 전송 IPC 서버에 오류가 발생했습니다.</value></data>
+  <data name="Log.FileTransfer.RequestRejected" xml:space="preserve"><value>파일 전송 요청을 거부했습니다: {0}</value></data>
+  <data name="Log.FileTransfer.Starting" xml:space="preserve"><value>파일 전송 시작: {0} ({1}), 기기={2}</value></data>
+  <data name="Log.FileTransfer.TempCleanupFailed" xml:space="preserve"><value>휴대폰 임시 파일 정리에 실패했습니다: {0}</value></data>
+  <data name="Log.FileTransfer.TargetPrepareFailed" xml:space="preserve"><value>휴대폰 파일 전송 폴더를 준비하지 못했습니다: {0}, 원인={1}</value></data>
+  <data name="Log.FileTransfer.Completed" xml:space="preserve"><value>파일 전송 완료: {0} -&gt; {1}</value></data>
+  <data name="Log.FileTransfer.Failed" xml:space="preserve"><value>파일 전송 실패: {0}, 원인={1}</value></data>
+  <data name="Log.FileTransfer.Canceled" xml:space="preserve"><value>파일 전송 취소: {0}</value></data>
+  <data name="Log.FileTransfer.ProgressSubscriberFailed" xml:space="preserve"><value>파일 전송 상태 갱신에 실패했습니다: {0}</value></data>
+  <data name="Log.FileTransfer.ReparseSkipped" xml:space="preserve"><value>폴더 전송 중 바로 가기, 정션 또는 심볼릭 링크를 건너뛰었습니다: {0}</value></data>
+  <data name="Log.FileTransfer.CommitRecovered" xml:space="preserve"><value>ADB 응답이 중단된 뒤 최종 파일 전송 결과를 복구했습니다: {0}</value></data>
+  <data name="Log.FileTransfer.CommitRecoveryFailed" xml:space="preserve"><value>중단된 최종 파일 전송 결과를 확인하지 못했습니다: {0}</value></data>
+  <data name="Log.FileTransfer.DeviceDisconnected" xml:space="preserve"><value>기기 연결이 해제되어 진행 중이거나 대기 중인 파일 전송을 중단합니다: 기기={0}, 항목={1}개</value></data>
+  <data name="MiniBar.ScreenOff" xml:space="preserve"><value>휴대폰 화면 끄기 (Alt+O)</value></data>
+  <data name="MiniBar.ScreenOn" xml:space="preserve"><value>휴대폰 화면 켜기 (Alt+Shift+O)</value></data>
+  <data name="MiniBar.Power" xml:space="preserve"><value>휴대폰 전원 버튼 누르기 (Alt+P)</value></data>
+  <data name="MiniBar.Fullscreen" xml:space="preserve"><value>전체 화면 전환 (Alt+F)</value></data>
+  <data name="MiniBar.ResetSize" xml:space="preserve"><value>Scrcpy 창 크기 복구 (Alt+G)</value></data>
+  <data name="MiniBar.Capture" xml:space="preserve"><value>이 Scrcpy 창 캡처 (단축키: {0})</value></data>
+  <data name="MiniBar.OpenManager" xml:space="preserve"><value>DX Manager 열기</value></data>
+  <data name="MiniBar.Collapse" xml:space="preserve"><value>컨트롤바 접기</value></data>
+  <data name="MiniBar.Expand" xml:space="preserve"><value>컨트롤바 펼치기</value></data>
+  <data name="Log.MiniBar.CommandFailed" xml:space="preserve"><value>미니 컨트롤바 명령을 보내지 못했습니다.</value></data>
+</root>

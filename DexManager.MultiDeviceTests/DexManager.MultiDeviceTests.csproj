@@ -1,117 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" Condition="false" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{838646D0-4EF3-411A-815F-A48A290B55E2}</ProjectGuid>
     <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>DexManager.MultiDeviceTests</RootNamespace>
     <AssemblyName>DexManager.MultiDeviceTests</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
-    <Prefer32Bit>false</Prefer32Bit>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
-    <Prefer32Bit>false</Prefer32Bit>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml" />
+    <ProjectReference Include="..\DexManager.Core\DexManager.Core.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="..\DexManager\Models\AdbDeviceInfo.cs">
-      <Link>Models\AdbDeviceInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\AppSettings.cs">
-      <Link>Models\AppSettings.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\AppSettings.Types.cs">
-      <Link>Models\AppSettings.Types.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\LastSuccessSettings.cs">
-      <Link>Models\LastSuccessSettings.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\DeviceTransportInfo.cs">
-      <Link>Models\DeviceTransportInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\PhysicalDeviceInfo.cs">
-      <Link>Models\PhysicalDeviceInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\DevicePresentationOrder.cs">
-      <Link>Models\DevicePresentationOrder.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\DeviceRegistrySnapshot.cs">
-      <Link>Models\DeviceRegistrySnapshot.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\ManagedDisplaySession.cs">
-      <Link>Models\ManagedDisplaySession.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\ProcessResult.cs">
-      <Link>Models\ProcessResult.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\VirtualDisplayLease.cs">
-      <Link>Models\VirtualDisplayLease.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\DeviceRuntimeSessionSnapshot.cs">
-      <Link>Models\DeviceRuntimeSessionSnapshot.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Models\DeviceRuntimeRegistrySnapshot.cs">
-      <Link>Models\DeviceRuntimeRegistrySnapshot.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Services\PhysicalDeviceRegistry.cs">
-      <Link>Services\PhysicalDeviceRegistry.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Services\DeviceRuntimeSessionRegistry.cs">
-      <Link>Services\DeviceRuntimeSessionRegistry.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Services\AdbCommandBuilder.cs">
-      <Link>Services\AdbCommandBuilder.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Services\BundledProcessCleanupService.cs">
-      <Link>Services\BundledProcessCleanupService.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Services\CompanionGuardianProtocol.cs">
-      <Link>Services\CompanionGuardianProtocol.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Services\DeviceSerialScope.cs">
-      <Link>Services\DeviceSerialScope.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Services\LocalizationService.cs">
-      <Link>Services\LocalizationService.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Services\LogService.cs">
-      <Link>Services\LogService.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Services\SettingsService.cs">
-      <Link>Services\SettingsService.cs</Link>
-    </Compile>
-    <Compile Include="..\DexManager\Utils\ProcessRunner.cs">
-      <Link>Utils\ProcessRunner.cs</Link>
-    </Compile>
-    <EmbeddedResource Include="..\DexManager\Resources\Strings.resx">
-      <Link>Resources\Strings.resx</Link>
-      <LogicalName>DexManager.Resources.Strings.resources</LogicalName>
-    </EmbeddedResource>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

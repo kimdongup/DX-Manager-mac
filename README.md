@@ -5,16 +5,17 @@
 <h1 align="center">DX Manager</h1>
 
 <p align="center">
-  Manage Samsung DeX and independent Android app windows for multiple Galaxy phones from Windows.
+  Manage Samsung DeX and independent Android app windows for multiple Galaxy phones from Windows, Mac.
 </p>
 
 <p align="center">
-  여러 Galaxy 휴대폰의 Samsung DeX와 앱별 단일창을 Windows에서 동시에 관리하는 데스크톱 도구입니다.
+  여러 Galaxy 휴대폰의 Samsung DeX와 앱별 단일창을 Windows와 Mac에서 동시에 관리하는 데스크톱 도구입니다.
 </p>
 
 <p align="center">
   <a href="#english">English</a> ·
   <a href="#korean">한국어</a> ·
+  <a href="docs/MACOS_GUIDE.md">macOS 가이드</a> ·
   <a href="docs/USER_GUIDE_EN.md">English guide</a> ·
   <a href="docs/USER_GUIDE_KO.md">한국어 사용 설명서</a> ·
   <a href="docs/FAQ_EN.md">FAQ</a> ·
@@ -31,7 +32,7 @@
 
 ## Overview
 
-DX Manager is a Windows utility built around Samsung DeX, ADB, and
+DX Manager is a utility built around Samsung DeX, ADB, and
 [scrcpy](https://github.com/Genymobile/scrcpy). It creates and tracks the
 correct DeX virtual display, launches scrcpy against that display, and can
 open up to three additional app-specific virtual displays for each connected
@@ -288,19 +289,42 @@ Shift events to left Shift events. This preserves normal Shift typing, but an
 Android app cannot distinguish the two Shift sides during that session. The
 mapping is not applied to SDL2-based scrcpy versions or other Windows apps.
 
-## Building
+## Builds
 
-- Visual Studio 2019
-- .NET Framework 4.6.2 targeting pack
-- C# WinForms
-- No external NuGet packages
+DX Manager provides two dedicated builds for Windows and macOS:
 
-Open `DexManager.sln` and build the `Release` configuration. The output is
-written to `DexManager/bin/Release`. To create the public portable folder and
-ZIP, run `scripts/Package-Release.ps1`. It keeps the developer output in place
-and writes `dist/DX Manager` plus
-`dist/DX-Manager-v2.0.0-win-x64.zip`. See
-[DexManager/README.md](DexManager/README.md) for packaging notes.
+### 1. Windows Edition (Desktop WinForms GUI)
+- **Target**: 64-bit Windows 7 SP1, 8.1, 10, 11
+- **Toolchain**: Visual Studio 2019+ / MSBuild, .NET Framework 4.6.2
+- **Solution**: `DexManager.sln`
+- **Output**: `DexManager/bin/Release`
+- **Features**: Full WinForms desktop window with mini control bars, system tray, and low-level keyboard hooks.
+
+```powershell
+# Package portable release ZIP (PowerShell on Windows)
+scripts/Package-Release.ps1
+```
+See [DexManager/README.md](DexManager/README.md) for packaging notes.
+
+### 2. macOS Edition (Cross-Platform Host & TUI Dashboard)
+- **Target**: macOS 12+ (Apple Silicon & Intel x86_64)
+- **Toolchain**: .NET 8.0 SDK (`net8.0`), scrcpy 3.3.4+ / 4.x
+- **Solution**: `DexManager.Mac.sln`
+- **Output**: `DexManager.Mac/bin/Release/net8.0`
+- **Features**: Interactive terminal UI (TUI) dashboard, CLI argument mode (`--dex`, `--diag`), native macOS path resolution, and multi-device support.
+
+```bash
+# Build on macOS
+export PATH="$HOME/.dotnet:$PATH"
+dotnet build DexManager.Mac.sln -c Release
+
+# Run Interactive Dashboard
+dotnet run --project DexManager.Mac -c Release
+
+# Run all unit and integration tests
+dotnet test DexManager.Mac.sln -c Release
+```
+See the detailed [macOS Guide (docs/MACOS_GUIDE.md)](docs/MACOS_GUIDE.md) for setup and usage.
 
 ## Project Status
 
@@ -613,18 +637,42 @@ DX Manager는 SDL3 기반 scrcpy 4.x 창과의 호환을 위해 물리 오른쪽
 세션에서 Android 앱은 좌우 Shift를 구분할 수 없습니다. SDL2 기반 scrcpy와
 다른 Windows 프로그램에는 이 변환을 적용하지 않습니다.
 
-## 빌드
+## 빌드 구성 (Windows & macOS)
 
-- Visual Studio 2019
-- .NET Framework 4.6.2 Targeting Pack
-- C# WinForms
-- 외부 NuGet 패키지 없음
+DX Manager는 Windows와 macOS를 각각 지원하는 2가지 독립 빌드를 제공합니다:
 
-`DexManager.sln`을 열고 `Release` 구성으로 빌드합니다. 결과물은
-`DexManager/bin/Release`에 생성됩니다. 공개용 포터블 폴더와 ZIP은
-`scripts/Package-Release.ps1`을 실행해 만듭니다. 개발 빌드 폴더는 유지하고
-`dist/DX Manager`와 `dist/DX-Manager-v2.0.0-win-x64.zip`을 생성합니다. 배포 파일 구성은
-[DexManager/README.md](DexManager/README.md)를 참조하십시오.
+### 1. Windows 에디션 (데스크톱 WinForms GUI)
+- **지원 환경**: 64비트 Windows 7 SP1, 8.1, 10, 11
+- **개발 환경**: Visual Studio 2019 이상 또는 MSBuild, .NET Framework 4.6.2
+- **솔루션**: `DexManager.sln`
+- **산출물**: `DexManager/bin/Release`
+- **특징**: 미니 컨트롤바, 시스템 트레이, 로우레벨 키보드 후킹을 지원하는 데스크톱 WinForms GUI 애플리케이션.
+
+```powershell
+# 배포용 포터블 ZIP 생성 (Windows PowerShell)
+scripts/Package-Release.ps1
+```
+배포 파일 구성은 [DexManager/README.md](DexManager/README.md)를 참조하십시오.
+
+### 2. macOS 에디션 (크로스플랫폼 호스트 & TUI 대시보드)
+- **지원 환경**: macOS 12 Monterey 이상 (Apple Silicon 및 Intel x86_64)
+- **개발 환경**: .NET 8.0 SDK (`net8.0`), scrcpy 3.3.4 이상 / 4.x
+- **솔루션**: `DexManager.Mac.sln`
+- **산출물**: `DexManager.Mac/bin/Release/net8.0`
+- **특징**: ANSI 대화형 콘솔 대시보드(TUI), CLI 인자 실행 모드(`--dex`, `--diag`), macOS 표준 경로 및 다중 기기 독립 세션 제어.
+
+```bash
+# macOS 빌드
+export PATH="$HOME/.dotnet:$PATH"
+dotnet build DexManager.Mac.sln -c Release
+
+# 대화형 대시보드 실행
+dotnet run --project DexManager.Mac -c Release
+
+# 전체 단위/통합 테스트 실행 (92개 테스트)
+dotnet test DexManager.Mac.sln -c Release
+```
+자세한 설치 및 조작 방법은 [macOS 가이드 (docs/MACOS_GUIDE.md)](docs/MACOS_GUIDE.md)를 참조하십시오.
 
 ## 프로젝트 상태
 

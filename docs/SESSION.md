@@ -1,14 +1,27 @@
 # Session Handoff
 
-마지막 갱신: 2026-08-18
+마지막 갱신: 2026-08-22
+
+## macOS 크로스플랫폼 변환 작업 현황 (v2.0.0 macOS Edition)
+
+- **1단계 (아키텍처 분리 및 코딩)**:
+  - `DexManager.Core` (.NET 8.0): 플랫폼 중립적 비즈니스 로직, 모델, 런타임 세션 레지스트리, ADB 커맨드 빌더, 양방향 파일 전송 코디네이터 분리 완료
+  - `DexManager.Mac` (.NET 8.0): macOS 전용 ANSI 컬러 콘솔 호스트 (`InteractiveHost`), TUI 대시보드, 네이티브 플랫폼 서비스 (`MacPlatformService`, `MacPathProvider`, `MacCaptureService`, `MacKeyboardService`, `MacAutoStartService`) 구현 완료
+  - `DexManager.AdbProxy` (.NET 8.0): Named Pipe 기반 Scrcpy 파일 드롭 가로채기 및 관리형 전송 중계 구현 완료
+- **2단계 (테스트 및 검증)**:
+  - `DexManager.Tests` (net8.0, xUnit 2.5.3): 92개 단위/통합 테스트 100% 통과
+  - `DexManager.MultiDeviceTests` (net8.0): 39개 다중 기기 세션 격리 회귀 테스트 100% 통과
+- **3단계 (리팩터링, 품질 개선, 문서화)**:
+  - C# 12 / .NET 8 최신 문법(파일 범위 네임스페이스, 패턴 매칭, 레코드, 컬렉션 식, 식 본문 멤버) 적용
+  - 불필요한 레거시/더미 파일(`UnitTest1.cs`) 정리 및 코드 정리
+  - Release 빌드 시 경고 0개, 에러 0개 유지 (`/warnaserror` 통과)
+  - macOS 전용 가이드 문서 `docs/MACOS_GUIDE.md` 작성 및 `CHANGELOG.md` 갱신
+  - 최종 릴리스 빌드 및 테스트 스위트 검증 완료
 
 ## Git
 
-- 저장소 작업 사본: 현재 Codex 작업 폴더의 `v12-docs`
-- 원본 저장소: `E:\vs\dex system`
-- 브랜치: `feature/v2-multi-device`
-- 마지막 공개 커밋: 이 문서를 포함한 최신 `main` (`git log -1`로 확인)
-- 현재 작업: v2 다중 기기 구현과 실기 확인 완료, v2.0.0 공개 후보 패키징
+- 솔루션: `DexManager.Mac.sln` (macOS), `DexManager.sln` (Windows)
+- 현재 작업: macOS 크로스플랫폼 포팅 3단계(리팩터링 및 품질/문서화) 완료
 
 Windows 종료 중 `adb.exe` 네이티브 오류창이 반복되는 문제 때문에 실제 종료
 경로를 일반적인 Alt+F8·트레이 종료와 완전히 분리했다. `WM_QUERYENDSESSION`을
