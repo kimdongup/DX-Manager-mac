@@ -289,6 +289,13 @@ Shift events to left Shift events. This preserves normal Shift typing, but an
 Android app cannot distinguish the two Shift sides during that session. The
 mapping is not applied to SDL2-based scrcpy versions or other Windows apps.
 
+### Korean / Multi-language Input on macOS
+- **Language Switch Shortcut**: Press **`Shift + Space`** in the Scrcpy/DeX window to switch between Korean and English. (The macOS system `한/영` or `Caps Lock` key does not automatically propagate to Android).
+- **Physical Keyboard Layout (Required on Phone)**: In Galaxy settings, go to **Settings > General management > Physical keyboard > Samsung Keyboard**, and ensure **Korean (2-set)** and **English (US)** are enabled, with `Shift + Space` checked under language switching shortcuts.
+- **Convenient Shortcuts**:
+  - `Cmd + V`: Paste text copied from macOS directly into Android.
+  - `Option + i`: Toggle scrcpy text injection mode (`--prefer-text`).
+
 ## Builds
 
 DX Manager provides two dedicated builds for Windows and macOS:
@@ -636,6 +643,13 @@ DX Manager는 SDL3 기반 scrcpy 4.x 창과의 호환을 위해 물리 오른쪽
 왼쪽 Shift 입력으로 변환합니다. 일반적인 Shift 타이핑은 유지되지만 해당
 세션에서 Android 앱은 좌우 Shift를 구분할 수 없습니다. SDL2 기반 scrcpy와
 다른 Windows 프로그램에는 이 변환을 적용하지 않습니다.
+
+### macOS에서의 한국어 입력 및 한/영 전환
+- **한/영 전환 단축키**: Scrcpy/DeX 창 안에서 **`Shift + Space`**를 누르면 스마트폰의 입력 언어가 **[한국어] ↔ [English]**로 전환됩니다. (Mac의 `한/영` 키나 `Caps Lock`은 macOS 시스템 입력기만 변경되므로, Scrcpy 창 안에서는 `Shift + Space`를 사용해야 합니다.)
+- **스마트폰 물리 키보드 레이아웃 설정 (최초 1회 필수)**: 스마트폰의 **설정 > 일반 > 하드웨어 키보드(물리적 키보드) > 삼성 키보드**에서 **한국어 (두벌식)**와 **영어 (미국)**가 활성화되어 있고, **언어 전환 단축키**에 `Shift + 스페이스`가 체크되어 있어야 합니다.
+- **유용한 Mac 단축키**:
+  - `Cmd + V`: Mac에서 복사한 텍스트를 스마트폰에 즉시 붙여넣기
+  - `Option + i`: Scrcpy 텍스트 직접 주입 모드(`--prefer-text`) 토글
 
 ## 빌드 구성 (Windows & macOS)
 
