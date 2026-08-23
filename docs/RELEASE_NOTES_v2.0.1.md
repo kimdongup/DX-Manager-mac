@@ -38,6 +38,13 @@ executable by itself.
 - Bundled `DX-Companion.apk`:
   `7CD40017789E22440DCA0291AB0C45ADB564A19D8A623E669F373395536B880F`
 
+### VirusTotal verification
+
+The published `DXManager.exe` was rescanned after the Microsoft Defender
+false-positive correction. VirusTotal currently reports **0 detections**;
+all listed security vendors, including Microsoft, show **Undetected**:
+https://www.virustotal.com/gui/file/f94c6edc43dedf742e0885e63a8e7d1b0104385b36a29f20d1bc55495ff466eb
+
 ---
 
 ## 한국어
@@ -76,3 +83,10 @@ DX Manager v2.0.1은 v2.0.0의 기기별 설정 도입 뒤 발생한 DeX 설정 
 - `DXManager.exe`: `F94C6EDC43DEDF742E0885E63A8E7D1B0104385B36A29F20D1BC55495FF466EB`
 - 번들 `DX-Companion.apk`:
   `7CD40017789E22440DCA0291AB0C45ADB564A19D8A623E669F373395536B880F`
+
+### VirusTotal 검증
+
+Microsoft Defender 오탐 해제 후 게시된 `DXManager.exe`를 다시 검사했습니다.
+VirusTotal은 현재 **탐지 0건**이며 Microsoft를 포함한 전체 보안 엔진이
+**Undetected**로 표시됩니다:
+https://www.virustotal.com/gui/file/f94c6edc43dedf742e0885e63a8e7d1b0104385b36a29f20d1bc55495ff466eb
