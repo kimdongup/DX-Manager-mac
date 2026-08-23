@@ -19,7 +19,7 @@
   <a href="docs/USER_GUIDE_KO.md">한국어 사용 설명서</a> ·
   <a href="docs/FAQ_EN.md">FAQ</a> ·
   <a href="docs/FAQ_KO.md">Q&amp;A</a> ·
-  <a href="docs/RELEASE_NOTES_v2.0.0.md">v2.0.0 release notes</a> ·
+  <a href="docs/RELEASE_NOTES_v2.0.1.md">v2.0.1 release notes</a> ·
   <a href="DexManager/licenses/THIRD_PARTY_NOTICES.md">Third-party notices</a>
 </p>
 
@@ -299,12 +299,12 @@ Open `DexManager.sln` and build the `Release` configuration. The output is
 written to `DexManager/bin/Release`. To create the public portable folder and
 ZIP, run `scripts/Package-Release.ps1`. It keeps the developer output in place
 and writes `dist/DX Manager` plus
-`dist/DX-Manager-v2.0.0-win-x64.zip`. See
+`dist/DX-Manager-v2.0.1-win-x64.zip`. See
 [DexManager/README.md](DexManager/README.md) for packaging notes.
 
 ## Project Status
 
-Version 2.0.0 bundles scrcpy 4.1. The current verification baseline includes:
+Version 2.0.1 bundles scrcpy 4.1. The current verification baseline includes:
 
 - Windows 11: two-phone USB/Wi-Fi combinations with independent DeX,
   single-app windows, settings, Companion sessions, and bidirectional transfers
@@ -623,12 +623,12 @@ DX Manager는 SDL3 기반 scrcpy 4.x 창과의 호환을 위해 물리 오른쪽
 `DexManager.sln`을 열고 `Release` 구성으로 빌드합니다. 결과물은
 `DexManager/bin/Release`에 생성됩니다. 공개용 포터블 폴더와 ZIP은
 `scripts/Package-Release.ps1`을 실행해 만듭니다. 개발 빌드 폴더는 유지하고
-`dist/DX Manager`와 `dist/DX-Manager-v2.0.0-win-x64.zip`을 생성합니다. 배포 파일 구성은
+`dist/DX Manager`와 `dist/DX-Manager-v2.0.1-win-x64.zip`을 생성합니다. 배포 파일 구성은
 [DexManager/README.md](DexManager/README.md)를 참조하십시오.
 
 ## 프로젝트 상태
 
-버전 2.0.0은 scrcpy 4.1을 포함합니다. 현재 확인 기준은 다음과 같습니다.
+버전 2.0.1은 scrcpy 4.1을 포함합니다. 현재 확인 기준은 다음과 같습니다.
 
 - Windows 11: 휴대폰 두 대의 USB·Wi-Fi 조합, 독립 DeX·단일창·설정·
   Companion 세션과 양방향 전송

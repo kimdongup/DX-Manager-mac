@@ -2,6 +2,12 @@
 
 ## 다음 작업
 
+- [x] v2.0.1 DeX 기기별 설정 표시 회귀 수정
+  - [x] 첫 물리 identity 결속 뒤 기기별 DeX 설정 UI 재동기화
+  - [x] 최초 다중 기기 선택에서 공통 기본값의 기기별 설정 덮어쓰기 차단
+  - [x] Windows 버전 2.0.1과 기존 DX Companion 2.0.0(versionCode 6) 호환 확인
+  - [x] .NET Framework 4.6.2 x64 Release와 39개 다중 기기 회귀 테스트
+
 - [x] v2.0.0 공개 후보 준비
   - [x] Windows 버전 2.0.0과 DX Companion 2.0.0(versionCode 6) 일치
   - [x] 다중 기기 README·사용 설명서·FAQ·개발 문서 최신화

@@ -61,7 +61,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Package-Release.ps
 안내하지 않는다.
 스크립트는 DX Manager 실행 여부를 확인하고 번들 Release ADB 서버를 정리한
 뒤 Debug/Release의 로그와 스크린샷 테스트 파일을 비운다.
-v2.0.0 패키지는 Scrcpy 4.1 런타임,
+v2.0.1 패키지는 Scrcpy 4.1 런타임,
 `tools\adb-proxy\DXMAdbProxy.exe`와 서명이 검증된
 `tools\companion\DX-Companion.apk`를 반드시 포함해야 한다.
 

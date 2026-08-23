@@ -83,6 +83,10 @@ GitHub 메인 README와 별도로 HTML이 없는 `docs\PACKAGE_README.md`를 배
 
 ## 현재 상태
 
+v2.0.1은 첫 물리 휴대폰 identity가 확정된 뒤에도 DeX 화면에 공통 기본값이
+남아 있던 UI 동기화 회귀를 수정한 GitHub 업로드 후보이다. DX Companion은
+변경 없이 2.0.0(versionCode 6)을 유지한다.
+
 v2.0.0과 DX Companion 2.0.0을 공개 배포했다. Windows 11에서
 휴대폰 두 대의 USB·무선 조합, 독립 DeX·단일창, 설정, Companion과 양방향
 전송을 확인했다. 64비트 Windows 7 SP1/.NET 4.6.2에서는 USB 복수 기기와
