@@ -90,7 +90,8 @@ distribution.
   one-time permission grant; it provides virtual-display and Stay-awake
   recovery, phone-to-PC file transfer, a Quick Settings tile, and a compact
   home-screen widget
-- 64-bit Windows 7 SP1 compatibility through .NET Framework 4.6.2
+- Dual OS support: Dedicated Windows WinForms GUI and native macOS (.NET 8 TUI & CLI host)
+- 64-bit Windows 7 SP1 to Windows 11 compatibility (.NET 4.6.2) and macOS 12+ (Apple Silicon & Intel x86_64)
 
 ## Design Philosophy
 
@@ -448,11 +449,10 @@ DX Manager는 개인적으로 사용하던 Batch 스크립트, CMD 명령과 Aut
 - 설정 시간 동안 미입력 시 시스템 트레이 자동 숨김
 - 라이트, 다크 및 Windows 설정 연동 테마
 - Windows 언어에 따른 한국어·영어 UI 자동 선택
-- 실행 세션 로그와 환경 점검
-- 번들 APK와 연결 기기를 검증한 뒤 설치·업데이트·삭제와 최초 1회 권한 부여를
-  지원하는 선택형 DX Companion, 가상화면·절전모드 해제 복구, 휴대폰에서 PC로
-  파일 전송, 빠른 설정 타일과 소형 위젯
-- .NET Framework 4.6.2를 통한 64비트 Windows 7 SP1 호환
+- 가상화면과 절전모드 해제 복구, 휴대폰→PC 파일 전송, 빠른 설정 타일과
+  2 × 1 홈 위젯을 제공하는 공식 검증형 DX Companion 번들
+- Windows 및 macOS 2가지 플랫폼 전용 빌드 지원 (Windows WinForms GUI & macOS .NET 8 TUI 대시보드/CLI)
+- 64비트 Windows 7 SP1~11 (.NET 4.6.2) 및 macOS 12 Monterey 이상 (Apple Silicon / Intel) 지원
 
 ## 개발 철학
 
