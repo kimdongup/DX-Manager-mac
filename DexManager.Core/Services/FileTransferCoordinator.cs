@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.IO.Pipes;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Security.Principal;
@@ -23,14 +24,17 @@ namespace DexManager.Services
         private const int MaximumCollisionIndex = 9999;
         private const int CancelBurstMilliseconds = 1000;
         private const int ShortAdbTimeoutMs = 5000;
+        private const int ProxyProbeTimeoutMs = 5000;
         private const int FinalCommitRecoveryAttempts = 6;
         private const int StaleCleanupCooldownMilliseconds = 5000;
         private const int ProcessPollMilliseconds = 100;
         private const int MaximumVisibleQueueItems = 5;
         private readonly object _syncRoot = new object();
         private readonly object _targetPreparationRoot = new object();
+        private readonly object _proxyValidationRoot = new object();
         private readonly string _realAdbPath;
         private readonly string _proxyPath;
+        private readonly Func<string, string, bool> _proxyProbe;
         private readonly string _pipeName;
         private readonly string _pipeToken;
         private readonly AppSettings _settings;
@@ -54,7 +58,8 @@ namespace DexManager.Services
         private Process _activeAdbProcess;
         private int _shutdownRequested;
         private int _disposed;
-        private bool _proxyMissingLogged;
+        private int _proxyAvailability;
+        private bool _proxyUnavailableLogged;
         private DateTime _lastStaleCleanupUtc = DateTime.MinValue;
         private long _progressSequence;
 
@@ -64,6 +69,23 @@ namespace DexManager.Services
             LogService logService,
             DeviceRuntimeSessionRegistry runtimeSessions,
             string proxyPath = null)
+            : this(
+                realAdbPath,
+                settings,
+                logService,
+                runtimeSessions,
+                proxyPath,
+                null)
+        {
+        }
+
+        internal FileTransferCoordinator(
+            string realAdbPath,
+            AppSettings settings,
+            LogService logService,
+            DeviceRuntimeSessionRegistry runtimeSessions,
+            string proxyPath,
+            Func<string, string, bool> proxyProbe)
         {
             if (string.IsNullOrWhiteSpace(realAdbPath))
                 throw new ArgumentException("ADB path is empty.", "realAdbPath");
@@ -73,35 +95,12 @@ namespace DexManager.Services
             _runtimeSessions = runtimeSessions ??
                 throw new ArgumentNullException("runtimeSessions");
 
-            if (!string.IsNullOrWhiteSpace(proxyPath))
-            {
-                _proxyPath = Path.GetFullPath(proxyPath);
-            }
-            else
-            {
-                var proxyDir = Path.Combine(
+            _proxyPath = !string.IsNullOrWhiteSpace(proxyPath)
+                ? Path.GetFullPath(proxyPath)
+                : GetDefaultProxyPath(
                     AppDomain.CurrentDomain.BaseDirectory,
-                    "tools",
-                    "adb-proxy");
-                var candidateName = OperatingSystem.IsWindows() ? "DXMAdbProxy.exe" : "DXMAdbProxy";
-                var candidatePath = Path.Combine(proxyDir, candidateName);
-                if (File.Exists(candidatePath))
-                {
-                    _proxyPath = candidatePath;
-                }
-                else if (File.Exists(Path.Combine(proxyDir, "DXMAdbProxy.dll")))
-                {
-                    _proxyPath = Path.Combine(proxyDir, "DXMAdbProxy.dll");
-                }
-                else if (File.Exists(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DXMAdbProxy.dll")))
-                {
-                    _proxyPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DXMAdbProxy.dll");
-                }
-                else
-                {
-                    _proxyPath = Path.Combine(proxyDir, "DXMAdbProxy.exe");
-                }
-            }
+                    OperatingSystem.IsWindows());
+            _proxyProbe = proxyProbe ?? ProbeProxy;
             _pipeName = "DXManager.Transfer." +
                 Process.GetCurrentProcess().Id.ToString(
                     CultureInfo.InvariantCulture) + "." +
@@ -123,6 +122,144 @@ namespace DexManager.Services
         }
 
         public event EventHandler<FileTransferProgressEventArgs> ProgressChanged;
+
+        internal static string GetDefaultProxyPath(
+            string baseDirectory,
+            bool isWindows)
+        {
+            if (string.IsNullOrWhiteSpace(baseDirectory))
+                throw new ArgumentException("Base directory is empty.", "baseDirectory");
+            return Path.Combine(
+                Path.GetFullPath(baseDirectory),
+                "tools",
+                "adb-proxy",
+                isWindows ? "DXMAdbProxy.exe" : "DXMAdbProxy");
+        }
+
+        internal static string GetDotnetRoot(string runtimeDirectory)
+        {
+            if (string.IsNullOrWhiteSpace(runtimeDirectory)) return string.Empty;
+            try
+            {
+                var versionDirectory = new DirectoryInfo(
+                    Path.GetFullPath(runtimeDirectory.TrimEnd(
+                        Path.DirectorySeparatorChar,
+                        Path.AltDirectorySeparatorChar)));
+                return versionDirectory.Parent?.Parent?.Parent?.FullName ??
+                    string.Empty;
+            }
+            catch
+            {
+                return string.Empty;
+            }
+        }
+
+        private bool IsProxyAvailable()
+        {
+            var cached = Volatile.Read(ref _proxyAvailability);
+            if (cached != 0) return cached > 0;
+
+            lock (_proxyValidationRoot)
+            {
+                cached = Volatile.Read(ref _proxyAvailability);
+                if (cached != 0) return cached > 0;
+
+                if (!File.Exists(_proxyPath))
+                {
+                    LogProxyFallback("Log.FileTransfer.ProxyMissing");
+                    Volatile.Write(ref _proxyAvailability, -1);
+                    return false;
+                }
+
+                if (!_proxyProbe(_proxyPath, _realAdbPath))
+                {
+                    LogProxyFallback("Log.FileTransfer.ProxyUnavailable");
+                    Volatile.Write(ref _proxyAvailability, -1);
+                    return false;
+                }
+
+                Volatile.Write(ref _proxyAvailability, 1);
+                return true;
+            }
+        }
+
+        private void LogProxyFallback(string resourceKey)
+        {
+            if (_proxyUnavailableLogged) return;
+            _proxyUnavailableLogged = true;
+            _logService.Warning(LocalizationService.Format(
+                resourceKey,
+                _proxyPath));
+        }
+
+        private static bool ProbeProxy(string proxyPath, string realAdbPath)
+        {
+            try
+            {
+                var startInfo = new ProcessStartInfo
+                {
+                    FileName = proxyPath,
+                    Arguments = "version",
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true
+                };
+                startInfo.EnvironmentVariables[
+                    FileTransferEnvironment.RealAdbPath] = realAdbPath;
+                ConfigureDotnetHostEnvironment(startInfo);
+
+                using (var process = Process.Start(startInfo))
+                {
+                    if (process == null) return false;
+                    if (!process.WaitForExit(ProxyProbeTimeoutMs))
+                    {
+                        try { process.Kill(true); }
+                        catch { }
+                        return false;
+                    }
+                    return process.ExitCode == 0;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static void ConfigureDotnetHostEnvironment(
+            ProcessStartInfo startInfo)
+        {
+            if (startInfo == null || OperatingSystem.IsWindows()) return;
+
+            var dotnetRoot = GetDotnetRoot(
+                RuntimeEnvironment.GetRuntimeDirectory());
+            if (string.IsNullOrWhiteSpace(dotnetRoot)) return;
+
+            startInfo.EnvironmentVariables["DOTNET_ROOT"] = dotnetRoot;
+            var architectureVariable = GetDotnetRootArchitectureVariable();
+            if (!string.IsNullOrWhiteSpace(architectureVariable))
+            {
+                startInfo.EnvironmentVariables[architectureVariable] = dotnetRoot;
+            }
+        }
+
+        private static string GetDotnetRootArchitectureVariable()
+        {
+            switch (RuntimeInformation.ProcessArchitecture)
+            {
+                case Architecture.Arm64:
+                    return "DOTNET_ROOT_ARM64";
+                case Architecture.X64:
+                    return "DOTNET_ROOT_X64";
+                case Architecture.X86:
+                    return "DOTNET_ROOT_X86";
+                case Architecture.Arm:
+                    return "DOTNET_ROOT_ARM";
+                default:
+                    return string.Empty;
+            }
+        }
 
         public string GetScrcpyPushTarget()
         {
@@ -228,20 +365,7 @@ namespace DexManager.Services
             {
                 return string.Empty;
             }
-            if (!File.Exists(_proxyPath))
-            {
-                lock (_syncRoot)
-                {
-                    if (!_proxyMissingLogged)
-                    {
-                        _proxyMissingLogged = true;
-                        _logService.Warning(LocalizationService.Format(
-                            "Log.FileTransfer.ProxyMissing",
-                            _proxyPath));
-                    }
-                }
-                return string.Empty;
-            }
+            if (!IsProxyAvailable()) return string.Empty;
 
             var id = Guid.NewGuid().ToString("N");
             lock (_syncRoot)
@@ -274,6 +398,7 @@ namespace DexManager.Services
             }
 
             startInfo.EnvironmentVariables["ADB"] = _proxyPath;
+            ConfigureDotnetHostEnvironment(startInfo);
             startInfo.EnvironmentVariables[
                 FileTransferEnvironment.RealAdbPath] = _realAdbPath;
             startInfo.EnvironmentVariables[

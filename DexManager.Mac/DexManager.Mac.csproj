@@ -13,14 +13,35 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DexManager.Core\DexManager.Core.csproj" />
+    <ProjectReference Include="..\DexManager.AdbProxy\DexManager.AdbProxy.csproj"
+                      ReferenceOutputAssembly="false" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\tools\**\*.*">
+    <None Include="..\tools\**\*.*"
+          Exclude="..\tools\adb-proxy\**\*.*">
       <Link>tools\%(RecursiveDir)%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+  <Target Name="CopyFreshAdbProxy" AfterTargets="Build">
+    <PropertyGroup>
+      <_AdbProxyOutputDirectory>$(MSBuildProjectDirectory)/../DexManager.AdbProxy/bin/$(Configuration)/$(TargetFramework)</_AdbProxyOutputDirectory>
+      <_AdbProxyOutputDirectory Condition="'$(RuntimeIdentifier)' != ''">$(_AdbProxyOutputDirectory)/$(RuntimeIdentifier)</_AdbProxyOutputDirectory>
+    </PropertyGroup>
+    <ItemGroup>
+      <_AdbProxyFiles Include="$(_AdbProxyOutputDirectory)/DXMAdbProxy*" />
+    </ItemGroup>
+    <Error Condition="'@(_AdbProxyFiles)' == ''"
+           Text="The freshly built DXMAdbProxy output was not found." />
+    <MakeDir Directories="$(OutDir)tools/adb-proxy" />
+    <Copy SourceFiles="@(_AdbProxyFiles)"
+          DestinationFolder="$(OutDir)tools/adb-proxy"
+          SkipUnchangedFiles="true" />
+    <Exec Condition="$([MSBuild]::IsOSPlatform('OSX'))"
+          Command="chmod +x &quot;$(OutDir)tools/adb-proxy/DXMAdbProxy&quot;" />
+  </Target>
 
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">

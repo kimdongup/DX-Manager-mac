@@ -705,6 +705,7 @@
   <data name="FileTransfer.FolderCreateFailed" xml:space="preserve"><value>휴대폰에 전송 대상 폴더를 준비하지 못했습니다.</value></data>
   <data name="FileTransfer.FolderFinalizeFailed" xml:space="preserve"><value>완성된 폴더를 최종 이름으로 저장하지 못했습니다.</value></data>
   <data name="Log.FileTransfer.ProxyMissing" xml:space="preserve"><value>DX Manager 파일 전송 도우미가 없어 scrcpy 순정 전송을 사용합니다: {0}</value></data>
+  <data name="Log.FileTransfer.ProxyUnavailable" xml:space="preserve"><value>DX Manager 파일 전송 도우미를 실행할 수 없어 scrcpy 순정 전송을 사용합니다: {0}</value></data>
   <data name="Log.FileTransfer.PipeAcceptFailed" xml:space="preserve"><value>파일 전송 IPC 연결에 실패했습니다: {0}</value></data>
   <data name="Log.FileTransfer.PipeServerFailed" xml:space="preserve"><value>파일 전송 IPC 서버에 오류가 발생했습니다.</value></data>
   <data name="Log.FileTransfer.RequestRejected" xml:space="preserve"><value>파일 전송 요청을 거부했습니다: {0}</value></data>

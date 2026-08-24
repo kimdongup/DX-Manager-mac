@@ -20,7 +20,11 @@ internal static class Program
                 return Fail("DX Manager: the real ADB executable is unavailable.");
             }
 
-            var currentProcessPath = Environment.ProcessPath ?? Process.GetCurrentProcess().MainModule?.FileName;
+            string currentProcessPath;
+            using (var currentProcess = Process.GetCurrentProcess())
+            {
+                currentProcessPath = currentProcess.MainModule?.FileName;
+            }
             if (!string.IsNullOrWhiteSpace(currentProcessPath) &&
                 PathsReferToSameFile(realAdbPath, currentProcessPath))
             {
@@ -70,7 +74,7 @@ internal static class Program
             }
             if (argument.StartsWith("--serial=", StringComparison.Ordinal))
             {
-                serial = argument["--serial=".Length..];
+                serial = argument.Substring("--serial=".Length);
                 index++;
                 continue;
             }
@@ -298,9 +302,7 @@ internal static class Program
             return string.Equals(
                 leftNorm,
                 rightNorm,
-                OperatingSystem.IsWindows() || OperatingSystem.IsMacOS()
-                    ? StringComparison.OrdinalIgnoreCase
-                    : StringComparison.Ordinal);
+                StringComparison.OrdinalIgnoreCase);
         }
         catch
         {
@@ -315,5 +317,20 @@ internal static class Program
         return exitCode;
     }
 
-    private sealed record PushRequest(string Serial, string LocalPath, string RemoteDirectory);
+    private sealed class PushRequest
+    {
+        internal PushRequest(
+            string serial,
+            string localPath,
+            string remoteDirectory)
+        {
+            Serial = serial;
+            LocalPath = localPath;
+            RemoteDirectory = remoteDirectory;
+        }
+
+        internal string Serial { get; }
+        internal string LocalPath { get; }
+        internal string RemoteDirectory { get; }
+    }
 }

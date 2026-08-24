@@ -2,14 +2,23 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework Condition="'$(OS)' == 'Windows_NT'">net462</TargetFramework>
+    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">net8.0</TargetFramework>
     <RootNamespace>DexManager.AdbProxy</RootNamespace>
     <AssemblyName>DXMAdbProxy</AssemblyName>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <LangVersion>latest</LangVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PlatformTarget Condition="'$(OS)' == 'Windows_NT'">x64</PlatformTarget>
+    <Prefer32Bit Condition="'$(OS)' == 'Windows_NT'">false</Prefer32Bit>
+    <OutputPath Condition="'$(OS)' == 'Windows_NT'">..\DexManager\bin\$(Configuration)\tools\adb-proxy\</OutputPath>
+    <AppendTargetFrameworkToOutputPath Condition="'$(OS)' == 'Windows_NT'">false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
+
+  <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Include="..\Shared\FileTransferProtocol.cs">

@@ -705,6 +705,7 @@
   <data name="FileTransfer.FolderCreateFailed" xml:space="preserve"><value>The destination folder could not be prepared on the phone.</value></data>
   <data name="FileTransfer.FolderFinalizeFailed" xml:space="preserve"><value>The completed folder could not be saved under its final name.</value></data>
   <data name="Log.FileTransfer.ProxyMissing" xml:space="preserve"><value>The DX Manager file-transfer helper is missing. scrcpy's original file transfer will be used: {0}</value></data>
+  <data name="Log.FileTransfer.ProxyUnavailable" xml:space="preserve"><value>The DX Manager file-transfer helper could not start. scrcpy's original file transfer will be used: {0}</value></data>
   <data name="Log.FileTransfer.PipeAcceptFailed" xml:space="preserve"><value>File-transfer IPC connection failed: {0}</value></data>
   <data name="Log.FileTransfer.PipeServerFailed" xml:space="preserve"><value>The file-transfer IPC server failed.</value></data>
   <data name="Log.FileTransfer.RequestRejected" xml:space="preserve"><value>A file-transfer request was rejected: {0}</value></data>
