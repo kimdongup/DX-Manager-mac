@@ -26,20 +26,8 @@ public sealed class MacPathProvider : IPathProvider
     public string DefaultLogDirectory =>
         Path.Combine(BaseDirectory, "logs");
 
-    public string DefaultProxyExecutablePath
-    {
-        get
-        {
-            var proxyDir = Path.Combine(BaseDirectory, "tools", "adb-proxy");
-            var native = Path.Combine(proxyDir, "DXMAdbProxy");
-            if (File.Exists(native)) return native;
-            var dllInProxy = Path.Combine(proxyDir, "DXMAdbProxy.dll");
-            if (File.Exists(dllInProxy)) return dllInProxy;
-            var dllInBase = Path.Combine(BaseDirectory, "DXMAdbProxy.dll");
-            if (File.Exists(dllInBase)) return dllInBase;
-            return Path.Combine(proxyDir, "DXMAdbProxy.exe");
-        }
-    }
+    public string DefaultProxyExecutablePath =>
+        Path.Combine(BaseDirectory, "tools", "adb-proxy", "DXMAdbProxy");
 
     public string ResolveDefaultAdbPath()
     {

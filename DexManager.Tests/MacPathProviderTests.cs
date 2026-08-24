@@ -58,6 +58,8 @@ namespace DexManager.Tests
             var path = _provider.DefaultProxyExecutablePath;
             Assert.False(string.IsNullOrWhiteSpace(path));
             Assert.Contains(Path.Combine("tools", "adb-proxy"), path);
+            Assert.Equal("DXMAdbProxy", Path.GetFileName(path));
+            Assert.NotEqual(".dll", Path.GetExtension(path));
         }
 
         [Fact]
