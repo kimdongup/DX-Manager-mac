@@ -72,13 +72,14 @@ public sealed class MacPathProvider : IPathProvider
         var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         var candidates = new List<string>
         {
-            Path.Combine(BaseDirectory, "tools", "adb", "adb"),
-            Path.Combine(BaseDirectory, "tools", "scrcpy", "adb"),
-            Path.Combine(home, "Downloads", "scrcpy-macos-x86_64-v3.3.4", "adb"),
-            Path.Combine(home, "Downloads", "scrcpy-macos-aarch64-v3.3.4", "adb"),
-            Path.Combine(home, "Library", "Android", "sdk", "platform-tools", "adb"),
+            // Prefer Homebrew native arm64 binaries on Apple Silicon
             "/opt/homebrew/bin/adb",
             "/usr/local/bin/adb",
+            Path.Combine(BaseDirectory, "tools", "adb", "adb"),
+            Path.Combine(BaseDirectory, "tools", "scrcpy", "adb"),
+            Path.Combine(home, "Downloads", "scrcpy-macos-aarch64-v3.3.4", "adb"),
+            Path.Combine(home, "Downloads", "scrcpy-macos-x86_64-v3.3.4", "adb"),
+            Path.Combine(home, "Library", "Android", "sdk", "platform-tools", "adb"),
             Path.Combine(home, ".android-sdk", "platform-tools", "adb"),
             "/opt/android-sdk/platform-tools/adb",
             Path.Combine(BaseDirectory, "tools", "adb", "adb.exe")
@@ -98,11 +99,12 @@ public sealed class MacPathProvider : IPathProvider
         var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         var candidates = new List<string>
         {
-            Path.Combine(BaseDirectory, "tools", "scrcpy", "scrcpy"),
-            Path.Combine(home, "Downloads", "scrcpy-macos-x86_64-v3.3.4", "scrcpy"),
-            Path.Combine(home, "Downloads", "scrcpy-macos-aarch64-v3.3.4", "scrcpy"),
+            // Prefer Homebrew native arm64 binaries on Apple Silicon
             "/opt/homebrew/bin/scrcpy",
             "/usr/local/bin/scrcpy",
+            Path.Combine(BaseDirectory, "tools", "scrcpy", "scrcpy"),
+            Path.Combine(home, "Downloads", "scrcpy-macos-aarch64-v3.3.4", "scrcpy"),
+            Path.Combine(home, "Downloads", "scrcpy-macos-x86_64-v3.3.4", "scrcpy"),
             "/usr/bin/scrcpy",
             Path.Combine(BaseDirectory, "tools", "scrcpy", "scrcpy.exe")
         };
