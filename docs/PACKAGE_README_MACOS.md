@@ -5,21 +5,19 @@ complete archive and run it from the extracted folder. The package includes the
 DX Manager runtime, scrcpy 4.1, ADB, and the scrcpy server. Homebrew and a
 separate .NET installation are not required.
 
-The portable packages require **macOS 14 Sonoma or later**.
+The portable package requires **macOS 14 Sonoma or later** and an Apple
+Silicon Mac.
 
 ## English
 
-### 1. Choose the correct package
+### 1. Confirm that the Mac is supported
 
-- **Apple Silicon Mac:** choose the package labeled **arm64**. This applies to
-  Macs with an Apple M-series chip.
-- **Intel Mac:** choose the package labeled **x64** or **x86_64**.
+- **Supported:** Apple Silicon Macs with an Apple M-series chip. Use the package
+  labeled **arm64**.
+- **Not supported:** Intel Macs (x86_64). An x64 package is not provided.
 
 If you are not sure which Mac you have, open the Apple menu and select **About
-This Mac**. The window shows either an Apple chip or an Intel processor.
-
-The two packages provide the same DX Manager functions. Only their processor
-architecture is different.
+This Mac**. Continue only when the window shows an Apple chip.
 
 ### 2. Verify the downloaded ZIP
 
@@ -34,9 +32,8 @@ shasum -a 256 -c "DX-Manager-v${release_version}-macos-arm64.zip.sha256"
 When reading this source document on GitHub, replace `<version>` with the
 Release version shown in the downloaded filename, for example `2.0.0`. The
 README inside a packaged ZIP already contains the exact package version.
-For an Intel Mac, replace `arm64` with `x64`. Continue only when the command
-prints `OK`. If it reports a mismatch, do not run the ZIP; download both files
-again from the Release.
+Continue only when the command prints `OK`. If it reports a mismatch, do not
+run the ZIP; download both files again from the Release.
 
 ### 3. Extract and keep the complete folder
 
@@ -98,15 +95,14 @@ on every supported Mac and macOS version cannot be guaranteed.
 
 ### Package contents and limits
 
-- Bundled DX Manager runtime for the selected Mac architecture
+- Bundled DX Manager runtime for Apple Silicon arm64
 - Bundled scrcpy 4.1, ADB, and scrcpy server
 - No Homebrew requirement
 - No separate .NET installation requirement
 - No DX Companion APK in the current macOS package
 
-The Intel executable has been checked under Rosetta on Apple Silicon, while a
-complete Galaxy DeX session on physical Intel Mac hardware still needs direct
-verification.
+Intel Macs are outside the supported scope, and no Intel x64 executable is
+included in the release.
 
 Do not add, replace, or delete bundled ADB and scrcpy files unless the package
 instructions for a later version explicitly require it.
@@ -120,18 +116,17 @@ DX Manager macOS 버전은 포터블 ZIP 패키지로 배포됩니다. ZIP 전�
 ADB와 scrcpy 서버가 포함됩니다. Homebrew와 별도의 .NET 설치는 필요하지
 않습니다.
 
-포터블 패키지의 최소 운영체제는 **macOS 14 Sonoma**입니다.
+포터블 패키지는 **macOS 14 Sonoma 이상 Apple Silicon Mac**에서 사용할 수
+있습니다.
 
-### 1. Mac에 맞는 패키지 선택
+### 1. 지원 대상 Mac 확인
 
-- **Apple Silicon Mac:** **arm64**로 표시된 패키지를 선택하십시오. Apple M
-  시리즈 칩이 탑재된 Mac이 여기에 해당합니다.
-- **Intel Mac:** **x64** 또는 **x86_64**로 표시된 패키지를 선택하십시오.
+- **지원:** Apple M 시리즈 칩이 탑재된 Apple Silicon Mac. **arm64**로 표시된
+  패키지를 사용하십시오.
+- **미지원:** Intel Mac(x86_64). x64 패키지는 제공하지 않습니다.
 
 Mac의 종류를 모르면 Apple 메뉴에서 **이 Mac에 관하여**를 여십시오. 이 화면에
-Apple 칩 또는 Intel 프로세서가 표시됩니다.
-
-두 패키지의 DX Manager 기능은 같습니다. 프로세서 아키텍처만 다릅니다.
+Apple 칩이 표시되는 경우에만 계속하십시오.
 
 ### 2. 다운로드한 ZIP 확인
 
@@ -147,9 +142,8 @@ shasum -a 256 -c "DX-Manager-v${release_version}-macos-arm64.zip.sha256"
 이 원본 문서를 GitHub에서 읽는 경우 `<version>`을 내려받은 파일명에 표시된
 Release 버전(예: `2.0.0`)으로 바꾸십시오. 패키지 ZIP 안의 README에는 실제
 패키지 버전이 이미 반영됩니다.
-Intel Mac에서는 `arm64`를 `x64`로 바꿉니다. 결과에 `OK`가 표시된 경우에만
-계속하십시오. 불일치가 표시되면 실행하지 말고 Release에서 두 파일을 다시
-내려받으십시오.
+결과에 `OK`가 표시된 경우에만 계속하십시오. 불일치가 표시되면 실행하지 말고
+Release에서 두 파일을 다시 내려받으십시오.
 
 ### 3. ZIP 전체 압축 해제 및 폴더 유지
 
@@ -210,14 +204,14 @@ macOS 버전에 따라 메뉴 문구와 위치가 다를 수 있습니다. Apple
 
 ### 패키지 구성 및 범위
 
-- 선택한 Mac 아키텍처용 DX Manager 런타임
+- Apple Silicon arm64용 DX Manager 런타임
 - 번들 scrcpy 4.1, ADB와 scrcpy 서버
 - Homebrew 설치 불필요
 - 별도 .NET 설치 불필요
 - 현재 macOS 패키지에는 DX Companion APK가 포함되지 않음
 
-Intel 실행 파일은 Apple Silicon Mac의 Rosetta에서 기동을 확인했습니다. 실제
-Intel Mac에서 Galaxy DeX 전체 흐름을 확인하는 실기 검증은 남아 있습니다.
+Intel Mac은 지원 범위에 포함하지 않으며, Release에 Intel x64 실행 파일을
+포함하지 않습니다.
 
 이후 버전의 패키지 안내에서 명시적으로 요구하지 않는 한 번들 ADB와 scrcpy
 파일을 추가, 교체 또는 삭제하지 마십시오.

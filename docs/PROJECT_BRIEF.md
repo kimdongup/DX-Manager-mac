@@ -28,11 +28,11 @@ GitHub 메인 README와 별도로 HTML이 없는 `docs\PACKAGE_README.md`를 배
 폴더의 `README.md`로 사용하며, 모든 이중 언어 문서는 영어 다음 한국어
 순서로 작성한다.
 
-macOS 에디션은 `scripts/Package-Mac-Release.sh`로 Apple Silicon arm64와
-Intel x64 self-contained ZIP을 별도로 만든다. 각 ZIP에는 해당 아키텍처로
-미리 publish한 DX Manager와 ADB proxy, 공식 scrcpy 4.1 정적 빌드, ADB,
-scrcpy-server, 실행기와 라이선스를 포함한다. 사용자는 Homebrew나 .NET을
-설치하거나 소스를 빌드하지 않고 ZIP 전체를 풀어 실행한다.
+macOS 에디션은 `scripts/Package-Mac-Release.sh`로 Apple Silicon arm64
+self-contained ZIP을 만든다. ZIP에는 arm64로 미리 publish한 DX Manager와 ADB
+proxy, 공식 scrcpy 4.1 정적 빌드, ADB, scrcpy-server, 실행기와 라이선스를
+포함한다. 사용자는 Homebrew나 .NET을 설치하거나 소스를 빌드하지 않고 ZIP 전체를
+풀어 실행한다. Intel Mac(x86_64)은 지원하지 않으며 x64 ZIP을 만들지 않는다.
 
 ## 완료 기능
 
