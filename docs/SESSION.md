@@ -1,6 +1,36 @@
 # Session Handoff
 
-마지막 갱신: 2026-08-22
+마지막 갱신: 2026-08-31
+
+## macOS 포터블 배포 작업
+
+- 작업 브랜치: `codex/macos-portable-release`
+- `scripts/Package-Mac-Release.sh`가 `osx-arm64`와 `osx-x64`용 DX Manager와
+  ADB proxy를 self-contained single-file로 publish한다.
+- 공식 scrcpy 4.1 arm64/x86_64 정적 아카이브를 고정 SHA-256으로 검증해
+  ADB와 scrcpy-server를 함께 포함한다.
+- `DX-Manager-v2.0.0-macos-arm64.zip`과
+  `DX-Manager-v2.0.0-macos-x64.zip`, 각 `.sha256` 파일을 생성한다.
+- GitHub Actions workflow는 `macos-15`와 `macos-15-intel`에서 빌드·95개
+  테스트·39개 다중 기기 테스트·package smoke test를 각각 수행하도록
+  구성했다. PR에서는 artifact를 보관하고, `v*` 태그에서는 정확한 네 파일과
+  체크섬을 검증한 뒤 Release 초안을 만든다. 첫 원격 run 결과 확인은 남아 있다.
+- Apple Silicon ZIP은 native 실행 검증을 통과했다. Intel ZIP은 Mach-O x64
+  검사와 이 Mac의 Rosetta에서 DX Manager, proxy, scrcpy 4.1, ADB 37.0.0
+  실행을 확인했다. 실제 Intel Mac의 Galaxy DeX 실기는 남아 있다.
+- macOS `Q` 종료가 no-op이던 조건을 제거하고 실행 중인 서비스 정지와 DeX
+  overlay cleanup 완료를 기다리도록 수정했다. CLI `--dex`/`--stop-dex`도 기기
+  감시가 첫 snapshot을 읽은 뒤 동작하며 시작·자연 종료 대기의 `Ctrl+C`를 실제
+  정리 경로에 연결한다.
+- DeX 시작·overlay 제거 직전에 live stable identity를 다시 읽는다. 같은 endpoint의
+  다른 휴대폰에는 정리 명령을 보내지 않고, USB transport가 사라져도 같은
+  identity로 검증된 Wi-Fi transport가 남아 있으면 그 경로로 정리한다. 보류된
+  cleanup은 identity별 독립 항목으로 보존하고 새 overlay 설정이 성공한 뒤에만
+  완료 처리한다.
+- 최종 소스 기준 .NET 8 Release 빌드는 경고 0·오류 0, xUnit 95개와 다중 기기
+  회귀 테스트 39개는 모두 통과했다.
+- 자동 artifact는 아직 Apple Developer ID 서명·notarization이 없으므로 최초
+  실행 시 Gatekeeper 승인이 필요할 수 있다.
 
 ## macOS 크로스플랫폼 변환 작업 현황 (v2.0.0 macOS Edition)
 
@@ -9,7 +39,7 @@
   - `DexManager.Mac` (.NET 8.0): macOS 전용 ANSI 컬러 콘솔 호스트 (`InteractiveHost`), TUI 대시보드, 네이티브 플랫폼 서비스 (`MacPlatformService`, `MacPathProvider`, `MacCaptureService`, `MacKeyboardService`, `MacAutoStartService`) 구현 완료
   - `DexManager.AdbProxy` (.NET 8.0): Named Pipe 기반 Scrcpy 파일 드롭 가로채기 및 관리형 전송 중계 구현 완료
 - **2단계 (테스트 및 검증)**:
-  - `DexManager.Tests` (net8.0, xUnit 2.5.3): 92개 단위/통합 테스트 100% 통과
+  - `DexManager.Tests` (net8.0, xUnit 2.5.3): 95개 단위/통합 테스트 100% 통과
   - `DexManager.MultiDeviceTests` (net8.0): 39개 다중 기기 세션 격리 회귀 테스트 100% 통과
 - **3단계 (리팩터링, 품질 개선, 문서화)**:
   - C# 12 / .NET 8 최신 문법(파일 범위 네임스페이스, 패턴 매칭, 레코드, 컬렉션 식, 식 본문 멤버) 적용

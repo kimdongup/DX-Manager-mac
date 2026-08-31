@@ -75,6 +75,19 @@ namespace DexManager.Tests
         }
 
         [Fact]
+        public void GetCandidateAdbPaths_PrefersBundledPortableAdb()
+        {
+            var provider = new MacPathProvider(preferBundledTools: true);
+            var candidates = provider.GetCandidateAdbPaths();
+
+            Assert.Equal(
+                Path.Combine(provider.BaseDirectory, "tools", "scrcpy", "adb"),
+                candidates[0]);
+            Assert.DoesNotContain(candidates, p =>
+                p.Contains(Path.Combine("Downloads", "scrcpy-macos")));
+        }
+
+        [Fact]
         public void GetCandidateScrcpyPaths_ContainsHomebrewAndLocalLocations()
         {
             var candidates = _provider.GetCandidateScrcpyPaths();
@@ -84,6 +97,32 @@ namespace DexManager.Tests
             Assert.Contains(candidates, p => p.Contains("/opt/homebrew/bin/scrcpy"));
             Assert.Contains(candidates, p => p.Contains("/usr/local/bin/scrcpy"));
             Assert.Contains(candidates, p => p.Contains("/usr/bin/scrcpy"));
+        }
+
+        [Fact]
+        public void GetCandidateScrcpyPaths_PrefersBundledPortableScrcpy()
+        {
+            var provider = new MacPathProvider(preferBundledTools: true);
+            var candidates = provider.GetCandidateScrcpyPaths();
+
+            Assert.Equal(
+                Path.Combine(provider.BaseDirectory, "tools", "scrcpy", "scrcpy"),
+                candidates[0]);
+            Assert.DoesNotContain(candidates, p =>
+                p.Contains(Path.Combine("Downloads", "scrcpy-macos")));
+        }
+
+        [Fact]
+        public void DevelopmentBuild_DoesNotForceBundledToolsAheadOfNativeTools()
+        {
+            var provider = new MacPathProvider(preferBundledTools: false);
+
+            Assert.NotEqual(
+                Path.Combine(provider.BaseDirectory, "tools", "scrcpy", "scrcpy"),
+                provider.GetCandidateScrcpyPaths()[0]);
+            Assert.NotEqual(
+                Path.Combine(provider.BaseDirectory, "tools", "scrcpy", "adb"),
+                provider.GetCandidateAdbPaths()[0]);
         }
 
         [Fact]

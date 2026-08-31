@@ -19,6 +19,7 @@
 - `RELEASE_NOTES_v2.0.0.md`: v2.0.0 GitHub Release용 영어·한국어 설명
 - `RELEASE_NOTES_v1.3.0.md`: 이전 v1.3.0 GitHub Release 기록
 - `PACKAGE_README.md`: 배포 ZIP 루트에 들어가는 HTML 없는 영어·한국어 안내
+- `PACKAGE_README_MACOS.md`: macOS arm64/x64 포터블 ZIP 전용 영어·한국어 안내
 - `../DXDisplayCleanup`: 번들 선택형 Android 복구·파일 전송 앱 소스와 빌드 문서
 
 사용자용 README는 저장소 루트의 `README.md`, 영어/한국어 설명서는
