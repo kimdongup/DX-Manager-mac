@@ -17,11 +17,12 @@
 ## 2. 시스템 요구사항 (Requirements)
 
 - **운영체제**: macOS 14 Sonoma 이상
-- **아키텍처**: Apple Silicon(Apple M 시리즈, arm64) 전용
-- **미지원**: Intel Mac(x86_64)은 지원하지 않으며 x64 ZIP을 제공하지 않습니다.
+- **아키텍처**: 
+  - Apple Silicon (Apple M series) - Native ARM64
+  - Intel Mac (x86_64)
 - **포터블 ZIP 사용자**: Homebrew, .NET, scrcpy와 ADB를 별도로 설치하지
-  않습니다. Apple Silicon용으로 미리 빌드된 ZIP에 self-contained .NET 런타임,
-  scrcpy 4.1, ADB와 scrcpy 서버가 포함됩니다.
+  않습니다. Mac 아키텍처에 맞게 미리 빌드된 ZIP에 self-contained .NET
+  런타임, scrcpy 4.1, ADB와 scrcpy 서버가 포함됩니다.
 - **소스 개발자**: `global.json`에 지정된 .NET 8 SDK가 필요합니다.
 - **지원 스마트폰**:
   - Samsung Galaxy 기기 중 Samsung DeX를 지원하는 기기 (Galaxy S시리즈, Note시리즈, Z Fold시리즈, Tab S시리즈 등)
@@ -31,18 +32,20 @@
 
 ## 3. 포터블 ZIP 실행 (Portable Release)
 
-### 3.1 지원 ZIP 확인
+### 3.1 Mac에 맞는 ZIP 선택
 
 - Apple M 시리즈 Mac: `DX-Manager-v<version>-macos-arm64.zip`
+- Intel Mac: `DX-Manager-v<version>-macos-x64.zip`
 
 여기서 `<version>`은 공개된 Release 버전(예: `2.0.0`)으로 바꿉니다. ZIP 안의
 문서에는 패키징 시 실제 버전이 자동 반영됩니다.
 
-저장소의 GitHub Actions workflow는 `macos-15` Apple Silicon 실행 환경에서 전체
-빌드·테스트·패키지 검증을 수행하도록 구성되어 있습니다. 버전 태그 작업이 성공하면
-검증된 arm64 ZIP과 SHA-256 파일을 포함한 GitHub Release 초안을 만들며,
-유지관리자가 확인 후 공개합니다. 이 변경의 첫 원격 workflow 성공 여부는 아직
-확인해야 합니다. Release가 공개된 뒤 사용자는 arm64 ZIP을
+저장소의 GitHub Actions workflow는 `macos-15` Apple Silicon 실행 환경과
+`macos-15-intel` Intel 실행 환경에서 각각 전체 빌드·테스트·패키지 검증을
+수행하도록 구성되어 있습니다. 버전 태그의 두 작업이 성공하면 검증된 ZIP 두 개와
+SHA-256 파일을 포함한 GitHub Release 초안을 만들며, 유지관리자가 확인 후
+공개합니다. 이 변경의 첫 원격 workflow 성공 여부는 아직 확인해야 합니다.
+Release가 공개된 뒤 사용자는 Mac에 맞는 ZIP 하나를
 내려받아 전체 폴더의 압축을 풀고 `Start DX Manager.command`를 더블클릭합니다.
 소스 빌드는 필요하지 않습니다.
 
@@ -89,14 +92,17 @@ dotnet test DexManager.Mac.sln -c Release
 dotnet run --project DexManager.MultiDeviceTests -c Release
 ```
 
-### 4.3 Apple Silicon 포터블 ZIP 생성
+### 4.3 아키텍처별 포터블 ZIP 생성
 
 ```bash
 # Apple Silicon용 self-contained ZIP
 scripts/Package-Mac-Release.sh --rid osx-arm64
+
+# Intel용 self-contained ZIP
+scripts/Package-Mac-Release.sh --rid osx-x64
 ```
 
-스크립트는 DX Manager와 ADB proxy를 `osx-arm64` RID로 미리 publish하고, 공식
+스크립트는 DX Manager와 ADB proxy를 지정한 RID로 미리 publish하고, 공식
 scrcpy 4.1 정적 빌드의 SHA-256을 확인한 뒤 번들합니다. 생성한 ZIP을 새 임시
 폴더에 다시 풀어 실행 권한, CPU 아키텍처, 외부 Homebrew 경로 의존성, 버전,
 라이선스와 사용자 데이터 제외 여부를 검사합니다.

@@ -4,9 +4,8 @@
 
 ## 2026-08 - v2.0.0 (macOS Cross-Platform Edition)
 
-- Apple Silicon arm64용 self-contained 포터블 ZIP 패키징 추가. Intel Mac은
-  지원하지 않으며 x64 ZIP을 제공하지 않음
-- GitHub Actions가 Apple Silicon에서 단위·통합 테스트와 다중 기기 테스트를
+- Apple Silicon arm64와 Intel x64용 self-contained 포터블 ZIP 패키징 추가
+- GitHub Actions가 각 Mac 아키텍처에서 단위·통합 테스트와 다중 기기 테스트를
   실행한 뒤 미리 빌드된 ZIP과 SHA-256 파일을 artifact로 업로드하고, 버전
   태그에서는 정확한 파일명과 체크섬을 확인해 Release 초안을 만들도록 구성
 - 공식 scrcpy 4.1 macOS 정적 아카이브의 SHA-256, Mach-O 아키텍처, 실행 권한,

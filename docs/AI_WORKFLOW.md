@@ -48,22 +48,23 @@
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Package-Release.ps1
 ```
 
-macOS 공개 후보는 사용자가 빌드하지 않아도 되도록 Apple Silicon arm64
-self-contained ZIP을 미리 만든다. Intel Mac용 x64 ZIP은 만들지 않는다.
+macOS 공개 후보는 사용자가 빌드하지 않아도 되도록 아키텍처별 self-contained
+ZIP을 미리 만든다.
 
 ```bash
 scripts/Package-Mac-Release.sh --rid osx-arm64
+scripts/Package-Mac-Release.sh --rid osx-x64
 ```
 
-macOS 스크립트는 현재 저장소의 다른 아키텍처용 개발 도구를 그대로 복사하지
-않는다. DX Manager와 `DXMAdbProxy`를 `osx-arm64` RID로 publish하고, SHA-256을
-고정한 공식 scrcpy 4.1 macOS arm64 정적 아카이브를 넣는다. ZIP을 다시 풀어 실행
+macOS 스크립트는 현재 저장소의 x86 전용 개발 도구를 그대로 복사하지 않는다.
+DX Manager와 `DXMAdbProxy`를 대상 RID로 publish하고, SHA-256을 고정한 공식
+scrcpy 4.1 macOS 정적 아카이브를 아키텍처별로 넣는다. ZIP을 다시 풀어 실행
 권한, Mach-O 아키텍처, 외부 Homebrew·사용자 경로 의존성, 버전, 필수 문서와
 사용자 데이터·디버그 파일 제외를 확인한다. 파일 권한·순서·시각은
 `SOURCE_DATE_EPOCH` 또는 현재 Git 커밋 시각으로 정규화한다. GitHub Actions
-workflow는 Apple Silicon `macos-15`에서 arm64 패키지를 빌드·테스트해 PR
-artifact로 보관한다. `v*` 버전 태그에서는 ZIP과 체크섬을 다시 검증한 뒤 Release
-초안을 만들고, 유지관리자가 초안을 확인한 뒤 공개한다.
+workflow는 `macos-15`와 `macos-15-intel`에서 두 패키지를 각각 빌드·테스트해
+PR artifact로 보관한다. `v*` 버전 태그에서는 두 ZIP과 체크섬을 다시 검증한 뒤
+Release 초안을 만들고, 유지관리자가 초안을 확인한 뒤 공개한다.
 
 시스템에 .NET Framework 4.6.2 Developer Pack이 없으면 참조 어셈블리 루트를
 `-TargetFrameworkRootPath`로 지정하거나 현재 셸의

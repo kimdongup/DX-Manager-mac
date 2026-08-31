@@ -23,7 +23,7 @@ usage() {
 Create one prebuilt, self-contained DX Manager portable ZIP for macOS.
 
 Usage:
-  scripts/Package-Mac-Release.sh --rid osx-arm64 [options]
+  scripts/Package-Mac-Release.sh --rid osx-arm64|osx-x64 [options]
 
 Options:
   --version VERSION          Package version (default: 2.0.0)
@@ -34,7 +34,7 @@ Options:
 
 Examples:
   scripts/Package-Mac-Release.sh --rid osx-arm64
-  scripts/Package-Mac-Release.sh --rid osx-arm64 --version 2.0.0
+  scripts/Package-Mac-Release.sh --rid osx-x64 --version 2.0.0
 EOF
 }
 
@@ -140,8 +140,14 @@ case "$rid" in
         scrcpy_asset_arch="aarch64"
         scrcpy_sha256="20fd47c9014dd5e0fa77091f3cb7adbda8445a360c4584aeaa0150b5b3988ff3"
         ;;
+    osx-x64)
+        package_arch="x64"
+        binary_arch="x86_64"
+        scrcpy_asset_arch="x86_64"
+        scrcpy_sha256="ee2a7223bc8dbdc4f482db1134bcf441178dafb833492b71ca4c22090c58ce72"
+        ;;
     *)
-        fail "unsupported RID '$rid'; only osx-arm64 is supported"
+        fail "unsupported RID '$rid'; use osx-arm64 or osx-x64"
         ;;
 esac
 

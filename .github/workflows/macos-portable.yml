@@ -1,4 +1,4 @@
-name: macOS Apple Silicon portable package
+name: macOS portable packages
 
 on:
   pull_request:
@@ -53,8 +53,21 @@ permissions:
 
 jobs:
   build-portable:
-    name: Apple Silicon arm64
-    runs-on: macos-15
+    name: ${{ matrix.name }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Apple Silicon arm64
+            runner: macos-15
+            rid: osx-arm64
+            package_arch: arm64
+          - name: Intel x64
+            runner: macos-15-intel
+            rid: osx-x64
+            package_arch: x64
+
+    runs-on: ${{ matrix.runner }}
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -91,17 +104,17 @@ jobs:
       - name: Build and verify portable ZIP
         run: >-
           scripts/Package-Mac-Release.sh
-          --rid osx-arm64
+          --rid "${{ matrix.rid }}"
           --version "$DXM_PACKAGE_VERSION"
           --skip-tests
 
       - name: Upload prebuilt portable package
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: DX-Manager-v${{ env.DXM_PACKAGE_VERSION }}-macos-arm64
+          name: DX-Manager-v${{ env.DXM_PACKAGE_VERSION }}-macos-${{ matrix.package_arch }}
           path: |
-            dist/DX-Manager-v${{ env.DXM_PACKAGE_VERSION }}-macos-arm64.zip
-            dist/DX-Manager-v${{ env.DXM_PACKAGE_VERSION }}-macos-arm64.zip.sha256
+            dist/DX-Manager-v${{ env.DXM_PACKAGE_VERSION }}-macos-${{ matrix.package_arch }}.zip
+            dist/DX-Manager-v${{ env.DXM_PACKAGE_VERSION }}-macos-${{ matrix.package_arch }}.zip.sha256
           if-no-files-found: error
           compression-level: 0
           retention-days: 30
@@ -115,7 +128,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Download the verified package
+      - name: Download both verified packages
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           pattern: DX-Manager-v*-macos-*
@@ -130,10 +143,12 @@ jobs:
           expected=(
             "DX-Manager-v${version}-macos-arm64.zip"
             "DX-Manager-v${version}-macos-arm64.zip.sha256"
+            "DX-Manager-v${version}-macos-x64.zip"
+            "DX-Manager-v${version}-macos-x64.zip.sha256"
           )
           mapfile -t actual < <(find release-assets -type f -print | sort)
           if [[ "${#actual[@]}" -ne "${#expected[@]}" ]]; then
-            echo "Expected exactly two release files, found ${#actual[@]}." >&2
+            echo "Expected exactly four release files, found ${#actual[@]}." >&2
             exit 1
           fi
           for filename in "${expected[@]}"; do
@@ -145,9 +160,10 @@ jobs:
           (
             cd release-assets
             sha256sum --check "DX-Manager-v${version}-macos-arm64.zip.sha256"
+            sha256sum --check "DX-Manager-v${version}-macos-x64.zip.sha256"
           )
 
-      - name: Create draft release with verified package
+      - name: Create draft release with verified packages
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}

@@ -1,7 +1,7 @@
 # DX Manager for macOS - Third-Party Notices
 
-DX Manager is an independently developed utility. The macOS portable package
-includes the components listed below from official project sources or archives.
+DX Manager is an independently developed utility. The macOS portable packages
+include the components listed below from official project sources or archives.
 Packaging applies ad-hoc macOS signatures to the DX Manager executables and to
 a third-party executable only when it does not already have a valid signature.
 This changes signing metadata, not program code. Those components remain
@@ -20,8 +20,8 @@ Official source: https://github.com/dotnet/runtime/tree/v8.0.30
 
 ## scrcpy
 
-The package includes the official static scrcpy 4.1 archive for Apple Silicon
-arm64. scrcpy and scrcpy-server are licensed under the
+The package includes the official static scrcpy 4.1 archive for the selected
+Mac processor architecture. scrcpy and scrcpy-server are licensed under the
 Apache License, Version 2.0. The complete license supplied by the official
 archive is retained in `tools/scrcpy/LICENSE` and is also provided as
 `scrcpy-LICENSE.txt` in the package license directory.

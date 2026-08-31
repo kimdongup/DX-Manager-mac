@@ -5,20 +5,19 @@
 ## macOS 포터블 배포 작업
 
 - 작업 브랜치: `codex/macos-portable-release`
-- 원본 저장소의 Draft PR #3에서 검토 중이며 제목과 본문은 한국어로 작성한다.
-  Apple Silicon arm64 원격 검증을 마칠 때까지 기존 PR #2에는 댓글이나 상태 변경을
-  하지 않는다.
-- `scripts/Package-Mac-Release.sh`가 `osx-arm64`용 DX Manager와 ADB proxy를
-  self-contained single-file로 publish한다.
-- 공식 scrcpy 4.1 arm64 정적 아카이브를 고정 SHA-256으로 검증해 ADB와
-  scrcpy-server를 함께 포함한다.
-- `DX-Manager-v2.0.0-macos-arm64.zip`과 해당 `.sha256` 파일을 생성한다.
-- GitHub Actions workflow는 Apple Silicon `macos-15`에서 빌드·95개 테스트·39개
-  다중 기기 테스트·package smoke test를 수행하도록 구성했다. PR에서는 arm64
-  artifact를 보관하고, `v*` 태그에서는 정확한 ZIP과 체크섬 두 파일을 검증한 뒤
-  Release 초안을 만든다. 첫 원격 run 결과 확인은 남아 있다.
-- Apple Silicon ZIP은 native 실행 검증을 통과했다. Intel Mac(x86_64)은 공식
-  지원 범위에서 제외했고 x64 패키지를 더 이상 빌드·배포하지 않는다.
+- `scripts/Package-Mac-Release.sh`가 `osx-arm64`와 `osx-x64`용 DX Manager와
+  ADB proxy를 self-contained single-file로 publish한다.
+- 공식 scrcpy 4.1 arm64/x86_64 정적 아카이브를 고정 SHA-256으로 검증해
+  ADB와 scrcpy-server를 함께 포함한다.
+- `DX-Manager-v2.0.0-macos-arm64.zip`과
+  `DX-Manager-v2.0.0-macos-x64.zip`, 각 `.sha256` 파일을 생성한다.
+- GitHub Actions workflow는 `macos-15`와 `macos-15-intel`에서 빌드·95개
+  테스트·39개 다중 기기 테스트·package smoke test를 각각 수행하도록
+  구성했다. PR에서는 artifact를 보관하고, `v*` 태그에서는 정확한 네 파일과
+  체크섬을 검증한 뒤 Release 초안을 만든다. 첫 원격 run 결과 확인은 남아 있다.
+- Apple Silicon ZIP은 native 실행 검증을 통과했다. Intel ZIP은 Mach-O x64
+  검사와 이 Mac의 Rosetta에서 DX Manager, proxy, scrcpy 4.1, ADB 37.0.0
+  실행을 확인했다. 실제 Intel Mac의 Galaxy DeX 실기는 남아 있다.
 - macOS `Q` 종료가 no-op이던 조건을 제거하고 실행 중인 서비스 정지와 DeX
   overlay cleanup 완료를 기다리도록 수정했다. CLI `--dex`/`--stop-dex`도 기기
   감시가 첫 snapshot을 읽은 뒤 동작하며 시작·자연 종료 대기의 `Ctrl+C`를 실제

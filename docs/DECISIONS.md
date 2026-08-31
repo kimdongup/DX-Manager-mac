@@ -327,14 +327,13 @@ Scrcpy, DeX orchestrator, 단일창, 화면 OFF, Companion 수신기와 PC→휴
 보존하는 것이 우선이다. 공통화는 이 경로를 직접 검증하는 테스트가 생긴 뒤 별도
 작업으로 수행한다.
 
-## 2026-08 - macOS는 Apple Silicon arm64 self-contained ZIP으로 배포한다
+## 2026-08 - macOS는 아키텍처별 self-contained ZIP으로 배포한다
 
 macOS 사용자가 저장소를 clone하거나 .NET, Homebrew, scrcpy와 ADB를 직접
 설치하도록 하지 않는다. 원본 Windows 프로젝트가 실행 파일과 도구 폴더 전체를
-미리 만든 ZIP으로 배포하는 것과 같은 원칙을 적용한다. 공식 지원과 검증 범위는
-Apple Silicon arm64로 한정하고 `osx-arm64` RID로 DX Manager와 ADB proxy를
-self-contained publish한다. Intel Mac(x86_64)은 지원하지 않으며 universal 또는
-x64 ZIP을 만들지 않는다.
+미리 만든 ZIP으로 배포하는 것과 같은 원칙을 적용한다. Apple Silicon arm64와
+Intel x64는 하나의 universal ZIP으로 합치지 않고 각각 해당 RID로 DX Manager와
+ADB proxy를 self-contained publish한다.
 
 .NET single-file 내부 압축은 사용하지 않는다. macOS arm64 self-contained
 실행 파일을 같은 추출 캐시에서 연속 실행할 때 내부 압축을 켠 빌드에서
@@ -342,10 +341,11 @@ x64 ZIP을 만들지 않는다.
 연속 실행을 통과했다. 실행 파일은 계속 single-file로 publish하며 최종 ZIP의
 표준 압축은 유지한다.
 
-저장소의 개발용 `tools`에는 다른 아키텍처의 파일이 있을 수 있으므로 공개
-패키징에서 그 폴더를 무조건 복사하지 않는다. 공식 scrcpy 4.1 macOS arm64 정적
-아카이브의 URL과 SHA-256을 고정해 넣고, 번들 도구를 PATH와 Homebrew보다 먼저
-사용한다. GitHub Actions는 Apple Silicon `macos-15`에서 빌드·실행 검증한다.
+저장소의 개발용 `tools`에는 x86 전용 파일이 있을 수 있으므로 공개 패키징에서
+그 폴더를 무조건 복사하지 않는다. 공식 scrcpy 4.1 macOS 정적 아카이브를
+아키텍처별 URL과 SHA-256으로 고정해 넣고, 번들 도구를 PATH와 Homebrew보다 먼저
+사용한다. GitHub Actions도 실제 아키텍처가 일치하는 `macos-15`와
+`macos-15-intel`에서 별도로 빌드·실행 검증한다.
 
 DeX overlay를 만들거나 제거하기 직전에는 선택 화면에 남은 identity만 신뢰하지
 않고 해당 ADB transport에서 안정적인 물리 identity를 다시 읽는다. 이미 알고 있던

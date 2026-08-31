@@ -91,9 +91,10 @@ distribution.
   recovery, phone-to-PC file transfer, a Quick Settings tile, and a compact
   home-screen widget
 - Dual OS support: Dedicated Windows WinForms GUI and native macOS (.NET 8 TUI & CLI host)
-- 64-bit Windows 7 SP1 to Windows 11 compatibility (.NET 4.6.2), plus a macOS
-  14+ portable target for Apple Silicon (Apple M-series, arm64). Intel Macs
-  (x86_64) are not supported, and no x64 package is provided.
+- 64-bit Windows 7 SP1 to Windows 11 compatibility (.NET 4.6.2), plus macOS 14+
+  portable targets for Apple Silicon and Intel x86_64. The Intel package has
+  passed Rosetta executable checks; a physical Intel Mac DeX session is not yet
+  verified.
 
 ## Design Philosophy
 
@@ -320,23 +321,24 @@ scripts/Package-Release.ps1
 See [DexManager/README.md](DexManager/README.md) for packaging notes.
 
 ### 2. macOS Edition (Cross-Platform Host & TUI Dashboard)
-- **Target**: macOS 14 Sonoma or later on Apple Silicon (Apple M-series, arm64).
-  Intel Macs (x86_64) are not supported.
-- **Portable package**: `DX-Manager-v2.0.0-macos-arm64.zip`
+- **Target**: macOS 14 Sonoma or later (Apple Silicon & Intel x86_64)
+- **Portable packages**: `DX-Manager-v2.0.0-macos-arm64.zip` and
+  `DX-Manager-v2.0.0-macos-x64.zip`
 - **End-user prerequisites**: no Homebrew and no separate .NET installation;
-  the package includes a self-contained .NET runtime, scrcpy 4.1, ADB, and the
+  the packages include a self-contained .NET runtime, scrcpy 4.1, ADB, and the
   scrcpy server
 - **Developer toolchain**: pinned .NET 8 SDK (`global.json`)
 - **Solution**: `DexManager.Mac.sln`
-- **Developer packaging output**: `dist/DX-Manager-v2.0.0-macos-arm64.zip`
+- **Developer packaging output**: `dist/DX-Manager-v2.0.0-macos-*.zip`
 - **Features**: Interactive terminal UI (TUI) dashboard, CLI argument mode (`--dex`, `--diag`), native macOS path resolution, and multi-device support.
 
-Users download the arm64 package, extract the complete ZIP, and double-click
-`Start DX Manager.command`. They do not build the source. A version tag such as
-`v2.0.0` is configured to trigger a fresh Apple Silicon build. When the job
-succeeds, the workflow creates a draft GitHub Release containing the verified
-ZIP and its SHA-256 file. A maintainer reviews the draft before publishing it.
-The first remote workflow run for this change still needs to be confirmed.
+Users download the package matching their Mac, extract the complete ZIP, and
+double-click `Start DX Manager.command`. They do not build the source. A
+version tag such as `v2.0.0` is configured to trigger fresh Apple Silicon and
+Intel builds. When both jobs succeed, the workflow creates a draft GitHub
+Release containing both verified ZIPs and their SHA-256 files. A maintainer
+reviews the draft before publishing it. The first remote workflow run for this
+change still needs to be confirmed.
 
 The following commands are for maintainers who need to reproduce the packages
 locally:
@@ -344,11 +346,14 @@ locally:
 ```bash
 # Build and verify a prebuilt Apple Silicon portable ZIP
 scripts/Package-Mac-Release.sh --rid osx-arm64
+
+# Build and verify a prebuilt Intel portable ZIP
+scripts/Package-Mac-Release.sh --rid osx-x64
 ```
 The repository workflow is configured to run the build and test suites on
-an Apple Silicon runner. Pull requests retain the package as a workflow
-artifact; version tags create a draft Release with the same verified files.
-See the [portable package guide](docs/PACKAGE_README_MACOS.md)
+matching Apple Silicon and Intel runners. Pull requests retain both packages as
+workflow artifacts; version tags create a draft Release with the same verified
+files. See the [portable package guide](docs/PACKAGE_README_MACOS.md)
 and the detailed [macOS guide](docs/MACOS_GUIDE.md).
 
 ## Project Status
@@ -470,8 +475,8 @@ DX Manager는 개인적으로 사용하던 Batch 스크립트, CMD 명령과 Aut
   빠른 설정 타일과 2 × 1 홈 위젯을 제공하는 공식 검증형 DX Companion 번들
 - Windows 및 macOS 2가지 플랫폼 전용 빌드 지원 (Windows WinForms GUI & macOS .NET 8 TUI 대시보드/CLI)
 - 64비트 Windows 7 SP1~11 (.NET 4.6.2) 호환 및 macOS 14 Sonoma 이상
-  Apple Silicon(Apple M 시리즈, arm64)용 포터블 패키지 제공. Intel
-  Mac(x86_64)은 지원하지 않으며 x64 패키지를 제공하지 않습니다.
+  Apple Silicon/Intel용 포터블 패키지 제공 목표. Intel 패키지는 Rosetta 기동을
+  확인했으며 실제 Intel Mac의 DeX 실기는 아직 확인하지 않았습니다.
 
 ## 개발 철학
 
@@ -691,32 +696,35 @@ scripts/Package-Release.ps1
 배포 파일 구성은 [DexManager/README.md](DexManager/README.md)를 참조하십시오.
 
 ### 2. macOS 에디션 (크로스플랫폼 호스트 & TUI 대시보드)
-- **지원 환경**: macOS 14 Sonoma 이상 Apple Silicon(Apple M 시리즈, arm64).
-  Intel Mac(x86_64)은 지원하지 않습니다.
-- **포터블 패키지**: `DX-Manager-v2.0.0-macos-arm64.zip`
+- **지원 환경**: macOS 14 Sonoma 이상 (Apple Silicon 및 Intel x86_64)
+- **포터블 패키지**: `DX-Manager-v2.0.0-macos-arm64.zip` 및
+  `DX-Manager-v2.0.0-macos-x64.zip`
 - **사용자 사전 설치**: Homebrew와 별도 .NET 설치 불필요. self-contained
   .NET 런타임, scrcpy 4.1, ADB와 scrcpy 서버를 ZIP에 포함
 - **개발 환경**: `global.json`에 고정된 .NET 8 SDK
 - **솔루션**: `DexManager.Mac.sln`
-- **개발자용 패키징 산출물**: `dist/DX-Manager-v2.0.0-macos-arm64.zip`
+- **개발자용 패키징 산출물**: `dist/DX-Manager-v2.0.0-macos-*.zip`
 - **특징**: ANSI 대화형 콘솔 대시보드(TUI), CLI 인자 실행 모드(`--dex`, `--diag`), macOS 표준 경로 및 다중 기기 독립 세션 제어.
 
-일반 사용자는 arm64 패키지를 내려받아 ZIP 전체의 압축을 풀고
+일반 사용자는 Mac에 맞는 패키지를 내려받아 ZIP 전체의 압축을 풀고
 `Start DX Manager.command`를 더블클릭합니다. 소스 빌드는 필요하지 않습니다.
-`v2.0.0` 같은 버전 태그를 push하면 Apple Silicon용 패키지를 새로 빌드하도록
-구성했습니다. 작업이 성공하면 검증된 ZIP과 SHA-256 파일이 포함된 GitHub Release
-초안을 만들며, 유지관리자가 확인한 뒤 공개합니다. 이 변경의 첫 원격 workflow 성공
-여부는 아직 확인해야 합니다.
+`v2.0.0` 같은 버전 태그를 push하면 Apple Silicon용과 Intel용 패키지를 새로
+빌드하도록 구성했습니다. 두 작업이 성공하면 검증된 ZIP 두 개와 SHA-256 파일이
+포함된 GitHub Release 초안을 만들며, 유지관리자가 확인한 뒤 공개합니다. 이 변경의
+첫 원격 workflow 성공 여부는 아직 확인해야 합니다.
 
 다음 명령은 패키지를 로컬에서 재현하려는 유지관리자용입니다.
 
 ```bash
 # Apple Silicon 포터블 ZIP 미리 빌드 및 검증
 scripts/Package-Mac-Release.sh --rid osx-arm64
+
+# Intel 포터블 ZIP 미리 빌드 및 검증
+scripts/Package-Mac-Release.sh --rid osx-x64
 ```
-저장소의 GitHub Actions workflow는 Apple Silicon 실행 환경에서 빌드·테스트하도록
-구성되어 있습니다. PR에서는 arm64 패키지를 workflow artifact로 보관하고, 버전
-태그에서는 같은 검증 파일을 넣은 Release 초안을 만듭니다.
+저장소의 GitHub Actions workflow는 Apple Silicon과 Intel 실행 환경에서 각각
+빌드·테스트하도록 구성되어 있습니다. PR에서는 두 패키지를 workflow artifact로
+보관하고, 버전 태그에서는 같은 검증 파일을 넣은 Release 초안을 만듭니다.
 [포터블 패키지 안내](docs/PACKAGE_README_MACOS.md)와 [macOS
 가이드](docs/MACOS_GUIDE.md)를 참조하십시오.
 

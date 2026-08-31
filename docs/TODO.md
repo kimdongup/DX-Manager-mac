@@ -2,16 +2,16 @@
 
 ## 다음 작업
 
-- [x] macOS Apple Silicon 포터블 배포 기반
-  - [x] arm64 DX Manager와 ADB proxy self-contained single-file publish
-  - [x] 공식 scrcpy 4.1 arm64 아카이브 SHA-256 검증 및 번들
+- [x] macOS 아키텍처별 포터블 배포 기반
+  - [x] arm64/x64 DX Manager와 ADB proxy self-contained single-file publish
+  - [x] 공식 scrcpy 4.1 arm64/x86_64 아카이브 SHA-256 검증 및 번들
   - [x] ZIP 재압축 해제, 실행 권한, 아키텍처, 외부 경로, 제외 파일 검증
-  - [x] Apple Silicon GitHub Actions, PR artifact와 검증된 Release 초안
-  - [ ] PR에서 첫 GitHub Actions arm64 원격 실행 결과 확인
+  - [x] Apple Silicon/x64 GitHub Actions matrix, PR artifact와 검증된 Release 초안
+  - [ ] PR에서 첫 GitHub Actions arm64/x64 원격 실행 결과 확인
   - [x] `Q` 정상 종료의 DeX·단일창·전송·overlay cleanup 보강
   - [x] DeX 시작·정리 전 live identity 재검증과 identity별 보류 정리 분리
   - [x] CLI 시작·자연 종료 대기의 `Ctrl+C` 취소 및 종료 경합 보강
-  - [x] Intel Mac(x86_64) 지원 범위 제외 및 x64 패키지 미제공 명시
+  - [ ] 실제 Intel Mac에서 Galaxy DeX 시작·중지와 overlay cleanup 실기 확인
   - [ ] Apple Developer ID 서명·notarization 자격이 준비되면 공개 ZIP 서명
 
 - [x] v2.0.0 공개 후보 준비
