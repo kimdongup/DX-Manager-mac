@@ -37,7 +37,7 @@
 - Apple M 시리즈 Mac: `DX-Manager-v<version>-macos-arm64.zip`
 - Intel Mac: `DX-Manager-v<version>-macos-x64.zip`
 
-여기서 `<version>`은 공개된 Release 버전(예: `2.0.0`)으로 바꿉니다. ZIP 안의
+여기서 `<version>`은 공개된 Release 버전(예: `2.0.1`)으로 바꿉니다. ZIP 안의
 문서에는 패키징 시 실제 버전이 자동 반영됩니다.
 
 저장소의 GitHub Actions workflow는 `macos-15` Apple Silicon 실행 환경과

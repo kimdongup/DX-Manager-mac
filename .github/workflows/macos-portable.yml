@@ -46,7 +46,7 @@ on:
       version:
         description: Version used in the generated ZIP filenames
         required: true
-        default: "2.0.0"
+        default: "2.0.1"
 
 permissions:
   contents: read
@@ -83,7 +83,7 @@ jobs:
           elif [[ -n "$REQUESTED_VERSION" ]]; then
             version="$REQUESTED_VERSION"
           else
-            version="2.0.0"
+            version="2.0.1"
           fi
           echo "DXM_PACKAGE_VERSION=$version" >> "$GITHUB_ENV"
 

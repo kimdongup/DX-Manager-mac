@@ -32,7 +32,7 @@ shasum -a 256 -c "DX-Manager-v${release_version}-macos-arm64.zip.sha256"
 ```
 
 When reading this source document on GitHub, replace `<version>` with the
-Release version shown in the downloaded filename, for example `2.0.0`. The
+Release version shown in the downloaded filename, for example `2.0.1`. The
 README inside a packaged ZIP already contains the exact package version.
 For an Intel Mac, replace `arm64` with `x64`. Continue only when the command
 prints `OK`. If it reports a mismatch, do not run the ZIP; download both files
@@ -145,7 +145,7 @@ shasum -a 256 -c "DX-Manager-v${release_version}-macos-arm64.zip.sha256"
 ```
 
 이 원본 문서를 GitHub에서 읽는 경우 `<version>`을 내려받은 파일명에 표시된
-Release 버전(예: `2.0.0`)으로 바꾸십시오. 패키지 ZIP 안의 README에는 실제
+Release 버전(예: `2.0.1`)으로 바꾸십시오. 패키지 ZIP 안의 README에는 실제
 패키지 버전이 이미 반영됩니다.
 Intel Mac에서는 `arm64`를 `x64`로 바꿉니다. 결과에 `OK`가 표시된 경우에만
 계속하십시오. 불일치가 표시되면 실행하지 말고 Release에서 두 파일을 다시

@@ -5,7 +5,7 @@ set -euo pipefail
 script_directory="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repository_root="$(cd "$script_directory/.." && pwd)"
 
-version="2.0.0"
+version="2.0.1"
 rid=""
 output_directory="$repository_root/dist"
 scrcpy_archive=""
@@ -26,7 +26,7 @@ Usage:
   scripts/Package-Mac-Release.sh --rid osx-arm64|osx-x64 [options]
 
 Options:
-  --version VERSION          Package version (default: 2.0.0)
+  --version VERSION          Package version (default: 2.0.1)
   --output-dir DIRECTORY    Generated ZIP directory (default: ./dist)
   --scrcpy-archive FILE     Use an already downloaded official scrcpy archive
   --skip-tests              Skip the test suites (intended only after CI tests)
@@ -34,7 +34,7 @@ Options:
 
 Examples:
   scripts/Package-Mac-Release.sh --rid osx-arm64
-  scripts/Package-Mac-Release.sh --rid osx-x64 --version 2.0.0
+  scripts/Package-Mac-Release.sh --rid osx-x64 --version 2.0.1
 EOF
 }
 

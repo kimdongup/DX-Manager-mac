@@ -20,7 +20,7 @@
   <a href="docs/USER_GUIDE_KO.md">한국어 사용 설명서</a> ·
   <a href="docs/FAQ_EN.md">FAQ</a> ·
   <a href="docs/FAQ_KO.md">Q&amp;A</a> ·
-  <a href="docs/RELEASE_NOTES_v2.0.0.md">v2.0.0 release notes</a> ·
+  <a href="docs/RELEASE_NOTES_v2.0.1.md">v2.0.1 release notes</a> ·
   <a href="DexManager/licenses/THIRD_PARTY_NOTICES.md">Third-party notices</a>
 </p>
 
@@ -318,23 +318,25 @@ DX Manager provides two dedicated builds for Windows and macOS:
 # Package portable release ZIP (PowerShell on Windows)
 scripts/Package-Release.ps1
 ```
-See [DexManager/README.md](DexManager/README.md) for packaging notes.
+The script keeps the developer output in place and writes `dist/DX Manager`
+plus `dist/DX-Manager-v2.0.1-win-x64.zip`. See
+[DexManager/README.md](DexManager/README.md) for packaging notes.
 
 ### 2. macOS Edition (Cross-Platform Host & TUI Dashboard)
 - **Target**: macOS 14 Sonoma or later (Apple Silicon & Intel x86_64)
-- **Portable packages**: `DX-Manager-v2.0.0-macos-arm64.zip` and
-  `DX-Manager-v2.0.0-macos-x64.zip`
+- **Portable packages**: `DX-Manager-v2.0.1-macos-arm64.zip` and
+  `DX-Manager-v2.0.1-macos-x64.zip`
 - **End-user prerequisites**: no Homebrew and no separate .NET installation;
   the packages include a self-contained .NET runtime, scrcpy 4.1, ADB, and the
   scrcpy server
 - **Developer toolchain**: pinned .NET 8 SDK (`global.json`)
 - **Solution**: `DexManager.Mac.sln`
-- **Developer packaging output**: `dist/DX-Manager-v2.0.0-macos-*.zip`
+- **Developer packaging output**: `dist/DX-Manager-v2.0.1-macos-*.zip`
 - **Features**: Interactive terminal UI (TUI) dashboard, CLI argument mode (`--dex`, `--diag`), native macOS path resolution, and multi-device support.
 
 Users download the package matching their Mac, extract the complete ZIP, and
 double-click `Start DX Manager.command`. They do not build the source. A
-version tag such as `v2.0.0` is configured to trigger fresh Apple Silicon and
+version tag such as `v2.0.1` is configured to trigger fresh Apple Silicon and
 Intel builds. When both jobs succeed, the workflow creates a draft GitHub
 Release containing both verified ZIPs and their SHA-256 files. A maintainer
 reviews the draft before publishing it. The first remote workflow run for this
@@ -358,7 +360,12 @@ and the detailed [macOS guide](docs/MACOS_GUIDE.md).
 
 ## Project Status
 
-Version 2.0.0 bundles scrcpy 4.1. The current verification baseline includes:
+Version 2.0.1 bundles scrcpy 4.1. The current verification baseline includes:
+
+This maintenance release reloads the selected phone's per-device DeX settings
+after the first physical identity binding and prevents shared startup defaults
+from overwriting a device profile in multi-phone startup scenarios. DX
+Companion remains at the verified version 2.0.0 (versionCode 6).
 
 - Windows 11: two-phone USB/Wi-Fi combinations with independent DeX,
   single-app windows, settings, Companion sessions, and bidirectional transfers
@@ -693,22 +700,24 @@ DX Manager는 Windows와 macOS를 각각 지원하는 2가지 독립 빌드를 �
 # 배포용 포터블 ZIP 생성 (Windows PowerShell)
 scripts/Package-Release.ps1
 ```
-배포 파일 구성은 [DexManager/README.md](DexManager/README.md)를 참조하십시오.
+개발 빌드 폴더는 유지하고 `dist/DX Manager`와
+`dist/DX-Manager-v2.0.1-win-x64.zip`을 생성합니다. 배포 파일 구성은
+[DexManager/README.md](DexManager/README.md)를 참조하십시오.
 
 ### 2. macOS 에디션 (크로스플랫폼 호스트 & TUI 대시보드)
 - **지원 환경**: macOS 14 Sonoma 이상 (Apple Silicon 및 Intel x86_64)
-- **포터블 패키지**: `DX-Manager-v2.0.0-macos-arm64.zip` 및
-  `DX-Manager-v2.0.0-macos-x64.zip`
+- **포터블 패키지**: `DX-Manager-v2.0.1-macos-arm64.zip` 및
+  `DX-Manager-v2.0.1-macos-x64.zip`
 - **사용자 사전 설치**: Homebrew와 별도 .NET 설치 불필요. self-contained
   .NET 런타임, scrcpy 4.1, ADB와 scrcpy 서버를 ZIP에 포함
 - **개발 환경**: `global.json`에 고정된 .NET 8 SDK
 - **솔루션**: `DexManager.Mac.sln`
-- **개발자용 패키징 산출물**: `dist/DX-Manager-v2.0.0-macos-*.zip`
+- **개발자용 패키징 산출물**: `dist/DX-Manager-v2.0.1-macos-*.zip`
 - **특징**: ANSI 대화형 콘솔 대시보드(TUI), CLI 인자 실행 모드(`--dex`, `--diag`), macOS 표준 경로 및 다중 기기 독립 세션 제어.
 
 일반 사용자는 Mac에 맞는 패키지를 내려받아 ZIP 전체의 압축을 풀고
 `Start DX Manager.command`를 더블클릭합니다. 소스 빌드는 필요하지 않습니다.
-`v2.0.0` 같은 버전 태그를 push하면 Apple Silicon용과 Intel용 패키지를 새로
+`v2.0.1` 같은 버전 태그를 push하면 Apple Silicon용과 Intel용 패키지를 새로
 빌드하도록 구성했습니다. 두 작업이 성공하면 검증된 ZIP 두 개와 SHA-256 파일이
 포함된 GitHub Release 초안을 만들며, 유지관리자가 확인한 뒤 공개합니다. 이 변경의
 첫 원격 workflow 성공 여부는 아직 확인해야 합니다.
@@ -730,7 +739,12 @@ scripts/Package-Mac-Release.sh --rid osx-x64
 
 ## 프로젝트 상태
 
-버전 2.0.0은 scrcpy 4.1을 포함합니다. 현재 확인 기준은 다음과 같습니다.
+버전 2.0.1은 scrcpy 4.1을 포함합니다. 현재 확인 기준은 다음과 같습니다.
+
+이 유지보수 릴리스는 첫 물리 identity 결속 뒤 선택 휴대폰의 기기별 DeX 설정을
+다시 불러오고, 시작부터 여러 휴대폰이 연결된 경우 공통 기본값이 기기 프로필을
+덮어쓰지 않도록 수정했습니다. DX Companion은 검증된 2.0.0(versionCode 6)을
+유지합니다.
 
 - Windows 11: 휴대폰 두 대의 USB·Wi-Fi 조합, 독립 DeX·단일창·설정·
   Companion 세션과 양방향 전송
