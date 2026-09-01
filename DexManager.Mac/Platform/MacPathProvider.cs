@@ -4,6 +4,21 @@ namespace DexManager.Mac.Platform;
 
 public sealed class MacPathProvider : IPathProvider
 {
+    private readonly bool _preferBundledTools;
+
+    public MacPathProvider()
+        : this(null)
+    {
+    }
+
+    internal MacPathProvider(bool? preferBundledTools)
+    {
+        _preferBundledTools = preferBundledTools ?? File.Exists(
+            Path.Combine(BaseDirectory, "PORTABLE_PACKAGE.txt"));
+    }
+
+    internal bool IsPortablePackage => _preferBundledTools;
+
     public string BaseDirectory => AppDomain.CurrentDomain.BaseDirectory;
 
     public string DefaultSettingsFilePath =>
@@ -70,23 +85,32 @@ public sealed class MacPathProvider : IPathProvider
     public string[] GetCandidateAdbPaths()
     {
         var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        var bundledScrcpyAdb = Path.Combine(BaseDirectory, "tools", "scrcpy", "adb");
+        var bundledFallbackAdb = Path.Combine(BaseDirectory, "tools", "adb", "adb");
         var candidates = new List<string>
         {
-            Path.Combine(BaseDirectory, "tools", "adb", "adb"),
-            Path.Combine(BaseDirectory, "tools", "scrcpy", "adb"),
-            Path.Combine(home, "Downloads", "scrcpy-macos-x86_64-v3.3.4", "adb"),
-            Path.Combine(home, "Downloads", "scrcpy-macos-aarch64-v3.3.4", "adb"),
             Path.Combine(home, "Library", "Android", "sdk", "platform-tools", "adb"),
             "/opt/homebrew/bin/adb",
             "/usr/local/bin/adb",
             Path.Combine(home, ".android-sdk", "platform-tools", "adb"),
             "/opt/android-sdk/platform-tools/adb",
+            bundledScrcpyAdb,
+            bundledFallbackAdb,
             Path.Combine(BaseDirectory, "tools", "adb", "adb.exe")
         };
 
         var inPath = FindInPath("adb");
-        if (!string.IsNullOrWhiteSpace(inPath) && !candidates.Contains(inPath))
+        if (_preferBundledTools)
         {
+            candidates.Remove(bundledScrcpyAdb);
+            candidates.Insert(0, bundledScrcpyAdb);
+        }
+        else if (!string.IsNullOrWhiteSpace(inPath))
+        {
+            candidates.RemoveAll(path => string.Equals(
+                path,
+                inPath,
+                StringComparison.Ordinal));
             candidates.Insert(0, inPath);
         }
 
@@ -95,21 +119,28 @@ public sealed class MacPathProvider : IPathProvider
 
     public string[] GetCandidateScrcpyPaths()
     {
-        var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        var bundledScrcpy = Path.Combine(BaseDirectory, "tools", "scrcpy", "scrcpy");
         var candidates = new List<string>
         {
-            Path.Combine(BaseDirectory, "tools", "scrcpy", "scrcpy"),
-            Path.Combine(home, "Downloads", "scrcpy-macos-x86_64-v3.3.4", "scrcpy"),
-            Path.Combine(home, "Downloads", "scrcpy-macos-aarch64-v3.3.4", "scrcpy"),
             "/opt/homebrew/bin/scrcpy",
             "/usr/local/bin/scrcpy",
             "/usr/bin/scrcpy",
+            bundledScrcpy,
             Path.Combine(BaseDirectory, "tools", "scrcpy", "scrcpy.exe")
         };
 
         var inPath = FindInPath("scrcpy");
-        if (!string.IsNullOrWhiteSpace(inPath) && !candidates.Contains(inPath))
+        if (_preferBundledTools)
         {
+            candidates.Remove(bundledScrcpy);
+            candidates.Insert(0, bundledScrcpy);
+        }
+        else if (!string.IsNullOrWhiteSpace(inPath))
+        {
+            candidates.RemoveAll(path => string.Equals(
+                path,
+                inPath,
+                StringComparison.Ordinal));
             candidates.Insert(0, inPath);
         }
 
@@ -121,7 +152,7 @@ public sealed class MacPathProvider : IPathProvider
         var pathEnv = Environment.GetEnvironmentVariable("PATH");
         if (string.IsNullOrWhiteSpace(pathEnv)) return null;
 
-        foreach (var segment in pathEnv.Split([':'], StringSplitOptions.RemoveEmptyEntries))
+        foreach (var segment in pathEnv.Split(new[] { ':' }, StringSplitOptions.RemoveEmptyEntries))
         {
             try
             {
